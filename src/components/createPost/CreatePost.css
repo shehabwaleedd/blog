@@ -1,0 +1,177 @@
+.create {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-top: 8rem;
+
+}
+
+.create__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 74vh;
+}
+
+.create__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 50rem;
+    justify-content: center;
+}
+
+.create__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.create__input-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+}
+
+.create__input-title input {
+    width: 50rem;
+    height: 3rem;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+
+}
+
+.create__input-post {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+
+}
+
+.create__input-post textarea {
+    width: 50rem;
+    height: 10rem;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.create__input-post textarea:focus {
+    outline: none;
+}
+
+.create__input-title input:focus {
+    outline: none;
+}
+
+.create__button {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--nav-overlay-color);
+    color: var(--container-color);
+    font-weight: var(--font-medium);
+    width: 10rem;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.create__input-image {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+}
+
+.create__input-image img {
+    width: 60rem;
+    height: 20rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.create__input-image input {
+    width: 50rem;
+    height: 3rem;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.create__input-image input:focus {
+    outline: none;
+}
+
+
+.create__input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+}
+
+.create__input-category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+
+}
+
+.create__input-category select {
+    width: 10rem;
+    height: 3.5rem;
+    border-bottom: 1px solid #ccc;
+    padding: 1rem;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.create__input-category select:focus {
+    outline: none;
+}
+
+
+.create__input-category textarea:focus {
+    outline: none;
+}
+
+.create__input-category input:focus {
+    outline: none;
+}
+
+.create__button-div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-file-upload:hover {
+    background-color: var(--container-color);
+}

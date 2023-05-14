@@ -1,0 +1,204 @@
+.edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 9rem;
+    height: 150vh;
+    
+}
+
+.edit__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    height: 10vh;
+}
+
+.edit__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 50rem;
+    justify-content: center;
+    
+}
+
+.form__container-edit {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+}
+
+.edit__form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.edit__input-title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+
+}
+
+
+.edit__input-title input {
+    width: 50rem;
+    height: 3rem;
+    border-bottom: 1px solid #ccc;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.edit__input-post {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+
+}
+
+.edit__input-post textarea {
+    width: 50rem;
+    height: 10rem;
+    border-bottom: 1px solid #ccc;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.edit__input-post textarea:focus {
+    outline: none;
+}
+
+.edit__input-title input:focus {
+    outline: none;
+}
+
+.edit__button {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--nav-color);
+    color: var(--container-color);
+    font-weight: var(--font-medium);
+    width: 10rem;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.edit__input-image {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+}
+
+.edit__input-image img {
+    width: 60rem;
+    height: 20rem;
+    border: 1px solid #ccc;
+
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.edit__input-image input {
+    width: 50rem;
+    height: 3rem;
+    border-bottom: 1px solid #ccc;
+
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.edit__input-image input:focus {
+    outline: none;
+}
+
+
+.edit__input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+}
+
+.edit__input-category select {
+    width: 10rem;
+    height: 1.8rem;
+    border-bottom: 1px solid #ccc;
+    background-color: var(--body-color);
+    color: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.edit__input-category select:focus {
+    outline: 0.5px solid var(--accent-color);
+    border-radius: 1rem;
+}
+
+.edit__input-category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+    justify-content: flex-start;
+
+}
+
+.edit__input-category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    color: var(--text-color);
+
+}
+
+.edit__input-category input {
+    width: 10rem;
+    height: 3.5rem;
+    border-bottom: 1px solid #ccc;
+
+    background-color: var(--body-color);
+    color: var(--accent-color);
+}
+
+.edit__input-category textarea:focus {
+    outline: none;
+}
+
+.edit__input-category input:focus {
+    outline: none;
+}
+
+
+
+.edit-file-upload {
+    display: inline-block;
+    padding: 1.625rem 1.25rem;
+    background-color: var(--body-color);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 1rem;
+}
+
+.edit-file-upload:hover {
+    background-color: var(--container-color);
+}

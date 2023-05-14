@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Itim&family=Kaushan+Script&family=Oooh+Baby&family=Reggae+One&display=swap');
+@import url(https://fonts.bunny.net/css?family=aladin:400|allerta-stencil:400|bayon:400|krona-one:400);
+
+
+
+.blog__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem;
+  height: calc(100vh - 3rem);
+  width: 100vw;
+  margin-left: 3rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100vw;
+  position: relative;
+}
+
+.menu__item-image_wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+  position: relative;
+}
+
+
+.text-container {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  cursor: pointer;
+  margin: 0.2rem 0;
+  text-align: left;
+  align-items: flex-start;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.9;
+  width: 50vw;
+  height: 35.25rem;
+  /* Set the height to whatever you want */
+  overflow: hidden;
+  margin-bottom: 5rem;
+
+
+}
+
+
+
+
+.work__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 41%;
+  text-align: left;
+  position: relative;
+  gap: 7rem;
+}
+
+.work__title a {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  font-family: "Satoshi", sans-serif;
+  color: var(--accent-color);
+}
+
+.work__title h1 {
+  width: 100%;
+  color: transparent;
+  -webkit-text-stroke: 0.2px var(--project-text-animation-color);
+  font-size: 2rem;
+  font-family: "Krona One", sans-serif;
+  top: 0;
+  font-weight: bolder;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  white-space: nowrap;
+  cursor: pointer;
+  padding-top: 0.5rem;
+}
+
+.work__title h1::before {
+  position: absolute;
+  content: attr(data-text);
+  -webkit-text-stroke: transparent;
+  -webkit-text-fill-color: var(--title-color);
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 0%;
+  overflow: hidden;
+}
+
+.work__title h1::after {
+  content: "";
+  position: absolute;
+  left: 0rem;
+  top: 4.5rem;
+  width: 38rem;
+  height: 2px;
+  background-color: var(--text-color);
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: all 5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.work__title:hover h1::before {
+  width: 100%;
+}
+
+.blog__details-titlecat {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  font-size: 0.8rem;
+  text-align: right;
+}
+
+.blog__date {
+  font-size: 0.6rem;
+  color: var(--accent-color);
+
+}
+
+.blog__author {
+  font-size: 0.60rem;
+  margin-bottom: 0.2rem;
+  color: var(--accent-color);
+
+}
+
+
+
+.work__work-text {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  transition: 0.3s ease;
+  text-align: left;
+  font-family: "Krona One", sans-serif;
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  position: relative;
+  letter-spacing: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.work__work-text::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 272.5%;
+  background: var(--text-color);
+  height: 2px;
+  transition: width 0.3s;
+  left: 0rem;
+  top: 4.2rem;
+}
+
+
+
+
+.menu__item-image_wrapper img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 3.25rem;
+  transition: 0.3s ease;
+  border-top-left-radius: 5rem;
+}
+
+.menu__item-image {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu__item-image.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+
+
+
+.post__date-imgname {
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: absolute;
+  font-size: 1.2rem;
+  font-family: "Krona One", sans-serif;
+  color: var(--accent-color);
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  right: 3%;
+  top: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post__date-imagename.fade-in {
+  opacity: 1;
+}
+
+.image-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.image-wrapper label {
+  opacity: 1;
+  font-size: 1rem;
+  font-family: "Krona One", sans-serif;
+  color: var(--accent-color);
+  cursor: pointer;
+}
+
+
+
+.projects__load-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 10;
+  pointer-events: none;
+}
+
+
+.projects__load-screen {
+  position: relative;
+  padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  background-color: var(--contact-transition-color);
+  width: 100%;
+  height: 0%;
+}
+
+
+
+
+.scrollbarr {
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* hide default scrollbar in Firefox */
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+.scrollbarr::-webkit-scrollbar {
+  width: 0;
+  /* hide default scrollbar in Chrome and Safari */
+}
+
+/* Add custom scrollbar styles */
+.scrollbarr::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
+}
+
+.scrollbarr::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+}
+
+.scrollbarr::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+.blog {
+
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  height: 130vh;
+}
+
+.blog__header {
+  padding-top: 6rem;
+}
+
+
+.section__subtitle-blog {
+  color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
