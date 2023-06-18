@@ -64,8 +64,8 @@ function Login() {
                 <div className="login__button">
                   <button type="submit" className="login__button-sign">
                     <h3>{t("login__form__button")}</h3>
+                    <i className="uil uil-arrow-right button__icon-login"></i>
                   </button>
-                  <i className="uil uil-arrow-right button__icon-login"></i>
                 </div>
               </div>
               <div className="form__container_form-center">

@@ -62,7 +62,7 @@
 
 }
 
-.login__button {
+.login__button-sign {
     background-color: var(--nav-overlay-color);
     color: var(--container-color);
     display: flex;
@@ -70,6 +70,7 @@
     margin: 0.4rem 1rem;
     padding: 1rem;
     border-radius: 0.4rem;
+    gap: 13rem;
 }
 
 .login__button h3 {
@@ -122,8 +123,9 @@
 }
 
 .google__button {
-    background-color: #fffafa;
+    background-color: #ffffff;
     color: black;
+    border: 0.001px solid var(--text-color);
 }
 
 .facebook__button {

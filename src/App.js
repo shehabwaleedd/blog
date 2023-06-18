@@ -6,6 +6,7 @@ import MainRoutes from './routes/routes/MainRoutes';
 import { createContext } from 'react';
 import AnimatedNav from './navItems/animatedNav/AnimatedNav';
 import ScrollUp from './components/scrollup/ScrollUp';
+import Footer from './pages/footer/Footer';
 
 export const ThemeContext = createContext(null);
 
@@ -30,6 +31,7 @@ function App() {
                 <MainRoutes />
               </AnimatePresence>
               <ScrollUp />
+              <Footer />
             </ThemeContext.Provider>
       </div>
   );
