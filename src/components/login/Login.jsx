@@ -56,10 +56,10 @@ function Login() {
             <div className="form__container">
               <div className="form__container_form-input">
                 <div className="login__input">
-                  <input type="email" id="email" className="login__input-field" placeholder={t("login__form__insert_email")} value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <input type="email" id="email" className="login__input-field" placeholder={t("login__form__insert_email")} value={email} onChange={(e) => setEmail(e.target.value)} autoComplete='email'/>
                 </div>
                 <div className="login__input">
-                  <input type="password" id="password" className="login__input-field left-aligned-input" placeholder={t("login__form__password")} value={password} onChange={(e) => setPassword(e.target.value)} style={{ textAlign: 'left' }} />
+                  <input type="password" id="password" className="login__input-field left-aligned-input" placeholder={t("login__form__password")} value={password} onChange={(e) => setPassword(e.target.value)} style={{ textAlign: 'left' }} autoComplete="current-password" />
                 </div>
                 <div className="login__button">
                   <button type="submit" className="login__button-sign">
@@ -77,11 +77,11 @@ function Login() {
         <div className="login__container-right">
           <div className="form__container_form-buttons">
             <div className="signup__social-button facebook__button">
-              <i class='bx bxl-facebook' ></i>
+              <i className='bx bxl-facebook' ></i>
               <button onClick={handleGoogle} className=""><p>Sign In With Facebook</p></button>
             </div>
             <div className="signup__social-button google__button">
-              <i class='bx bxl-google' ></i>
+              <i className='bx bxl-google' ></i>
               <button onClick={handleGoogle}><p>{t("button__sign__in__with__google")}</p></button>
             </div>
             <div className="login__forgot">

@@ -14,27 +14,27 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
   const location = useLocation();
   const { user } = useUserAuth()
 
-  
+
   useEffect(() => {
-    
+
     setNavOpen(false); // Close the navbar when the location changes
-     // eslint-disable-next-line 
+    // eslint-disable-next-line 
   }, [location, setNavOpen]);
-  
+
   return (
     <nav className='nav'>
       <div className="nav-container">
         <div className="navbar">
-          <div className={navOpen ? "logo spin" : "logo"} style={{transitionDuration: navOpen ? "1s" : "1.5s", transition: navOpen ? "1.5s" : "1.5s"}}>
+          <div className={navOpen ? "logo spin" : "logo"} style={{ transitionDuration: navOpen ? "1s" : "1.5s", transition: navOpen ? "1.5s" : "1.5s" }}>
             <Link to="/">lumos</Link>
           </div>
           <div className="side__navbar">
             <NavComponents navOpen={navOpen} />
-            <Toggle toggleTheme={toggleTheme} navOpen={navOpen}/>
+            <Toggle toggleTheme={toggleTheme} navOpen={navOpen} />
             <DropDownMenu navOpen={navOpen} />
             <button>
               <Link className={navOpen ? "createpost__button spin" : "createpost__button"} to={user ? "/createpost" : "/signup"}>
-              {user ? "CreatePost" : "Register"}
+                {user ? "CreatePost" : "Register"}
               </Link>
             </button>
             <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>
@@ -52,7 +52,8 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
         }}>
         </div>
         <div className="nav-overlay" style={{
-          top: navOpen ? "0" : "-120%",
+          top: navOpen ? "0%" : "-200%",
+          marginRight: navOpen ? "0" : "-200%",
           transitionDelay: navOpen ? "0s" : "0s",
           transitionDuration: navOpen ? "1s" : "1.5s",
         }}>

@@ -153,16 +153,3 @@ const SignUp = (Props) => {
 export default SignUp
 
 
-// <div class="or__container">
-// <div class="line__separator"></div>
-// <div class="or__label">{t("form__or")}</div>
-// <div class="line__separator"></div>
-// </div>
-// <div className="signup__social">
-// <div className="signup__box">
-//     <button onClick={handleGoogle} className='signup-with-google-btn'>{t("button__sign__up__with__google")}</button>
-// </div>
-// </div>
-// <div className="signup__forgot">
-// <span className="signup__account">{t("signup__form__have_account_already")} <Link className="signup__link" to="/login">{t("signup__form__login")}</Link></span>
-// </div>
