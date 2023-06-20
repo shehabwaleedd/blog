@@ -47,7 +47,7 @@
   .nav__home {
     margin: 0.2rem auto;
     position: relative;
-    color: var(--text-color);
+    color: var(--container-color);
     left: 0rem;
     right: 0px;
     font-family: "Satoshi-Bold", sans-serif;
@@ -109,7 +109,7 @@
   
   .login__text {
     position: relative;
-    color: var(--title-color);
+    color: var(--container-color);
     font-family: "Satoshi-Bold", sans-serif;
     width: 100%;
     display: flex;

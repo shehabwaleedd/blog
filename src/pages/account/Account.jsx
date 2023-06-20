@@ -6,9 +6,10 @@ import { db } from '../../firebase-config';
 import "./Account.css"
 
 const Account = () => {
-    const { user, logout } = useUserAuth();
+    const { user, logOut } = useUserAuth();
     const navigate = useNavigate();
     const [userData, setUserData] = useState(null);
+    const [personalOpen, setPersonalOpen] = useState(false);
 
     useEffect(() => {
         // Fetch user data from the backend based on user ID or username
@@ -32,12 +33,26 @@ const Account = () => {
         }
     }, [user]);
 
+    const handlePersonalOpen = () => {
+        setPersonalOpen(true);
+    };
+
+    const handleLogout = async () => {
+        try {
+            await logOut()
+            navigate('/login')
+            console.log("logged out successfully")
+        } catch (e) {
+            console.log(e.message)
+        }
+    }
+
 
     return (
         <section className="account">
             <div className="account__upper">
                 <h1>Personal Information</h1>
-                <button>
+                <button onClick={handleLogout}>
                     <h1>Logout</h1>
                 </button>
             </div>
@@ -54,7 +69,7 @@ const Account = () => {
                         <div className="left__bottom">
                             <div className="left__bottom_content">
                                 <ul>
-                                    <li>
+                                    <li onClick={handlePersonalOpen}>
                                         <h1>Personal Information</h1>
                                     </li>
                                     <li>
@@ -72,71 +87,73 @@ const Account = () => {
                     </div>
                 </div>
                 <div className="right__container">
-                    <div className="right__content">
-                        <div className="right__header">
-                            <h1>Personal Information</h1>
-                            <p>Manage your personal information, including phone numbers and email address where you can be contacted</p>
-                        </div>
-                        <div className="right__bottom">
-                            <div className="right__bottom_cards">
-                                <div className="right__bottom_card">
-                                    <div className="right__bottom_card_header">
-                                        <div className="right__bottom_card_name_icon">
-                                            <h1>Name</h1>
-                                            <i className='bx bx-user'></i>
-                                        </div>
-                                        <div className="right__bottom_card_text">
-                                            <h1>{user.displayName}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="right__bottom_card">
-                                    <div className="right__bottom_card_header">
-                                        <div className="right__bottom_card_name_icon">
-                                            <h1>Date Of Birth</h1>
-                                            <i className='bx bx-calendar-alt'></i>
-                                        </div>
-                                        <div className="right__bottom_card_text">
-                                            <h1>05 Februray 1999</h1>
+                    {user && handlePersonalOpen && (
+                        <div className="right__content">
+                            <div className="right__header">
+                                <h1>Personal Information</h1>
+                                <p>Manage your personal information, including phone numbers and email address where you can be contacted</p>
+                            </div>
+                            <div className="right__bottom">
+                                <div className="right__bottom_cards">
+                                    <div className="right__bottom_card">
+                                        <div className="right__bottom_card_header">
+                                            <div className="right__bottom_card_name_icon">
+                                                <h1>Name</h1>
+                                                <i className='bx bx-user'></i>
+                                            </div>
+                                            <div className="right__bottom_card_text">
+                                                <h1>{user.displayName}</h1>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="right__bottom_card">
-                                    <div className="right__bottom_card_header">
-                                        <div className="right__bottom_card_name_icon">
-                                            <h1>Country/Region</h1>
-                                            <i className='bx bx-map'></i>
-                                        </div>
-                                        <div className="right__bottom_card_text">
-                                            <h1>Egypt, Cairo.</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="right__bottom_card">
-                                    <div className="right__bottom_card_header">
-                                        <div className="right__bottom_card_name_icon">
-                                            <h1>Language</h1>
-                                            <i className='bx bx-globe'></i>
-                                        </div>
-                                        <div className="right__bottom_card_text">
-                                            <h1>English, EN</h1>
+                                    <div className="right__bottom_card">
+                                        <div className="right__bottom_card_header">
+                                            <div className="right__bottom_card_name_icon">
+                                                <h1>Date Of Birth</h1>
+                                                <i className='bx bx-calendar-alt'></i>
+                                            </div>
+                                            <div className="right__bottom_card_text">
+                                                <h1>05 Februray 1999</h1>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="right__bottom_card">
-                                    <div className="right__bottom_card_header">
-                                        <div className="right__bottom_card_name_icon">
-                                            <h1>Contact</h1>
-                                            <i className='bx bx-chat'></i>
+                                    <div className="right__bottom_card">
+                                        <div className="right__bottom_card_header">
+                                            <div className="right__bottom_card_name_icon">
+                                                <h1>Country/Region</h1>
+                                                <i className='bx bx-map'></i>
+                                            </div>
+                                            <div className="right__bottom_card_text">
+                                                <h1>Egypt, Cairo.</h1>
+                                            </div>
                                         </div>
-                                        <div className="right__bottom_card_text">
-                                            <h1>shehabwaleedd@gmail.com</h1>
+                                    </div>
+                                    <div className="right__bottom_card">
+                                        <div className="right__bottom_card_header">
+                                            <div className="right__bottom_card_name_icon">
+                                                <h1>Language</h1>
+                                                <i className='bx bx-globe'></i>
+                                            </div>
+                                            <div className="right__bottom_card_text">
+                                                <h1>English, EN</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="right__bottom_card">
+                                        <div className="right__bottom_card_header">
+                                            <div className="right__bottom_card_name_icon">
+                                                <h1>Contact</h1>
+                                                <i className='bx bx-chat'></i>
+                                            </div>
+                                            <div className="right__bottom_card_text">
+                                                <h1>{user.email}</h1>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
         </section>
