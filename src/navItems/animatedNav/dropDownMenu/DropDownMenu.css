@@ -11,7 +11,7 @@
   .dropdown__icon  {
     margin: 0 auto;
     position: relative;
-    color: var(--text-color);
+    color: var(--container-color);
     display: block;
     left: 0rem;
     right: 0px;

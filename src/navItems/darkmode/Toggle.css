@@ -1,7 +1,7 @@
 .toggle__container {
     margin: 0.2rem auto;
     position: relative;
-    color: var(--title-color);
+    color: var(--container-color);
     left: 0rem;
     right: 0px;
     font-family: "Satoshi-Bold", sans-serif;
@@ -12,7 +12,7 @@
 
 .toggle__container.spin {
     position: relative;
-    color: var(--overlay-color);
+    color: var(--container-color);
     transition: all 5.5s cubic-bezier(0.16, 1, 0.3, 1);
     padding: 0.5rem;
     display: block;

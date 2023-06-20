@@ -32,11 +32,11 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
             <NavComponents navOpen={navOpen} />
             <Toggle toggleTheme={toggleTheme} navOpen={navOpen} />
             <DropDownMenu navOpen={navOpen} />
-            <button>
-              <Link className={navOpen ? "createpost__button spin" : "createpost__button"} to={user ? "/createpost" : "/signup"}>
-                {user ? "CreatePost" : "Register"}
-              </Link>
-            </button>
+            <Link className={navOpen ? "createpost__button spin" : "createpost__button"} to={user ? "/createpost" : "/signup"}>
+              <button>
+                {user ? <h1 className='createpost'>Create Post</h1> : <h1>Register</h1>}
+              </button>
+            </Link>
             <div className="menu-toggle" onClick={() => setNavOpen(!navOpen)}>
               <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
                 <span className={navOpen ? "lineTop spin" : "lineTop"}></span>

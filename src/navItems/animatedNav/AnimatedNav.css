@@ -1,4 +1,3 @@
-
 .nav {
     position: absolute;
     z-index: 999999;
@@ -8,7 +7,6 @@
     height: 12vh;
     transition: all 4s cubic-bezier(0.16, 1, 0.3, 1);
     background-color: var(--nav-overlay-color);
-    
 }
 
 .navbar {
@@ -76,10 +74,21 @@
 
 }
 
+.createpost {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999999;
+    width: 7vw;
+}
+
 .createpost__button {
   padding: 0.8rem;
-  background-color: var(--nav-overlay-color);
-  color: var(--container-color);
+  background-color: var(--container-color);
+  color: var(--nav-overlay-color);
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 1rem;
 
