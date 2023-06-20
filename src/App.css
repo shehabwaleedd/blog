@@ -13,6 +13,7 @@
   --text-color: hsl(var(--hue), var(--sat), 65%);
   --body-color: #10100e;
   --container-color: #1b1b1b;
+  --glass-background: rgba(72, 72, 69, 0.1);
   --box-shadow-img: 0 0 0 9px rgba(254, 254, 254, 1);
   --rim-color: rgba(254, 254, 254, 0.9);
   --nav-color: wheat;
@@ -50,9 +51,10 @@
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
   --text-color: hsl(var(--hue), var(--sat), 60%);
   --body-color: #fffbf7;
-  --container-color: #f3e9e1;
+  --container-color: #fffdfb;
   --nav-color: #698269;
   --rim-color: #212121;
+  --glass-background: rgba(255, 251, 247, 0.2);
   --accent-color: #4E6C50;
   --box-shadow: -4px 2px 20px 1px rgba(63, 63, 63, 0.3);
   --webkit-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
@@ -77,15 +79,14 @@
   --blog-text-color: hsl(var(--hue), var(--sat), 55%);
 
   /* Background */
-  background-color: var(--body-color);
+  background-color: #fffbf7;
 }
 
 :root {
   /* Common Colors */
   --mode: light; /* Initial mode set to 'light' */
-  --body-color-light: #10100e;
-  --body-color-dark: #f4ede6;
-  --body-color: var(--body-color-light);
+
+  background-color: #fffbf7;
   
   /* Default Colors */
   --hue: 0;

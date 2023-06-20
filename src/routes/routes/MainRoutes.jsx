@@ -9,6 +9,7 @@ import DetailsPages from '../../pages/blog/blog/details/DetailsPages';
 import CreatePost from '../../components/createPost/CreatePost';
 import EditPage from '../../pages/blog/blog/details/edit/EditPost';
 import { useUserAuth } from '../../components/authContext/AuthContext';
+import Account from '../../pages/account/Account';
 
 const MainRoutes = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const MainRoutes = () => {
     { path: '/login', element: <Login /> },
     { path: '/signup', element: <SignUp /> },
     { path: '/passwordreset', element: <PasswordReset /> },
+    { path: '/account', element: <Account /> },
     {
       path: '/',
       element: user ? <Blog /> : <Navigate to="/login" replace />,
@@ -29,6 +31,7 @@ const MainRoutes = () => {
       path: '/createpost',
       element: user ? <CreatePost /> : <Navigate to="/login" replace />,
     },
+
     {
       path: '/edit/:id',
       element: user ? <EditPage /> : <Navigate to="/login" replace />,
