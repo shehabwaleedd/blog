@@ -2,6 +2,10 @@
 @import url(https://fonts.bunny.net/css?family=aladin:400|allerta-stencil:400|bayon:400|krona-one:400);
 
 
+.blog {
+  padding-top: 4rem;
+}
+
 
 .blog__container {
   display: flex;
@@ -11,6 +15,7 @@
   height: calc(100vh - 3rem);
   width: 100vw;
   margin-left: 3rem;
+  
 }
 
 .menu {

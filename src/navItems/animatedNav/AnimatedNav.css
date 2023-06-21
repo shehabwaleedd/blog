@@ -3,17 +3,18 @@
     z-index: 999999;
     top: 0;
     left: 0rem;
-    width: 100vw;
-    height: 12vh;
+
     transition: all 4s cubic-bezier(0.16, 1, 0.3, 1);
     background-color: var(--nav-overlay-color);
 }
 
-.navbar {
+.navbar__container {
     display: flex;
     justify-content: space-between;
     transition: all 4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 999999;
+    width: 100vw;
+    height: 12vh;
     padding: 1rem 2rem;
 }
 
@@ -28,6 +29,16 @@
     background-color: var(--nav-overlay-color);
 }
   
+
+.navbar__middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999999;
+    width: 7vw;
+}
 
 .side__navbar {
     display: flex;
@@ -47,7 +58,7 @@
     letter-spacing: 0.3rem;
     font-weight: bolder;
     cursor: pointer;
-    padding-top: 1rem;
+    padding-top: 0.6rem;
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
     
 }
@@ -61,6 +72,70 @@
 .menu__toggle {
     
     cursor: pointer;
+}
+
+.search__field {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999999;
+}
+
+.search__field input:focus {
+  outline: none;
+  padding: 1.2rem 3rem 1.2rem 0.9rem;
+  width: 15vw;
+  height: 2.5rem;
+}
+
+.search__field input:focus + i {
+  opacity: 0;
+}
+
+.search__field input::placeholder {
+  font-size: 0.8rem;
+  color: var(--text-color);
+  padding: 0.4rem;
+}
+
+.search__field input {
+    width:10vw;
+    height: 2rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: var(--container-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.search__field i {
+    position: absolute;
+    left: 0.2rem;
+    font-size: 1.1rem;
+    color: var(--title-color);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.search__field input:focus {
+    background-color: var(--container-color);
+    color: var(--title-color);
+}
+
+.search__field input:focus .search__field i {
+    padding: 0;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+}
+
+.search__field input::placeholder {
+    color: var(--nav-overlay-color);
 }
 
 

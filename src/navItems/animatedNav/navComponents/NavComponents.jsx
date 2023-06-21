@@ -29,20 +29,22 @@ const NavComponents = (Props) => {
     };
     return (
         <div className="nav__links-links">
-            {user ? <>
+            {!user ? 
+            <>
                 <Link className={Props.navOpen ? "nav__home spin" : "nav__home"} to="/" style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                    {t("navbar__home")}
+                    <h1>{t("navbar__home")}</h1>
                 </Link>
-                <div className="loginss">
-                        <button className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }} onClick={handleExpand}>    
-                            Account
-                        </button>
-                </div>
-                <button className={Props.navOpen ? "nav__home spin" : "nav__home"} onClick={handleLogout} >{t("navbar__logout")}</button>
+                <Link className={Props.navOpen ? "nav__home spin" : "nav__home"} to="/about" style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
+                    <h1>{t("navbar__about")}</h1>
+                </Link>
+                <Link className={Props.navOpen ? "nav__home spin" : "nav__home"} to="/contact" style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
+                    <h1> {t("navbar__contact")}</h1>
+
+                </Link>
             </>
                 :
                 <>
-                    <Link className={Props.navOpen ? "nav__home spin" : "nav__home"} to="/login">{t("navbar__login")}</Link>
+                    
                 </>
             }
 

@@ -1,5 +1,4 @@
 .nav__link {
-    margin: 0 auto;
     position: relative;
     color: var(--title-color);
     display: block;
@@ -16,8 +15,7 @@
 .nav__link.spin {
     position: relative;
     color: var(--overlay-color);
-    transition: all 5.5s cubic-bezier(0.16, 1, 0.3, 1);
-    padding: 0.6rem;
+    transition: all 5.5s cubic-bezier(0.16, 1, 0.3, 1); 
     display: block;
 }
 
@@ -44,8 +42,13 @@
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .nav__links-links h1 {
+    font-size: 1.2rem;
+    color: var(--container-color);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
   .nav__home {
-    margin: 0.2rem auto;
     position: relative;
     color: var(--container-color);
     left: 0rem;
