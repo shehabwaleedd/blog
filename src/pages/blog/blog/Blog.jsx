@@ -54,9 +54,6 @@ function Blog() {
     <React.Fragment>
       <motion.div data-barba="container" initial={{ y: "100%" }} animate={{ y: "0%" }} transition={{ duration: 0.25, ease: "easeOut" }} exit={{ opacity: 1 }}>
         <section className="blog">
-          <div className="blog__header">
-            <h2 className="section__title">Blog</h2>
-          </div>
           <FilteredCategoriesTabs categories={categories} selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
           {isLoading ? ( // Render loading indicator if isLoading is true
               <Loading height={70} />

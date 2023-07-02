@@ -79,7 +79,7 @@
   --blog-text-color: hsl(var(--hue), var(--sat), 55%);
 
   /* Background */
-  background-color: #fffefe;
+  background-color: #ffffeb;
 }
 
 :root {
