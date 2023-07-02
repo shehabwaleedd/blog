@@ -1,0 +1,25 @@
+.logged__nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+    gap: -1.0rem;
+    transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
+}
+
+.logged__nav ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.logged__nav ul li h1 {
+    color: var(--nav-overlay-color);
+    text-transform: capitalize;
+    font-size: 1rem;
+    width: 5vw;
+    transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
+}

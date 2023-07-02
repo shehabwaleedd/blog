@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom'
 import Toggle from '../darkmode/Toggle'
 import { useUserAuth } from '../../components/authContext/AuthContext'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import LoggedInNav from './loggedInNav/LoggedInNav'
 
 
 const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
@@ -43,17 +43,10 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
             <Link to="/">lumos</Link>
           </div>
         </div>
-        <div className="navbar__middle">
-          <NavComponents navOpen={navOpen} />
-        </div>
         <div className="side__navbar">
           {user && (
             <>
-
-                <div className="search__field">
-                  <input type="text" placeholder="Search" />
-                  <i className='bx bx-search' ></i>
-                </div>
+              <LoggedInNav />
               <div className="loginss">
                 <button className={navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: navOpen ? "1" : "1", padding: navOpen ? "0.6rem" : "0" }}>
                   Account
@@ -76,18 +69,19 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
             </div>
           </div>
         </div>
-        <div className="nav-footer" style={{
-          opacity: navOpen ? "1" : "0",
-          transition: navOpen ? "1s" : "0s",
-          transitionDelay: navOpen ? "3s" : "0s",
-        }}>
-        </div>
         <div className="nav-overlay" style={{
-          top: navOpen ? "0%" : "-200%",
-          marginRight: navOpen ? "0" : "-200%",
-          transitionDelay: navOpen ? "0s" : "0s",
-          transitionDuration: navOpen ? "1s" : "1.5s",
+          right: navOpen ? "0%" : "-200%",
         }}>
+          <div className="nav__links">
+            <NavComponents navOpen={navOpen} />
+{/* 
+#ffb3c2
+#99b9ff
+#78ffd1
+#f0ffa6
+
+*/}
+          </div>
         </div>
       </div>
     </nav>

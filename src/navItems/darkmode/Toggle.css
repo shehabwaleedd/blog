@@ -1,7 +1,7 @@
 .toggle__container {
     margin: 0.2rem auto;
     position: relative;
-    color: var(--container-color);
+    color: var(--nav-overlay-color);
     left: 0rem;
     right: 0px;
     font-family: "Satoshi-Bold", sans-serif;

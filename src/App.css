@@ -55,7 +55,7 @@
   --nav-color: #698269;
   --rim-color: #212121;
   --glass-background: rgba(255, 251, 247, 0.2);
-  --accent-color: #4E6C50;
+  --accent-color: #60b79a;
   --box-shadow: -4px 2px 20px 1px rgba(63, 63, 63, 0.3);
   --webkit-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
   --moz-box-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
@@ -79,7 +79,7 @@
   --blog-text-color: hsl(var(--hue), var(--sat), 55%);
 
   /* Background */
-  background-color: #fffbf7;
+  background-color: #fffefe;
 }
 
 :root {
@@ -215,9 +215,11 @@ img {
 }
 
 .section__title {
-  font-size: var(--h1-font-size);
-  color: var(--title-color);
+  font-size: 7rem;
+  color: var(--nav-overlay-color);
   font-family: "Satoshi-Bold", sans-serif;
+  letter-spacing: 1rem;
+  text-transform: uppercase;
 }
 
 .section__subtitle {

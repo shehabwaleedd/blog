@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../../firebase-config";
 import "./Blog.css";
@@ -30,7 +30,7 @@ function Blog() {
     };
 
     getPosts();
-  }, []);
+  }, [postsCollectionRef]);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category === "All" ? "" : category);
@@ -56,9 +56,6 @@ function Blog() {
         <section className="blog">
           <div className="blog__header">
             <h2 className="section__title">Blog</h2>
-            <span className="section__subtitle-blog">
-              An Intellectual Blog Where You Find Me Talking About Everything
-            </span>
           </div>
           <FilteredCategoriesTabs categories={categories} selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
           {isLoading ? ( // Render loading indicator if isLoading is true

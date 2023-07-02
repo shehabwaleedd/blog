@@ -3,9 +3,8 @@
     z-index: 999999;
     top: 0;
     left: 0rem;
-
     transition: all 4s cubic-bezier(0.16, 1, 0.3, 1);
-    background-color: var(--nav-overlay-color);
+    border-bottom: 1px solid #000;
 }
 
 .navbar__container {
@@ -14,7 +13,7 @@
     transition: all 4s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 999999;
     width: 100vw;
-    height: 12vh;
+    height: 14vh;
     padding: 1rem 2rem;
 }
 
@@ -24,8 +23,8 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    height: 12vh;
-    transition: all 4s cubic-bezier(0.16, 1, 0.3, 1);
+    height: 100vh;
+    transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
     background-color: var(--nav-overlay-color);
 }
   
@@ -44,7 +43,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    overflow: hidden;
+
     margin-top: 0.6rem;
     align-items: center;
     z-index: 999999;
@@ -52,13 +51,13 @@
 
 .logo {
     text-decoration: none;
-    color: var(--container-color);
+    color: var(--nav-overlay-color);
     font-size: 1.5em;
     font-family: "Satoshi-Bold", sans-serif;
     letter-spacing: 0.3rem;
     font-weight: bolder;
     cursor: pointer;
-    padding-top: 0.6rem;
+    padding-top: 1.6rem;
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
     
 }
@@ -70,7 +69,7 @@
 }
 
 .menu__toggle {
-    
+
     cursor: pointer;
 }
 
@@ -82,10 +81,11 @@
     gap: 0.5rem;
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 999999;
+    border: 0.5px solid var(--nav-overlay-color);
 }
 
 .search__field input:focus {
-  outline: none;
+  outline:  0.5px solid var(--nav-overlay-color);
   padding: 1.2rem 3rem 1.2rem 0.9rem;
   width: 15vw;
   height: 2.5rem;
@@ -104,20 +104,18 @@
 .search__field input {
     width:10vw;
     height: 2rem;
-    border-radius: 1rem;
-    border: none;
-    outline: none;
-    padding: 0.5rem 1rem;
+    padding: 1.2rem 1.4rem;
     font-size: 0.8rem;
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-    background-color: var(--container-color);
     color: var(--text-color);
     cursor: pointer;
+
 }
+  
 
 .search__field i {
     position: absolute;
-    left: 0.2rem;
+    left: 0.4rem;
     font-size: 1.1rem;
     color: var(--title-color);
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
@@ -140,6 +138,7 @@
 
 
 .hamBox {
+    display: none;
     position: relative;
     width: 44px;
     height: 44px;
@@ -162,11 +161,14 @@
 
 .createpost__button {
   padding: 0.8rem;
-  background-color: var(--container-color);
-  color: var(--nav-overlay-color);
+  background-color: var(--nav-overlay-color);
+  color: var(--container-color);
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 1rem;
+}
 
+.createpost__button h1 {
+  color: var(--container-color);
 }
 
 .createpost__button.spin {
@@ -184,7 +186,7 @@
     width: 24px;
     height: 2px;
     border-radius: 10px;
-    background: var(--container-color);
+    background: var(--nav-overlay-color);
     left: 0;
     right: 0;
     transform: rotate(0deg);
