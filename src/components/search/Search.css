@@ -16,7 +16,7 @@
     top: 0rem;
     z-index: 999; /* Add a higher z-index value */
     display: flex;
-
+    background-color: var(--body-color);
 }
 
 .shop__input input {

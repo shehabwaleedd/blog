@@ -9,7 +9,7 @@ import Toggle from '../darkmode/Toggle'
 import { useUserAuth } from '../../components/authContext/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import LoggedInNav from './loggedInNav/LoggedInNav'
-
+import Blog from '../../pages/blog/blog/Blog'
 
 const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
 
@@ -17,7 +17,10 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
   const location = useLocation();
   const { user, logOut } = useUserAuth()
   const navigate = useNavigate()
-
+  const [articlesOpen, setArticlesOpen] = React.useState(false);
+  const [aboutOpen, setAboutOpen] = React.useState(false);
+  const [accountOpen, setAccountOpen] = React.useState(false);
+  const [createOpen, setCreateOpen] = React.useState(false);
 
   const handleLogout = async () => {
     try {
@@ -28,6 +31,29 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
       console.log(e.message)
     }
   }
+
+  const handleArticlesOpen = () => {
+    setArticlesOpen(!articlesOpen);
+    setAboutOpen(false);
+    setAccountOpen(false);
+  };
+
+  const handleAboutOpen = () => {
+    setAboutOpen(!aboutOpen);
+    setArticlesOpen(false);
+    setAccountOpen(false);
+
+  };
+
+  const handleAccountOpen = () => {
+    setAccountOpen(!accountOpen);
+    setArticlesOpen(false);
+    setAboutOpen(false);
+  };
+
+  const handleCreateOpen = () => {
+    setCreateOpen(!createOpen);
+  };
 
   useEffect(() => {
 
@@ -44,35 +70,39 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
           <div className="logo square">
             <h1>lumos</h1>
           </div>
-          <div className="square1">
-            <div className="articles__container">
-              <div className="squared2">
-                <h1>Articles</h1>
-                <div className="articles__count">
-                  <h1>(40)</h1>
+          <Link to="/"className={`${articlesOpen ? "square1Open" : "square1"}`} onClick={handleArticlesOpen}>
+            <div>
+              <div className="articles__container">
+                <div className="squared2">
+                  <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)" }}>Articles</h1>
+                  <div className="articles__count">
+                    <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)" }}>(40)</h1>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="square2">
+          </Link>
+          <div className={`${aboutOpen ? "square2Open" : "square2"}`} onClick={handleAboutOpen}>
             <div className="about__container">
               <div className="squared2">
-                <h1>About</h1>
+                <h1 style={{ color: aboutOpen ? "var(--container-color)" : "var(--title-color)" }}>About</h1>
               </div>
             </div>
           </div>
-          <div className="square3">
-            <div className="account__container">
-              <div className="squared3">
-                {user ? (
-                  <h1>Account</h1>
+          <Link to="/account" className={`${accountOpen ? "square3Open" : "square3"}`} onClick={handleAccountOpen}>
+            <div >
+              <div className="account__container">
+                <div className="squared3">
+                  {user ? (
+                    <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)" }}>Account</h1>
                   ) : (
-                  <h1>login</h1>
-                )}
+                    <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)" }}>login</h1>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="square4" onClick={() => setNavOpen(!navOpen)}>
+          </Link>
+          <div className={`${navOpen ? "square4Open" : "square4"}`} onClick={() => setNavOpen(!navOpen)}>
             <div className="menu__container" >
               <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
                 <span className={navOpen ? "lineTop spin" : "lineTop"}></span>

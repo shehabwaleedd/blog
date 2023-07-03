@@ -11,6 +11,7 @@
     font-size: 1.3rem;
     letter-spacing: 0.1rem;
     font-family: "Satoshi-Medium", sans-serif;
+    text-transform: lowercase;
 }
 
 .category__active {

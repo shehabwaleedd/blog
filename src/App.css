@@ -5,17 +5,18 @@
 /* Light Mode */
 #light {
   /* Colors */
-  --title-color: #FFFFE3;
+  --title-color: #ffffda;
   --title-color-dark: hsl(var(--hue), var(--sat), 80%);
   --text-color: hsl(var(--hue), var(--sat), 65%);
   --border-text-color: hsl(var(--hue), var(--sat), 25%);
+  --nav-open-color: hsl(var(--hue), var(--sat), 15%);
   --body-color: #10100e;
   --container-color: #1b1b1b;
   --glass-background: rgba(72, 72, 69, 0.1);
   --box-shadow-img: 0 0 0 9px rgba(254, 254, 254, 1);
   --rim-color: rgba(254, 254, 254, 0.9);
   --nav-color: wheat;
-  --accent-color: #f1dbb2;
+  --accent-color: #ffffda;
   --box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
   --webkit-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
   --moz-box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
@@ -45,16 +46,17 @@
 /* Dark Mode */
 #dark {
   /* Colors */
-  --title-color: hsl(var(--hue), var(--sat), 39%);
+  --title-color: hsl(var(--hue), var(--sat), 10%);
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
   --text-color: hsl(var(--hue), var(--sat), 60%);
   --border-text-color: hsl(var(--hue), var(--sat), 60%);
-  --body-color: #fffbf7;
+  --nav-open-color: hsl(var(--hue), var(--sat), 15%);
+  --body-color: #fff8de;
   --container-color: #fffdfb;
   --nav-color: #698269;
   --rim-color: #212121;
   --glass-background: rgba(255, 251, 247, 0.2);
-  --accent-color: #60b79a;
+  --accent-color:  hsl(var(--hue), var(--sat), 0%);
   --box-shadow: -4px 2px 20px 1px rgba(63, 63, 63, 0.3);
   --webkit-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
   --moz-box-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
@@ -78,7 +80,7 @@
   --blog-text-color: hsl(var(--hue), var(--sat), 55%);
 
   /* Background */
-  background-color: #ffffeb;
+  background-color: var(--body-color);
 }
 
 :root {
