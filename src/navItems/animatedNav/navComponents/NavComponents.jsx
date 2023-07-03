@@ -40,7 +40,7 @@ const NavComponents = (Props) => {
 
 
     return (
-        <div className="nav__links-links">
+        <div className={`${Props.navOpen ? "nav__links-links open" : "nav__links-links"}`}>
             {user && (
                 <div className='nav__links__container'>
                     <Link className={Props.navOpen ? "nav__home spin" : "nav__home"} to="/" style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>

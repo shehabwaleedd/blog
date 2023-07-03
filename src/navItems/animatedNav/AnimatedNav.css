@@ -1,5 +1,8 @@
 .navbar { 
   width: 100vw;
+  position: relative;
+  border-top: 0.5px solid var(--text-color);
+  border-bottom: 0.5px solid var(--text-color);
 }
 
 .navbar__container {
@@ -15,8 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000; /* Optional border */
+  border-right: 0.5px solid var(--text-color);
 }
 
 
@@ -25,8 +27,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000; /* Optional border */
+  border-right: 0.5px solid var(--text-color);
   width: 11.5vw;
   text-align: center;
 
@@ -37,8 +38,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000; /* Optional border */
+  border-right: 0.5px solid var(--text-color);
   width: 11.5vw;
   text-align: center;
 }
@@ -47,8 +47,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000; /* Optional border */
+  border-right: 0.5px solid var(--text-color);
   width: 11.5vw;
   text-align: center;
   padding-bottom: 2rem;
@@ -60,8 +59,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000; /* Optional border */
+  border-right: 0.5px solid var(--text-color);
   width: 11.5vw;
   text-align: center;
   padding-bottom: 2.5rem;
@@ -72,8 +70,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 1px solid #000;
-  border-bottom: 1px solid #000; /* Optional border */
+  border-right: 0.5px solid var(--text-color);
   width: 27.5vw;
   text-align: center;
 }
@@ -197,4 +194,16 @@
   color: var(--text-color);
   font-family: "Satoshi-Bold", sans-serif;
   letter-spacing: 0.12rem;
+}
+
+
+.nav-overlay {
+	/* position: absolute;
+	z-index: -2;
+	top: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 100vh;
+	transition: all 4s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: #000; */
 }

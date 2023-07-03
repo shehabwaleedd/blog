@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../../firebase-config";
 import "./Blog.css";
@@ -30,7 +30,7 @@ function Blog() {
     };
 
     getPosts();
-  }, [postsCollectionRef]);
+  }, []);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category === "All" ? "" : category);

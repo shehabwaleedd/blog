@@ -1,11 +1,19 @@
 .nav__links-links {
+  display: none;
+}
+
+.nav__links-links.open {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
   gap: 1rem;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-  height: 100vh;
+  height: 70vh;
+  opacity: 1;
+  right: 18rem;
+  top: -5rem;
 }
 
 .nav__links__container {
