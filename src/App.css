@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Itim&family=Kaushan+Script&family=Oooh+Baby&family=Reggae+One&display=swap');
-@import url("//db.onlinewebfonts.com/c/1c87f20c55baa7eccc98b8603b5eecea?family=Grifinito+L");
-
-
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@200;300;400;500;600;700;800;900&family=Expletus+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Krona+One&family=Noto+Sans+Arabic:wght@100;200;300&display=swap');
 /* ============ VARIABLES CSS ============ */
 
 
@@ -364,16 +361,6 @@ img {
   font-style: normal;
 }
 
-@font-face {
-  font-family: 'Satoshi-VariableItalic';
-  src: url('../public/fonts/Satoshi-VariableItalic.woff2') format('woff2'),
-    url('../public/fonts/Satoshi-VariableItalic.woff') format('woff'),
-    url('../public/fonts/Satoshi-VariableItalic.ttf') format('truetype');
-  font-weight: 300 900;
-  font-display: swap;
-  font-style: italic;
-}
-
 
 @font-face {
   font-family: 'Satoshi-Light';
@@ -461,15 +448,4 @@ img {
   font-weight: 900;
   font-display: swap;
   font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Satoshi-BlackItalic';
-  src: url('../public/fonts/Satoshi-BlackItalic.woff2') format('woff2'),
-    url('../public/fonts/Satoshi-BlackItalic.woff') format('woff'),
-    url('../public/fonts/Satoshi-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-display: swap;
-  font-style: italic;
 }
