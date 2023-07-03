@@ -11,7 +11,7 @@ import EditPage from '../../pages/blog/blog/details/edit/EditPost';
 import { useUserAuth } from '../../components/authContext/AuthContext';
 import Account from '../../pages/account/Account';
 
-const MainRoutes = () => {
+const MainRoutes = ({navOpen, setNavOpen, toggleTheme}) => {
   const location = useLocation();
   const { user } = useUserAuth();
 
@@ -23,7 +23,7 @@ const MainRoutes = () => {
     { path: '/account', element: <Account /> },
     {
       path: '/',
-      element: user ? <Blog /> : <Navigate to="/login" replace />,
+      element: user ? <Blog navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
     },
     { path: '/filtered/:category', element: <FilteredCategories /> },
     { path: '/details/:id', element: <DetailsPages /> },

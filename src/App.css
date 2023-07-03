@@ -11,6 +11,7 @@
   --title-color: #FFFFE3;
   --title-color-dark: hsl(var(--hue), var(--sat), 80%);
   --text-color: hsl(var(--hue), var(--sat), 65%);
+  --border-text-color: hsl(var(--hue), var(--sat), 25%);
   --body-color: #10100e;
   --container-color: #1b1b1b;
   --glass-background: rgba(72, 72, 69, 0.1);
@@ -50,6 +51,7 @@
   --title-color: hsl(var(--hue), var(--sat), 39%);
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
   --text-color: hsl(var(--hue), var(--sat), 60%);
+  --border-text-color: hsl(var(--hue), var(--sat), 60%);
   --body-color: #fffbf7;
   --container-color: #fffdfb;
   --nav-color: #698269;

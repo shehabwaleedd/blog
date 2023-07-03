@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./FilteredCategories.css"
 import Search from "../../../components/search/Search";
+import Toggle from "../../../navItems/darkmode/Toggle";
+import DropDownMenu from "../../../navItems/animatedNav/dropDownMenu/DropDownMenu";
 
-function FilteredCategoriesTabs({ categories, selectedCategory, onCategoryClick }) {
+function FilteredCategoriesTabs({ categories, selectedCategory, onCategoryClick, toggleTheme, navOpen  }) {
 
   let [activeTab, setActiveTab] = useState(categories[0]);
 
@@ -27,6 +29,10 @@ function FilteredCategoriesTabs({ categories, selectedCategory, onCategoryClick 
             {category}
           </button>
         ))}
+        <div className="category__switches">
+        <Toggle toggleTheme={toggleTheme} navOpen={navOpen} />
+        <DropDownMenu navOpen={navOpen} />
+        </div>
       </div>
       <Search />
     </>

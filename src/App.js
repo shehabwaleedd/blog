@@ -28,7 +28,7 @@ function App() {
             <AnimatedNav navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/>
             <ThemeContext.Provider value={{ theme, toggleTheme }}>
               <AnimatePresence>
-                <MainRoutes />
+                <MainRoutes navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/>
               </AnimatePresence>
               <ScrollUp />
               <Footer />

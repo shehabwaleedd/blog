@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "../../loading/Loading.tsx";
 
-const FilteredCategories = () => {
+const FilteredCategories = ({navOpen, toggleTheme}) => {
     const { category } = useParams();
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
@@ -52,14 +52,12 @@ const FilteredCategories = () => {
 
     return (
         <section className="filtered section">
-            <h2 className="section__title">Blog</h2>
-            <span className="section__subtitle-filtered">
-                An Intellectual Blog Where You Find Me Talking About Everything
-            </span>
             <FilteredCategoriesTabs
                 categories={categories}
                 selectedCategory={selectedCategory}
                 onCategoryClick={handleCategoryClick}
+                navOpen={navOpen}
+                toggleTheme={toggleTheme}
             />
 
             <div className="filtered__container grid3 container">

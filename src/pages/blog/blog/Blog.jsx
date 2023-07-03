@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import Loading from "../../loading/Loading.tsx";
 
 
-function Blog() {
+function Blog({ navOpen, toggleTheme}) {
   const [postLists, setPostList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const postsCollectionRef = collection(db, "posts");
@@ -54,7 +54,7 @@ function Blog() {
     <React.Fragment>
       <motion.div data-barba="container" initial={{ y: "100%" }} animate={{ y: "0%" }} transition={{ duration: 0.25, ease: "easeOut" }} exit={{ opacity: 1 }}>
         <section className="blog">
-          <FilteredCategoriesTabs categories={categories} selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
+          <FilteredCategoriesTabs navOpen={navOpen} toggleTheme={toggleTheme} categories={categories} selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
           {isLoading ? ( // Render loading indicator if isLoading is true
               <Loading height={70} />
             ) : (

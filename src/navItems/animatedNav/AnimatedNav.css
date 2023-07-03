@@ -1,8 +1,8 @@
 .navbar { 
   width: 100vw;
   position: relative;
-  border-top: 0.5px solid var(--text-color);
-  border-bottom: 0.5px solid var(--text-color);
+  border-top: 0.5px solid var(--border-text-color);
+  border-bottom: 0.5px solid var(--border-text-color);
 }
 
 .navbar__container {
@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-right: 0.5px solid var(--text-color);
+  border-right: 0.5px solid var(--border-text-color);
 }
 
 
@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 0.5px solid var(--text-color);
+  border-right: 0.5px solid var(--border-text-color);
   width: 11.5vw;
   text-align: center;
 
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 0.5px solid var(--text-color);
+  border-right: 0.5px solid var(--border-text-color);
   width: 11.5vw;
   text-align: center;
 }
@@ -47,19 +47,17 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 0.5px solid var(--text-color);
+  border-right: 0.5px solid var(--border-text-color);
   width: 11.5vw;
   text-align: center;
   padding-bottom: 2rem;
-  
-
 }
 
 .square4 {
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 0.5px solid var(--text-color);
+  border-right: 0.5px solid var(--border-text-color);
   width: 11.5vw;
   text-align: center;
   padding-bottom: 2.5rem;
@@ -70,7 +68,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 0.5px solid var(--text-color);
+  border-right: 0.5px solid var(--border-text-color);
   width: 27.5vw;
   text-align: center;
 }
@@ -110,7 +108,7 @@
 .create__container h1 {
   font-size: 1.3rem;
   text-transform: lowercase;
-  color: #000;
+  color: var(--title-color);
   font-family: "Satoshi-Bold", sans-serif;
   letter-spacing: 0.12rem;
 }
@@ -126,7 +124,7 @@
 .logo h1 {
   font-size: 2rem;
   text-transform: uppercase;
-  color: #000;
+  color: var(--title-color);
   font-family: "Satoshi-Bold", sans-serif;
   letter-spacing: 0.56rem;
 }
@@ -134,9 +132,18 @@
 .squared2 h1 {
   font-size: 1.3rem;
   text-transform: lowercase;
-  color: #000;
+  color: var(--title-color);
   font-family: "Satoshi-Bold", sans-serif;
   letter-spacing: 0.12rem;
+}
+
+.squared3 h1 {
+  font-size: 1.3rem;
+  text-transform: lowercase;
+  color: var(--title-color);
+  font-family: "Satoshi-Bold", sans-serif;
+  letter-spacing: 0.12rem;
+
 }
 
 
@@ -158,7 +165,7 @@
 	width: 2.5rem;
 	height: 0.125rem;
 	border-radius: 0.625rem;
-	background: var(--text-color);
+	background: var(--title-color);
 	left: 0;
 	right: 0;
 	transform: rotate(0deg);
@@ -173,7 +180,7 @@
 	width: 2.5rem;
 	height: 0.125rem;
 	border-radius: 0.625rem;
-	background: var(--text-color);
+	background: var(--title-color);
 	left: 0;
 	right: 0;
 	transform: rotate(0deg);

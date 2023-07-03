@@ -13,7 +13,7 @@
 .shop__input {
     position: sticky;
     transition: all 3.8s cubic-bezier(0.19, 1, 0.22, 1);
-    top: 5.5rem;
+    top: 0rem;
     z-index: 999; /* Add a higher z-index value */
 
 }
@@ -21,7 +21,8 @@
 .shop__input input {
     width: 100vw;
     height: 5rem;
-    border: 0.5px solid var(--text-color);
+    border-top: 0.5px solid var(--border-text-color);
+    border-bottom: 0.5px solid var(--border-text-color);
     outline: none;
     font-size: 2rem;
     padding-left: 4rem;

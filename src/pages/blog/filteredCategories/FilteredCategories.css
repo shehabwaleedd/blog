@@ -33,11 +33,16 @@
     padding: 1.8rem 0.9rem;
     gap: 1.5rem;
     transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
-    position: sticky;
-    top: 0rem;
-    z-index: 999; /* Add a higher z-index value */
+    position: relative;
 }
 
+.category__switches {
+    position: absolute;
+    top: 1.5rem;
+    right: 10rem;
+    display: flex;
+    gap: 1rem;
+}
 
 .filtered {
     display: flex;
