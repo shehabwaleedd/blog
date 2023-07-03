@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Search.css'
+import { BiSearch } from 'react-icons/bi'
 
 const Search = () => {  
     return (
         <div className="shop__input">
-            <i className="bx bx-search search__iconn"></i>
+            <BiSearch className='search__iconn'/>
             <input type="text" placeholder="Search for products" />
         </div>
     )

@@ -5,12 +5,12 @@
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    background-color: var(--nav-overlay-color);
-    color: var(--container-color);
+    color: var(--title-color);
     font-family: "Satoshi-Bold", sans-serif;
     font-size: 1.2rem;
     width: 100%;
     height: 100%;
+    border-top: 0.5px solid var(--border-text-color);
 }
 
 .footer__container {
@@ -26,7 +26,7 @@
     font-size: 2rem;
     font-weight: var(--font-bold);
     margin-left: 2rem;
-    color: var(--container);
+    color: var(--title-color);
 }
 
 
@@ -34,13 +34,13 @@
     font-size: 0.95rem;
     font-weight: var(--font-medium);
     margin-left: 2rem;
-    color: var(--container);
+    color: var(--title-color);
 }
 
 .footer__credits span {
     font-size: 0.8rem;
     font-weight: var(--font-medium);
     margin-left: 2rem;
-    color: var(--container-color);
+    color: var(--title-color);
 }
 
