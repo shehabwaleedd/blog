@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Toggle.css';
+import { BiMoon, BiSun } from 'react-icons/bi';
 
 const Toggle = ({ toggleTheme, navOpen }) => {
   const spring = {
@@ -24,9 +25,13 @@ const Toggle = ({ toggleTheme, navOpen }) => {
         layout 
         transition={spring}
         className={navOpen ? "toggle__container spin" : "toggle__container"}
-        style={{transitionDuration: navOpen ? "1s" : "1.5s", transition: navOpen ? "1.5s" : "1.5s"}}
+        style={{transitionDuration: navOpen ? "1s" : "1.5s", paddingTop: "0.2rem"}}
       >
-        <motion.i className={isOn ? 'bx bx-sun icon__spin' : 'bx bx-moon icon__spin'}/>
+        {isOn ? (
+          <BiSun />
+        ) : (
+          <BiMoon />
+        )}
       </motion.div>
   );
 };
