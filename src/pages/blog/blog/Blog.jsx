@@ -52,7 +52,7 @@ function Blog({ navOpen, toggleTheme}) {
 
   return (
     <React.Fragment>
-      <motion.div data-barba="container" initial={{ y: "50%" }} animate={{ y: "0%" }} transition={{ duration: 0.40, ease: "easeOut" }} exit={{ opacity: 1 }}>
+      <motion.div data-barba="container"  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
         <section className="blog">
           <FilteredCategoriesTabs navOpen={navOpen} toggleTheme={toggleTheme} categories={categories} selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
           {isLoading ? ( // Render loading indicator if isLoading is true

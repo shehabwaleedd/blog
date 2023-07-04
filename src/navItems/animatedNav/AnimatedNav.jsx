@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import DropDownMenu from './dropDownMenu/DropDownMenu'
 import './AnimatedNav.css'
 import { useTranslation } from 'react-i18next'
 import NavComponents from './navComponents/NavComponents'
 import { useLocation } from 'react-router-dom'
-import Toggle from '../darkmode/Toggle'
 import { useUserAuth } from '../../components/authContext/AuthContext'
 import { useNavigate } from 'react-router-dom'
-import LoggedInNav from './loggedInNav/LoggedInNav'
-import Blog from '../../pages/blog/blog/Blog'
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase-config";
 
 const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
 
@@ -17,10 +15,12 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
   const location = useLocation();
   const { user, logOut } = useUserAuth()
   const navigate = useNavigate()
-  const [articlesOpen, setArticlesOpen] = React.useState(false);
-  const [aboutOpen, setAboutOpen] = React.useState(false);
-  const [accountOpen, setAccountOpen] = React.useState(false);
-  const [createOpen, setCreateOpen] = React.useState(false);
+  const [articlesOpen, setArticlesOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const [accountOpen, setAccountOpen] = useState(false);
+  const [createOpen, setCreateOpen] = useState(false);
+  const [postCount, setPostCount] = useState(0);
+
 
   const handleLogout = async () => {
     try {
@@ -31,6 +31,21 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
       console.log(e.message)
     }
   }
+
+  useEffect(() => {
+    const fetchPostCount = async () => {
+      try {
+        const postsCollectionRef = collection(db, "posts");
+        const snapshot = await getDocs(postsCollectionRef);
+        const count = snapshot.size;
+        setPostCount(count);
+      } catch (error) {
+        console.error("Error fetching post count:", error);
+      }
+    };
+
+    fetchPostCount();
+  }, []);
 
   const handleArticlesOpen = () => {
     setArticlesOpen(true);
@@ -81,7 +96,7 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
                 <div className="squared2">
                   <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)" }}>Articles</h1>
                   <div className="articles__count">
-                    <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)" }}>(40)</h1>
+                    <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)" }}>({postCount})</h1>
                   </div>
                 </div>
               </div>

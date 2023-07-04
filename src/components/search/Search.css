@@ -12,7 +12,7 @@
 
 .shop__input {
     position: sticky;
-    transition: all 3.8s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
     top: 0rem;
     z-index: 999; /* Add a higher z-index value */
     display: flex;

@@ -4,6 +4,7 @@ import { getDoc, doc } from 'firebase/firestore';
 import { useUserAuth } from '../../components/authContext/AuthContext';
 import { db } from '../../firebase-config';
 import "./Account.css"
+import { motion } from 'framer-motion';
 
 const Account = () => {
     const { user, logOut } = useUserAuth();
@@ -49,7 +50,7 @@ const Account = () => {
 
 
     return (
-        <section className="account">
+        <motion.section className="account"  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
             <div className="account__upper">
                 <h1>Personal Information</h1>
                 <button onClick={handleLogout}>
@@ -156,7 +157,7 @@ const Account = () => {
                     )}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
 

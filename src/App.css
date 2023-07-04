@@ -51,7 +51,7 @@
   --text-color: hsl(var(--hue), var(--sat), 40%);
   --border-text-color: hsl(var(--hue), var(--sat), 60%);
   --nav-open-color: hsl(var(--hue), var(--sat), 15%);
-  --body-color: #ffedd1;
+  --body-color: #fef3de;
   --container-color: #fffdfb;
   --nav-color: #698269;
   --rim-color: #212121;
@@ -61,7 +61,7 @@
   --webkit-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
   --moz-box-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
   --insider-color: #fff2e0;
-  --accent-color-darker: #244224;
+  --accent-color-darker: #ffefd0;
   --border-color: #698269;
   --blog-text-color: hsl(var(--hue), var(--sat, 45%));
   --progressive-bar-color: #6f988a;
