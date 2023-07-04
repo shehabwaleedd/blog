@@ -269,7 +269,6 @@ img {
   background-color: var(--title-color);
   color: var(--container-color);
   padding: 1rem 2rem;
-  border-radius: 1rem;
   font-weight: var(--font-medium);
 }
 

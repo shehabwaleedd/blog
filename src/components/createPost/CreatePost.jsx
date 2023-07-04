@@ -7,7 +7,7 @@ import "./CreatePost.css";
 import { storage } from "../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
@@ -34,6 +34,11 @@ const CreatePost = () => {
       console.error(error);
     }
   };
+
+  const clearImage = () => {
+    setImageUrls([]);
+  };
+
 
   const createPost = async () => {
     setError("");
@@ -79,7 +84,7 @@ const CreatePost = () => {
     ["clean"],
   ];
 
-  
+
 
   return (
     <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
@@ -88,9 +93,24 @@ const CreatePost = () => {
           <div className="create__container">
             <form className="create__form" onSubmit={handleCreatePost}>
               <div className="create__input-image">
-                {imageUrls.map((url, index) => (
-                  <img key={index} src={url} alt="" />
-                ))}
+                <AnimatePresence>
+                  {imageUrls.map((url, index) => (
+                    <motion.div className="create__image_wrap" key={index}                       
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 50 }}
+                    transition={{ duration: 0.5 }}>
+                      <motion.img src={url} alt=""    
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.3 }}/>
+                      <button className="create__image-clear" onClick={clearImage}>
+                        Clear
+                      </button>
+                    </motion.div>
+                  ))}
+                </AnimatePresence>
                 <label htmlFor="upload" className="custom-file-upload">
                   <span>Choose File</span>
                   <input id="upload" type="file" accept="image/*" onChange={handleFileUpload} style={{ display: "none" }} />
@@ -111,7 +131,7 @@ const CreatePost = () => {
                 </select>
               </div>
               <div className="create__input-post" >
-                <ReactQuill value={postText} onChange={setPostText} modules={{ toolbar: toolbarOptions }}  style={{ height: '15.75rem' }}/>
+                <ReactQuill value={postText} onChange={setPostText} modules={{ toolbar: toolbarOptions }} style={{ height: '15.75rem' }} />
               </div>
               {error && <p className="create__error">{error}</p>}
               <div className="create__button-div">

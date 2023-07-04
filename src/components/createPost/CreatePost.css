@@ -6,7 +6,7 @@
     gap: 2rem;
     padding-top: 2rem;
     min-height: 74vh;
-    
+
 }
 
 .create__page {
@@ -43,7 +43,7 @@
 
     height: 3rem;
     border-bottom: 1px solid var(--border-text-color);
-    padding: 1rem;
+    padding: 1rem 0.3rem;
     background-color: var(--body-color);
     color: var(--title-color);
 
@@ -65,7 +65,7 @@
     width: 50rem;
     height: 10rem;
     border-bottom: 1px solid var(--border-text-color);
-    padding: 1rem;
+    padding: 1rem 0.3rem;
     background-color: var(--body-color);
     color: var(--accent-color);
 }
@@ -80,8 +80,8 @@
 
 .create__button {
     padding: 1rem;
-    border-radius: 1rem;
-    background-color: var(--nav-overlay-color);
+    border-radius: 0.2rem;
+    background-color: var(--title-color);
     color: var(--container-color);
     font-weight: var(--font-medium);
     width: 10rem;
@@ -110,11 +110,13 @@
     object-fit: cover;
 }
 
+
+
 .create__input-image input {
     width: 50rem;
     height: 3rem;
     border-bottom: 1px solid var(--border-text-color);
-    padding: 1rem;
+    padding: 1rem 0.3rem;
     background-color: var(--body-color);
     color: var(--accent-color);
 }
@@ -143,7 +145,7 @@
     width: 55rem;
     height: 3.5rem;
     border-bottom: 1px solid var(--border-text-color);
-    padding: 1rem;
+    padding: 1rem 0.3rem;
     background-color: var(--body-color);
     color: var(--accent-color);
 }
@@ -169,14 +171,62 @@
 
 .custom-file-upload {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 0.625rem 0.625rem;
     background-color: var(--body-color);
     color: var(--text-color);
-    border-bottom: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--border-text-color);
     cursor: pointer;
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.custom-file-upload span {
+    color: var(--title-color);
+}
+
 .custom-file-upload:hover {
     background-color: var(--container-color);
+}
+
+.create__image-clear {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1rem;
+}
+
+.create__image_wrap button {
+
+    padding: 1rem 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--title-color);
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    position: absolute;
+    top: 70%;
+    right: 47%;
+    opacity: 0;
+    font-size: 1.2rem;
+}
+
+
+.create__image_wrap button:hover {
+    background-color: var(--title-color);
+    color: var(--container-color);
+}
+
+.create__image_wrap:hover button {
+    opacity: 1;
+}
+
+.create__image_wrap:hover img {
+    filter: brightness(70%);
+}
+
+
+.create__image-clear button h1 {
+    color: var(--accent-color);
+}
+
+.creat__image_wrap {
+    position: relative;
 }
