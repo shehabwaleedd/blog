@@ -51,15 +51,186 @@
 
 .square1Open {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 0.5px solid var(--border-text-color);
+  width: 11.5vw;
+  text-align: center;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.square1Open::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--title-color);
+  animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.square1:not(.square1Open) {
+  display: flex;
   align-items: center;  
   justify-content: center;
   border-right: 0.5px solid var(--border-text-color);
   width: 11.5vw;
   text-align: center;
-  background-color: var(--title-color);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
 }
 
+.square1:not(.square1Open)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--title-color);
+  animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.square2:not(.square2Open) {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  border-right: 0.5px solid var(--border-text-color);
+  width: 11.5vw;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.square2:not(.square2Open)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--title-color);
+  animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.square3:not(.square3Open) {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  border-right: 0.5px solid var(--border-text-color);
+  width: 11.5vw;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.square3:not(.square3Open)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--title-color);
+  animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.square4:not(.square4Open) {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  border-right: 0.5px solid var(--border-text-color);
+  width: 11.5vw;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.square4:not(.square4Open)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--title-color);
+  animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+@keyframes closeAnimation {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+    top: 100%;
+  }
+}
+
+.square2Open::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--title-color);
+  animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  z-index: 1;
+}
+.square3Open::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--title-color);
+  animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.square4Open::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--title-color);
+  animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.square5Open::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: var(--title-color);
+  animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+@keyframes fillAnimation {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
 
 .square2 {
   display: flex;
@@ -74,14 +245,14 @@
 
 .square2Open {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: center;
   border-right: 0.5px solid var(--border-text-color);
   width: 11.5vw;
   text-align: center;
-  background-color: var(--title-color);
-  transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
+  background-color: transparent;
   cursor: pointer;
+  position: relative;
 }
 
 .square3 {
@@ -94,19 +265,20 @@
   padding-bottom: 2rem;
   cursor: pointer;
   transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
+  position: relative;
 }
 
 .square3Open {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: center;
   border-right: 0.5px solid var(--border-text-color);
   width: 11.5vw;
   text-align: center;
-  padding-bottom: 2rem;
-  background-color: var(--title-color);
-  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: transparent;
   cursor: pointer;
+  position: relative;
+  padding-bottom: 2rem;
 }
 
 .square4 {
@@ -119,28 +291,28 @@
   padding-bottom: 2.5rem;
   cursor: pointer;
   transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
+  position: relative;
 }
 
 .square4Open {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: center;
   border-right: 0.5px solid var(--border-text-color);
   width: 11.5vw;
   text-align: center;
-  padding-bottom: 2.5rem;
+  background-color: transparent;
   cursor: pointer;
-  background-color: var(--title-color);
-  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
+  position: relative;
+  padding-bottom: 2rem;
 }
 
 .square5 {
   display: flex;
   align-items: center;  
   justify-content: center;
-
-  width: 27.5vw;
+  position: relative;
+  width: 28.5vw;
   text-align: center;
   transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
   cursor: pointer;
@@ -151,11 +323,12 @@
   align-items: center;  
   justify-content: center;
   border-right: 0.5px solid var(--border-text-color);
-  width: 27.5vw;
+  width: 28.5vw;
   text-align: center;
   background-color: var(--title-color);
   transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+  position: relative;
 }
 
 .articles__container {

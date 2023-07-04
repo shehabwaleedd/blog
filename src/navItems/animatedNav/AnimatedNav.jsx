@@ -94,9 +94,9 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
             <div>
               <div className="articles__container">
                 <div className="squared2">
-                  <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)" }}>Articles</h1>
+                  <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>Articles</h1>
                   <div className="articles__count">
-                    <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)" }}>({postCount})</h1>
+                    <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative"}}>({postCount})</h1>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
           <div className={`${aboutOpen ? "square2Open" : "square2"}`} onClick={handleAboutOpen}>
             <div className="about__container">
               <div className="squared2">
-                <h1 style={{ color: aboutOpen ? "var(--container-color)" : "var(--title-color)" }}>About</h1>
+                <h1 style={{ color: aboutOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", top: "0"}}>About</h1>
               </div>
             </div>
           </div>
@@ -114,9 +114,9 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
               <div className="account__container">
                 <div className="squared3">
                   {user ? (
-                    <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)" }}>Account</h1>
+                    <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative"}}>Account</h1>
                   ) : (
-                    <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)" }}>login</h1>
+                    <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative"}}>login</h1>
                   )}
                 </div>
               </div>
@@ -133,7 +133,7 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
           <Link to="/createpost" className={`${createOpen ? "square5Open" : "square5"}`}  onClick={handleCreateOpen}>
             <div>
               <div className="create__container">
-                {user ? <h1 className='createpost' style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>Create Post</h1> : <h1 style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>Register</h1>}
+                {user ? <h1 className='createpost' style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative"}}>Create Post</h1> : <h1 style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>Register</h1>}
               </div>
             </div>
           </Link>
