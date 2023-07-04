@@ -139,7 +139,7 @@
   display: flex;
   align-items: center;  
   justify-content: center;
-  border-right: 1px solid var(--border-text-color);
+
   width: 27.5vw;
   text-align: center;
   transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);

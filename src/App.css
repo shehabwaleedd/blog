@@ -48,10 +48,10 @@
   /* Colors */
   --title-color: hsl(var(--hue), var(--sat), 10%);
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
-  --text-color: hsl(var(--hue), var(--sat), 60%);
+  --text-color: hsl(var(--hue), var(--sat), 40%);
   --border-text-color: hsl(var(--hue), var(--sat), 60%);
   --nav-open-color: hsl(var(--hue), var(--sat), 15%);
-  --body-color: #fff8de;
+  --body-color: #ffeacb;
   --container-color: #fffdfb;
   --nav-color: #698269;
   --rim-color: #212121;

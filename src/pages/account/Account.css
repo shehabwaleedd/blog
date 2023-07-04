@@ -3,23 +3,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 7rem;
-    padding-bottom: 10rem;
+    padding-bottom: 3rem;
+    height: 100vh;
 }
 
 .account__upper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 5rem;
-    width: 80vw;
-    padding-bottom: 1rem;
-    border-bottom: 0.1px solid var(--text-color);
+    width: 100vw;
+    border-bottom: 0.1px solid var(--border-text-color);
+    padding: 2rem 2rem;
+
 }
 
 .account__upper button h1 {
     color: #ee7575;
     text-transform: uppercase;
+    font-size: 2rem;
+}
+
+.account__upper  h1 {
+    color: var(--title-color);
+    text-transform: uppercase;
+    font-size: 2rem;
 }
 
 .account__container {
@@ -38,7 +45,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     width: 40%;
-    margin-left: 4.4rem;
+
 }
 
 .left__content {
@@ -64,7 +71,7 @@
     width: 70%;
     height: 70%;
     object-fit: cover;
-    border-radius: 50%;
+
     border: 0.1rem solid var(--text-color);
 }
 
@@ -158,7 +165,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    border-left: 0.1px solid var(--text-color);
+    border-left: 0.1px solid var(--border-text-color);
     padding-left: 2rem;
 }
 
@@ -173,8 +180,9 @@
 .right__header p {
     color: var(--text-color);
     font-family: 'Satoshi-Regular';
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 1rem;
+    text-transform: lowercase;
+    letter-spacing: 0.1rem;
 }
 
 
@@ -205,20 +213,9 @@
     gap: 2rem;
     padding: 2rem;
     margin-top: 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    background: var(--glass-background);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 251, 247, 0.3);
+    border: 0.5px solid var(--border-text-color);
     transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
 
-}
-
-.right__bottom_card:hover {
-    box-shadow: var(--box-shadow);
 }
 
 
@@ -272,4 +269,7 @@
     font-size: 1rem;
     font-weight: 400;
     transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
+    font-family: "Satoshi-Regular";
+    letter-spacing: 0.1rem;
+    text-transform: lowercase;
 }
