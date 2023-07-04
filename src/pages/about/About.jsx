@@ -1,10 +1,56 @@
 import React from 'react'
 import "./About.css"
 import img from "../../assets/profile51.jpg"
+import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const About = () => {
+    const [showImage, setShowImage] = useState(false);
+    const imageRef = useRef(null);
+
+    useEffect(() => {
+        const handleMouseMove = (event) => {
+            const { clientX, clientY } = event;
+            const { top, left } = imageRef.current.parentElement.getBoundingClientRect();
+            const image = imageRef.current;
+
+            if (image) {
+                const offsetX = clientX - left;
+                const offsetY = clientY - top;
+                image.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            }
+        };
+
+        const handleMouseEnter = () => {
+            setShowImage(true);
+        };
+
+        const handleMouseLeave = () => {
+            setShowImage(false);
+            const image = imageRef.current;
+            if (image) {
+                image.style.transform = '';
+            }
+        };
+
+        const parentElement = imageRef.current?.parentElement;
+        if (parentElement) {
+            parentElement.addEventListener('mousemove', handleMouseMove);
+            parentElement.addEventListener('mouseenter', handleMouseEnter);
+            parentElement.addEventListener('mouseleave', handleMouseLeave);
+        }
+
+        return () => {
+            if (parentElement) {
+                parentElement.removeEventListener('mousemove', handleMouseMove);
+                parentElement.removeEventListener('mouseenter', handleMouseEnter);
+                parentElement.removeEventListener('mouseleave', handleMouseLeave);
+            }
+        };
+    }, []);
+
     return (
-        <section className='about'>
+        <motion.section className='about' initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
             <div className="about__container">
                 <div className="about__upper">
                     <h1>Story Behind lumos</h1>
@@ -16,14 +62,19 @@ const About = () => {
                         </p>
                     </div>
                     <div className="about__maker">
-                        <h1>behind the creation of lumos</h1>
-                        <div className="about__maker_img">
-                            <img src={img} alt="" />
+                        <h1>Behind the Creation of Lumos</h1>
+                        <div className="about__maker_img" ref={imageRef}>
+                            {showImage && <img src={img} alt="" />}
                         </div>
+                        <p>Shehab, a young gentleman of twenty-four years, is a resident of the bustling metropolis of Cairo, Egypt. Situated in the cradle of civilization, Shehab finds inspiration in the rich history and cultural heritage that surrounds him. While his professional journey has taken him through various vocations, it was in the realm of front-end development that his true passion was ignited.</p>
+                        <p>Diversity is a hallmark of Shehab's life. Not only is he fluent in three languages, but he also possesses an insatiable thirst for knowledge and an unwavering desire to explore the unknown. His inquisitive nature drives him to delve into the depths of art, culture, and philosophy. Shehab embraces the vibrant tapestry of colors and sounds that surround him, drawing inspiration from the timeless melodies of jazz, which resonate with the greatness of Africa. He finds solace and introspection in the soulful tunes of blues, encapsulating profound sorrows and unwavering hope. The essence of celebration and vitality, encapsulated in funk music, fuels his zest for life.</p>
+                        <p>his intellectual pursuits extend beyond dictionaries and lexicons. He envisions a diverse world of literature and philosophy, embarking on an endless journey to uncover the depths of the human soul and life's experiences. His commitment to exploring the intricacies of the human condition is a testament to his passion for understanding and embracing diverse perspectives.</p>
+                        <p>he is a young man who carries within him the fire of creativity and the passion for exploration. He eagerly anticipates the challenges and new possibilities that the future holds. His multidimensional nature, fueled by his diverse interests and relentless curiosity, propels him forward in his personal and professional endeavors.</p>
+                        <p>With his vibrant spirit, insatiable hunger for knowledge, and commitment to embracing the beauty of different cultures, Shehab is poised to make a positive impact on the world around him. He embodies the spirit of a global citizen, ready to contribute to the ever-evolving tapestry of human experiences.</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </motion.section>
     )
 }
 

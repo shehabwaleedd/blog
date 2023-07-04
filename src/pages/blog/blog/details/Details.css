@@ -1,17 +1,7 @@
-.blog__details  {
-    padding: 50px 0;
-
-  }
-  .blog__details_right {
-    margin-top: 30px;
-  }
-  .blog__image_container {
+  .blog__card_details {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;    
-    border-radius: 10px;
-    margin-top: 5rem;
+    flex-direction: column;
+    margin-bottom: 3rem;
   }
 
   .blog__details_texts h1 {
@@ -67,16 +57,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;    
-    border-radius: 10px;
-    margin-top: 7rem;
+    margin-bottom: 1.875rem;    
+    border-radius: 0.625rem;
+
 }
 
   .blog__image_container img {
-    width: 100%;
+    width: 100vw;
     height: 30rem;
     object-fit: cover;
-    border-radius: 10px;
 
   }
 
@@ -124,7 +113,6 @@
   background-color: var(--title-color);
   color: var(--container-color);
   padding: 1rem 2rem;
-  border-radius: 1rem;
   font-weight: var(--font-medium);
 }
 
@@ -133,21 +121,22 @@
 }
 
 .blog__details_button-delete button {
-  background-color: #eb9898;
+  background-color: #ee5e5e;
 }
 
 .blog__details_button-edit button {
-  background-color: #6f988a;
+  background-color: var(--title-color);
+  ;
 }
 
 .blog__details_button-delete button:hover {
-  background: #d37171;
-  border-radius: 0;
+  background: #d04242;
+
 }
 
 .blog__details_button-edit button:hover {
   background: #45655b;
-  border-radius: 0;
+
 }
 
 

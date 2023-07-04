@@ -9,6 +9,8 @@ import { useUserAuth } from "../../../../components/authContext/AuthContext"
 import { auth, db } from "../../../../firebase-config";
 import ScrollAnimation from "./ScrollAnimation";
 import Loading from "../../../loading/Loading.tsx";
+import {BiX} from "react-icons/bi";
+import {AiFillEdit} from "react-icons/ai";
 
 
 export const DetailsPages = () => {
@@ -54,38 +56,36 @@ export const DetailsPages = () => {
   return (
     <>
       <ScrollAnimation />
-      <div className="blog__details container">
+      <div className="blog__details">
         <div className='blog__card_details'>
           <div className='blog__image_container'>
             <img src={post.imageUrls} alt='' />
           </div>
-
-          <div className="blog__details_button">
+          <div className="blog__details_button container">
             <div className='post__tag-details'>
               <a href="/" className="post__hashtag-details" onClick={(e) => { e.preventDefault(); handleCategoryClick(post.category); }} >#{post.category}</a>
             </div>
             <div className="blog__details_button">
               {auth.currentUser?.uid === post.author.id && (
                 <div className="blog__details_button-delete">
-                  <button className="button__delete" onClick={() => { deletePost(post.id) }}><i className='bx bx-x'></i></button>
+                  <button className="button__delete" onClick={() => { deletePost(post.id) }}><BiX style={{fontSize: "2rem"}}/></button>
                 </div>
               )}
               <div className="blog__details_button-edit">
                 {auth.currentUser?.uid === post.author.id && (
-                  <button className="button__edit" onClick={handleEditClick}><i className='bx bx-edit'></i></button>
+                  <button className="button__edit" onClick={handleEditClick}><AiFillEdit style={{fontSize: "2rem", color: "var(-container-color)"}}/></button>
                 )}
               </div>
             </div>
           </div>
-
-          <div className="blog__details_post-text">
+          <div className="blog__details_post-text container">
             <div className="blog__details_post-textanddate">
               <h3 className="post__title_name-details">{post.title}</h3>
               <label htmlFor=''>{post.date}</label>
             </div>
             <p className="post__subtitle">{post.postText}</p>
           </div>
-          <div className='post__date-details'>
+          <div className='post__date-details container'>
             <div className="details__post__date-imgname">
               <div className="details__post__date_imgname-combined">
                 <img src={post.photoURL} alt=""/>

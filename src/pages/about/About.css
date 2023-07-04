@@ -57,23 +57,33 @@
     border-top: 1px solid var(--border-text-color);
 }
 
+
+
 .about__maker {
     position: relative;
+    overflow: hidden;
 }
 
-.aboit__maker_img {
+.about__maker p {
+    margin-bottom: 1rem;
+}
+
+.about__maker_img {
     position: absolute;
-    top: 10rem;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about__maker:hover .about__maker_img {
+    opacity: 1;
 }
 
 .about__maker_img img {
-    width: 50vw;
-    height: 25rem;
+    width: 20rem;
+    height: 10rem;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 
-.about__maker:hover img {
-    opacity: 1;
 }
