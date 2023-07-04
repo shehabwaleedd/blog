@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.91b72d49.css",
-    "main.js": "/static/js/main.c8f51d2a.js",
+    "main.css": "/static/css/main.69083fc0.css",
+    "main.js": "/static/js/main.fcf06920.js",
     "static/js/787.5e7ff5ef.chunk.js": "/static/js/787.5e7ff5ef.chunk.js",
     "static/media/eslam.jpg": "/static/media/eslam.c337457492f3dc5a2c05.jpg",
     "static/media/roy.jpg": "/static/media/roy.4dfc06d58efb1aedb8b3.jpg",
@@ -17,6 +17,7 @@
     "static/media/Satoshi-Light.ttf": "/static/media/Satoshi-Light.22ef061781b1162ac317.ttf",
     "static/media/Emily.webp": "/static/media/Emily.062665ec141eaf991003.webp",
     "static/media/Anas.jpeg": "/static/media/Anas.81d8697cabd5de9e8163.jpeg",
+    "static/media/profile51.jpg": "/static/media/profile51.b01b995ee3bce337216c.jpg",
     "static/media/Poet.jpeg": "/static/media/Poet.7eb5604ce04958feb283.jpeg",
     "static/media/Satoshi-Variable.woff2": "/static/media/Satoshi-Variable.353a66cdd8922bb63107.woff2",
     "static/media/Satoshi-Variable.woff": "/static/media/Satoshi-Variable.4db206aaad2132de9db7.woff",
@@ -39,12 +40,12 @@
     "static/media/Satoshi-Light.woff2": "/static/media/Satoshi-Light.df8f06167ee6fd05a131.woff2",
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.91b72d49.css.map": "/static/css/main.91b72d49.css.map",
-    "main.c8f51d2a.js.map": "/static/js/main.c8f51d2a.js.map",
+    "main.69083fc0.css.map": "/static/css/main.69083fc0.css.map",
+    "main.fcf06920.js.map": "/static/js/main.fcf06920.js.map",
     "787.5e7ff5ef.chunk.js.map": "/static/js/787.5e7ff5ef.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.91b72d49.css",
-    "static/js/main.c8f51d2a.js"
+    "static/css/main.69083fc0.css",
+    "static/js/main.fcf06920.js"
   ]
 }
