@@ -78,7 +78,7 @@ const FilteredCategories = ({ navOpen, toggleTheme }) => {
                                             </div>
                                             <h3 className="post__title-name-filtered">{post.title.slice(0,30)}...</h3>
                                         </Link>
-                                        <p className="post__subtitle-filtered">{post.postText.slice(0, 90)}...</p>
+                                        <p className="post__subtitle-filtered">{post.postText.slice(0, 130)}...</p>
                                         <div className="post__date-filtered">
                                             <div className="post__date-filtered-imgname">
                                                 <img src={post.photoURL} alt="" />

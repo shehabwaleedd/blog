@@ -47,10 +47,10 @@ const EditPage = () => {
 
   const handleUpdate = async (event) => {
     event.preventDefault();
-  
+
     const form = event.target;
     const formData = new FormData(form);
-  
+
     let imageUrl = post.imageUrls;
     if (imageFile) {
       const imagesRef = ref(storage, "images/");
@@ -59,14 +59,14 @@ const EditPage = () => {
       await uploadBytes(imageRef, imageFile);
       imageUrl = await getDownloadURL(imageRef);
     }
-  
+
     const updatedPost = {
       title: formData.get("title"),
       category: formData.get("category"),
       postText: formData.get("postText"),
       imageUrls: imageUrl,
     };
-  
+
     await updateDoc(postDocRef, updatedPost);
     navigate(`/details/${id}`);
   };
@@ -76,23 +76,23 @@ const EditPage = () => {
   }
 
   return (
-    <section className="edit section">
+    <section className="edit ">
       <div className="edit__page">
-        <div className="edit__container container grid">
+        <div className="edit__container ">
           <form onSubmit={handleUpdate}>
             <div className="form__container-edit">
               <div className="edit__input-image">
                 {imageUrl && <img src={imageUrl} alt="Selected Image" />}
-                <label htmlFor="upload" className="edit-file-upload">
+                <label htmlFor="upload" className="edit-file-upload container">
                   <span>Choose File</span>
-                  <input style={{ display: "none" }} accept="image/*" type="file" name="imageUrls" defaultValue=""  onChange={handleImageChange} id="upload" />
+                  <input style={{ display: "none" }} accept="image/*" type="file" name="imageUrls" defaultValue="" onChange={handleImageChange} id="upload" />
                 </label>
               </div>
-              <div className="edit__input-title">
+              <div className="edit__input-title container">
                 <label htmlFor="title">Title</label>
-                <input type="text" name="title" defaultValue={post.title}  />
+                <input type="text" name="title" defaultValue={post.title} />
               </div>
-              <div className="edit__input-category">
+              <div className="edit__input-category container">
                 <select className="create__input-field" name="category" value={category} onChange={(e) => setCategory(e.target.value)} required>
                   <option value="">Select Category...</option>
                   <option value="Anime">Anime</option>
@@ -101,11 +101,11 @@ const EditPage = () => {
                   <option value="Nature">Nature</option>
                 </select>
               </div>
-              <div className="edit__input-post">
+              <div className="edit__input-post container">
                 <label htmlFor="postText">Post</label>
-                <textarea name="postText" defaultValue={post.postText}  />
+                <textarea name="postText" defaultValue={post.postText} />
+                <button className="edit__button button--flex " type="submit">Update Post</button>
               </div>
-              <button className="edit__button button--flex" type="submit">Update Post</button>
             </div>
           </form>
         </div>
