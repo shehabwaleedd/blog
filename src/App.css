@@ -51,7 +51,7 @@
   --text-color: hsl(var(--hue), var(--sat), 40%);
   --border-text-color: hsl(var(--hue), var(--sat), 60%);
   --nav-open-color: hsl(var(--hue), var(--sat), 15%);
-  --body-color: #ffeacb;
+  --body-color: #ffedd1;
   --container-color: #fffdfb;
   --nav-color: #698269;
   --rim-color: #212121;

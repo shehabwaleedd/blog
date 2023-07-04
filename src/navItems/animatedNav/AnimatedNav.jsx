@@ -33,26 +33,31 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
   }
 
   const handleArticlesOpen = () => {
-    setArticlesOpen(!articlesOpen);
+    setArticlesOpen(true);
     setAboutOpen(false);
     setAccountOpen(false);
+    setCreateOpen(false);
   };
 
   const handleAboutOpen = () => {
-    setAboutOpen(!aboutOpen);
+    setAboutOpen(true);
     setArticlesOpen(false);
     setAccountOpen(false);
-
+    setCreateOpen(false);
   };
 
   const handleAccountOpen = () => {
-    setAccountOpen(!accountOpen);
+    setAccountOpen(true);
     setArticlesOpen(false);
     setAboutOpen(false);
+    setCreateOpen(false);
   };
 
   const handleCreateOpen = () => {
-    setCreateOpen(!createOpen);
+    setCreateOpen(true);
+    setArticlesOpen(false);
+    setAccountOpen(false);
+    setAboutOpen(false);
   };
 
   useEffect(() => {
@@ -70,7 +75,7 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
           <div className="logo square">
             <h1>lumos</h1>
           </div>
-          <Link to="/"className={`${articlesOpen ? "square1Open" : "square1"}`} onClick={handleArticlesOpen}>
+          <Link to="/" className={`${articlesOpen ? "square1Open" : "square1"}`} onClick={handleArticlesOpen}>
             <div>
               <div className="articles__container">
                 <div className="squared2">
@@ -110,11 +115,13 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
               </div>
             </div>
           </div>
-          <div className="square5">
-            <div className="create__container">
-              {user ? <h1 className='createpost'>Create Post</h1> : <h1>Register</h1>}
+          <Link to="/createpost" className={`${createOpen ? "square5Open" : "square5"}`}  onClick={handleCreateOpen}>
+            <div>
+              <div className="create__container">
+                {user ? <h1 className='createpost' style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>Create Post</h1> : <h1 style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>Register</h1>}
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </nav>
       <div className="nav-overlay" style={{

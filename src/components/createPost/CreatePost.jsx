@@ -1,15 +1,17 @@
-
-import React, { useState } from "react";
+// ...
+import { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db, auth } from "../../firebase-config";
 import { useNavigate } from "react-router-dom";
 import "./CreatePost.css";
 import { storage } from "../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { v4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
-const CreatePost = (props) => {
+const CreatePost = () => {
   const [title, setTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [category, setCategory] = useState("");
@@ -19,16 +21,15 @@ const CreatePost = (props) => {
 
   const navigate = useNavigate();
 
-
   const handleFileUpload = async (event) => {
     const file = event.target.files[0];
-    const fileId = v4();
+    const fileId = uuidv4();
     const imagesRef = ref(storage, `images/${fileId}`);
 
     try {
       await uploadBytes(imagesRef, file);
       const downloadURL = await getDownloadURL(imagesRef);
-      setImageUrls([downloadURL]); // Update to set only the latest image URL
+      setImageUrls([downloadURL]);
     } catch (error) {
       console.error(error);
     }
@@ -37,7 +38,7 @@ const CreatePost = (props) => {
   const createPost = async () => {
     setError("");
     try {
-      await addDoc(postsCollectionRef, {
+      const newPost = {
         title,
         imageUrls,
         postText,
@@ -45,34 +46,44 @@ const CreatePost = (props) => {
         date: new Date().toLocaleDateString(),
         category,
         photoURL: auth.currentUser.photoURL,
-      });
+      };
+      await addDoc(postsCollectionRef, newPost);
+      resetForm();
+      navigate("/");
     } catch (e) {
       setError(e.message);
       console.log(e.message);
     }
-    setCategory("");
-    setPostText("");
+  };
+
+  const resetForm = () => {
     setTitle("");
-    setError("");
+    setPostText("");
+    setCategory("");
     setImageUrls([]);
-    navigate("/blog");
   };
 
   const handleCreatePost = async (e) => {
     e.preventDefault();
-    setError("");
     createPost();
-    try {
-      navigate("/blog");
-    } catch (e) {
-      setError(e.message);
-      console.log(e.message);
-    }
   };
+
+  // Custom toolbar options for React Quill
+  const toolbarOptions = [
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+    [{ font: [] }], // Font family dropdown
+    ["bold", "italic", "underline", "strike"],
+    [{ list: "ordered" }, { list: "bullet" }],
+    [{ align: [] }],
+    ["link", "image", "video"],
+    ["clean"],
+  ];
+
+  
+
   return (
-    <motion.div initial={{ y: "-100vh" }} animate={{ y: "0%" }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 1 }}>
-      <section className='create section'>
-        <h2 className='section__title'>Publish</h2>
+    <motion.div initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
+      <section className="create section">
         <div className="create__page">
           <div className="create__container">
             <form className="create__form" onSubmit={handleCreatePost}>
@@ -82,39 +93,38 @@ const CreatePost = (props) => {
                 ))}
                 <label htmlFor="upload" className="custom-file-upload">
                   <span>Choose File</span>
-                  <input
-                    id="upload"
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileUpload}
-                    style={{ display: "none" }} // Hide the default file input
-                  />
+                  <input id="upload" type="file" accept="image/*" onChange={handleFileUpload} style={{ display: "none" }} />
                 </label>
               </div>
               <div className="create__input-title">
-                <input placeholder="Title..." onChange={(e) => setTitle(e.target.value)} />
+                <input placeholder="Title..." value={title} onChange={(e) => setTitle(e.target.value)} required />
               </div>
               <div className="create__input-category">
-                <select className="create__input-field" value={category} onChange={(e) => setCategory(e.target.value)}>
+                <select className="create__input-field" value={category} onChange={(e) => setCategory(e.target.value)} required>
                   <option value="">Select Category...</option>
                   <option value="Anime">Anime</option>
                   <option value="Philosophy">Philosophy</option>
                   <option value="Politics">Politics</option>
                   <option value="Nature">Nature</option>
+                  <option value="Poetry">Poetry</option>
+                  <option value="Economics">Economics</option>
                 </select>
               </div>
-              <div className="create__input-post">
-                <textarea placeholder="Tell Your Story..." onChange={(e) => setPostText(e.target.value)} />
+              <div className="create__input-post" >
+                <ReactQuill value={postText} onChange={setPostText} modules={{ toolbar: toolbarOptions }}  style={{ height: '15.75rem' }}/>
               </div>
+              {error && <p className="create__error">{error}</p>}
               <div className="create__button-div">
-                <button className="create__button button--flex" type="submit"> Submit Post</button>
+                <button className="create__button button--flex" type="submit">
+                  Submit Post
+                </button>
               </div>
             </form>
           </div>
         </div>
       </section>
     </motion.div>
-  )
-}
+  );
+};
 
 export default CreatePost;

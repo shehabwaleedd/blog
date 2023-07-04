@@ -35,7 +35,7 @@ export const DetailsPages = () => {
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
     await deleteDoc(postDoc);
-    navigate("/blog");
+    navigate("/");
   };
 
   const handleEditClick = () => {

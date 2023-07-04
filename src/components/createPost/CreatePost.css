@@ -4,8 +4,9 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    padding-top: 8rem;
-
+    padding-top: 2rem;
+    min-height: 74vh;
+    
 }
 
 .create__page {
@@ -14,7 +15,7 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    height: 74vh;
+    border: 1px solid var(--border-text-color);
 }
 
 .create__container {
@@ -22,8 +23,6 @@
     flex-direction: column;
     gap: 2rem;
     padding: 2rem;
-    border-radius: 1rem;
-    width: 50rem;
     justify-content: center;
 }
 
@@ -41,27 +40,31 @@
 }
 
 .create__input-title input {
-    width: 50rem;
+
     height: 3rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-text-color);
     padding: 1rem;
     background-color: var(--body-color);
-    color: var(--accent-color);
+    color: var(--title-color);
 
+}
+
+.create__input-title input::placeholder {
+    color: var(--title-color);
 }
 
 .create__input-post {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    color: var(--text-color);
+    color: var(--title-color);
 
 }
 
 .create__input-post textarea {
     width: 50rem;
     height: 10rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-text-color);
     padding: 1rem;
     background-color: var(--body-color);
     color: var(--accent-color);
@@ -98,18 +101,19 @@
 }
 
 .create__input-image img {
-    width: 60rem;
-    height: 20rem;
-    border: 1px solid #ccc;
+    width: 100%;
+    height: 30rem;
+    border: 1px solid var(--border-text-color);
     padding: 1rem;
     background-color: var(--body-color);
     color: var(--accent-color);
+    object-fit: cover;
 }
 
 .create__input-image input {
     width: 50rem;
     height: 3rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-text-color);
     padding: 1rem;
     background-color: var(--body-color);
     color: var(--accent-color);
@@ -136,9 +140,9 @@
 }
 
 .create__input-category select {
-    width: 10rem;
+    width: 55rem;
     height: 3.5rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-text-color);
     padding: 1rem;
     background-color: var(--body-color);
     color: var(--accent-color);
@@ -160,6 +164,7 @@
 .create__button-div {
     display: flex;
     justify-content: flex-start;
+    margin-top: 4rem;
 }
 
 .custom-file-upload {
