@@ -41,20 +41,22 @@ const NavComponents = (Props) => {
 
     return (
         <div className={`${Props.navOpen ? "nav__links-links open" : "nav__links-links"}`}>
-            {user && (
-                <div className='nav__links__container'>
-                    <Link className={Props.navOpen ? "nav__home spin" : "nav__home"} to="/" style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                        <h1>{t("navbar__home")}</h1>
-                    </Link>
-                    <Link className={Props.navOpen ? "nav__home spin" : "nav__home"} to="/about" style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                        <h1>{t("navbar__about")}</h1>
-                    </Link>
-                    <Link className={Props.navOpen ? "nav__home spin" : "nav__home"} to="/contact" style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                        <h1> {t("navbar__contact")}</h1>
-
-                    </Link>
-                </div>
-            )}
+            <AnimatePresence mode='wait'>
+                {user && (
+                    <div className='nav__links__container'>
+                        <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
+                            <Link to="/about" >
+                                <h1>{t("navbar__about")}</h1>
+                            </Link>
+                        </div>
+                        <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
+                            <Link to="/contact">
+                                <h1>FAQS</h1>
+                            </Link>
+                        </div>
+                    </div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }

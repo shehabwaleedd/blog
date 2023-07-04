@@ -102,13 +102,13 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
               </div>
             </div>
           </Link>
-          <div className={`${aboutOpen ? "square2Open" : "square2"}`} onClick={handleAboutOpen}>
+          <Link to="/about" className={`${aboutOpen ? "square2Open" : "square2"}`} onClick={handleAboutOpen}>
             <div className="about__container">
               <div className="squared2">
                 <h1 style={{ color: aboutOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", top: "0"}}>About</h1>
               </div>
             </div>
-          </div>
+          </Link>
           <Link to="/account" className={`${accountOpen ? "square3Open" : "square3"}`} onClick={handleAccountOpen}>
             <div >
               <div className="account__container">

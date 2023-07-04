@@ -48,6 +48,12 @@
   border-bottom: 1px solid var(--title-color);
 }
 
+.square5:hover {
+  border-bottom: 1px solid var(--title-color);
+}
+
+
+
 
 .square1Open {
   display: flex;
@@ -167,6 +173,31 @@
   background-color: var(--title-color);
   animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+
+.square5:not(.square5Open) {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  border-right: 0.5px solid var(--border-text-color);
+  width: 28.5vw;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+.square5:not(.square5Open)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--title-color);
+  animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 
 
 @keyframes closeAnimation {

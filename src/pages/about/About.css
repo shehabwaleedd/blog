@@ -1,0 +1,79 @@
+.about {
+    min-height: 80vh;
+}
+
+.about__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__upper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100vw;
+
+}
+
+.about__upper h1 {
+    padding-left: 1.5rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-text-color);
+    width: 100vw;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    text-transform: lowercase;
+}
+
+.about__upper p {
+    padding-left: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    width: 97vw;
+    color: var(--text-color);
+    text-align: justify;
+    font-family: "Satoshi-Italic";
+    text-transform: lowercase;
+    margin-bottom: 4rem;
+}
+
+.about__mission {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.about__mission h1 {
+    text-align: end;
+    border-top: 1px solid var(--border-text-color);
+    padding-right: 3rem;
+}
+
+.about__maker h1 {
+    border-top: 1px solid var(--border-text-color);
+}
+
+.about__maker {
+    position: relative;
+}
+
+.aboit__maker_img {
+    position: absolute;
+    top: 10rem;
+}
+
+.about__maker_img img {
+    width: 50vw;
+    height: 25rem;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.about__maker:hover img {
+    opacity: 1;
+}

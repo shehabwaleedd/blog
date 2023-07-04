@@ -10,6 +10,7 @@ import CreatePost from '../../components/createPost/CreatePost';
 import EditPage from '../../pages/blog/blog/details/edit/EditPost';
 import { useUserAuth } from '../../components/authContext/AuthContext';
 import Account from '../../pages/account/Account';
+import About from '../../pages/about/About';
 
 const MainRoutes = ({navOpen, setNavOpen, toggleTheme}) => {
   const location = useLocation();
@@ -21,6 +22,7 @@ const MainRoutes = ({navOpen, setNavOpen, toggleTheme}) => {
     { path: '/signup', element: <SignUp /> },
     { path: '/passwordreset', element: <PasswordReset /> },
     { path: '/account', element: <Account /> },
+    { path: '/about', element: <About />},
     {
       path: '/',
       element: user ? <Blog navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,

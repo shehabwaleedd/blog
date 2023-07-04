@@ -2,12 +2,13 @@
 /* ============ VARIABLES CSS ============ */
 
 
-/* Light Mode */
-#light {
+
+/* Dark Mode */
+#dark {
   /* Colors */
   --title-color: #ffffda;
   --title-color-dark: hsl(var(--hue), var(--sat), 80%);
-  --text-color: hsl(var(--hue), var(--sat), 65%);
+  --text-color:#ffffdabf;
   --border-text-color: hsl(var(--hue), var(--sat), 25%);
   --nav-open-color: hsl(var(--hue), var(--sat), 15%);
   --body-color: #10100e;
@@ -43,8 +44,8 @@
   background-color: var(--body-color);
 }
 
-/* Dark Mode */
-#dark {
+/* Light Mode */
+#light {
   /* Colors */
   --title-color: hsl(var(--hue), var(--sat), 10%);
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
@@ -217,7 +218,7 @@ img {
 
 .section__title {
   font-size: 7rem;
-  color: var(--nav-overlay-color);
+  color: var(--title-color);
   font-family: "Satoshi-Bold", sans-serif;
   letter-spacing: 1rem;
   text-transform: uppercase;
@@ -345,7 +346,7 @@ img {
 
 
 ::selection {
-  background: var(--accent-color);
+  background: var(--title-color);
   color: var(--container-color);
 }
 

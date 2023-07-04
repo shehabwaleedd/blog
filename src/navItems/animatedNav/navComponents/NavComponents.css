@@ -1,36 +1,49 @@
 .nav__links-links {
-  display: none;
+  opacity: 0;
+  height: 0;  
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav__links-links.open {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
   gap: 1rem;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   height: 70vh;
   opacity: 1;
   right: 18rem;
-  top: -5rem;
+  top: 30rem;
   margin-bottom: 10rem;
+
 }
 
 .nav__links__container {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  gap: 5rem;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: start;
+  align-content: flex-start;
 }
 
 .nav__links-links h1 {
   font-size: 5rem;
-  color: var(--title-color);
+  color: var(--text-color);
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: lowercase;
+  position: absolute;
+  top: -27rem;
+  right: 8rem;
+
+
+}
+
+.nav__links-links h1:hover {
+  color: var(--title-color);
 }
 
 .nav__home {
@@ -42,14 +55,22 @@
   width: 100%;
   display: flex;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
 }
 
 .nav__home.spin {
   position: relative;
-  color: var(--title-color);
-  transition: all 5.5s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--text-color);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 0.5rem;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: start;
 }
 
 .loginss {
