@@ -109,7 +109,7 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
               </div>
             </div>
           </Link>
-          <Link to="/account" className={`${accountOpen ? "square3Open" : "square3"}`} onClick={handleAccountOpen}>
+          <Link to={`${user ? "/account" : "/login"}`} className={`${accountOpen ? "square3Open" : "square3"}`} onClick={handleAccountOpen}>
             <div >
               <div className="account__container">
                 <div className="squared3">
