@@ -34,7 +34,6 @@ function FilteredCategoriesTabs({ categories, selectedCategory, onCategoryClick,
         <DropDownMenu navOpen={navOpen} />
         </div>
       </div>
-      <Search />
     </>
   );
 }

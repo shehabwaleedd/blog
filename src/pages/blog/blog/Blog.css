@@ -1,19 +1,16 @@
 
 
 
-.blog {
-}
-
 
 .blog__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 2rem;
-  height: calc(100vh - 3rem);
+  margin: 2rem 1.3rem;
+  height: calc(80vh - 3rem);
   width: 100vw;
-  margin-left: 3rem;
-  
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+
 }
 
 .menu {
@@ -23,22 +20,47 @@
   height: 100%;
   width: 100vw;
   position: relative;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+
 }
 
 .menu__item-image_wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 30%;
+  position: absolute;
+  top: 0;
+  left: 10rem;
+}
+
+.menu__item-image_wrapper img {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu__item-image {
+  opacity: 0;
+  transform: translateY(-50px);
   position: relative;
+  z-index: 999999;
+}
+
+.menu__item-image.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-wrapper {
+  position: relative;
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
+
+
 .text-container {
-  flex: 0.7;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,13 +71,12 @@
   align-items: flex-start;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   line-height: 1.9;
-  width: 50vw;
+  width: 100vw;
   height: 35.25rem;
-  /* Set the height to whatever you want */
-  overflow: hidden;
   margin-bottom: 5rem;
-
-
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -66,10 +87,10 @@
   justify-content: space-between;
   align-items: end;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-  width: 41%;
+  width: 97%;
   text-align: left;
   position: relative;
-  gap: 7rem;
+
 }
 
 .work__title a {
@@ -92,6 +113,7 @@
   white-space: nowrap;
   cursor: pointer;
   padding-top: 0.5rem;
+  text-transform: capitalize;
 }
 
 .work__title h1::before {
@@ -109,9 +131,9 @@
   position: absolute;
   left: 0rem;
   top: 4.5rem;
-  width: 38rem;
-  height: 2px;
-  background-color: var(--text-color);
+  width: 97vw;
+  height: 0.5px;
+  background: var(--border-text-color);
   transform: scaleX(1);
   transform-origin: left;
   transition: all 5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -162,40 +184,14 @@
   position: absolute;
   content: "";
   display: block;
-  width: 272.5%;
-  background: var(--text-color);
-  height: 2px;
+  width: 100vw;
+  background: var(--border-text-color);
+  height: 0.5px;
   transition: width 0.3s;
-  left: 0rem;
-  top: 4.2rem;
+  left: -1rem;
+  top: 5.5rem;
 }
 
-
-
-
-.menu__item-image_wrapper img {
-  width: 100%;
-  height: 90%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 3.25rem;
-  transition: 0.3s ease;
-  border-top-left-radius: 5rem;
-}
-
-.menu__item-image {
-  opacity: 0;
-  transform: translateY(-50px);
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.menu__item-image.fade-in {
-  opacity: 1;
-  transform: translateY(0);
-  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
-
-}
 
 
 
@@ -217,20 +213,6 @@
 
 .post__date-imagename.fade-in {
   opacity: 1;
-}
-
-.image-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.image-wrapper label {
-  opacity: 1;
-  font-size: 1rem;
-  font-family: "Krona One", sans-serif;
-  color: var(--accent-color);
-  cursor: pointer;
 }
 
 
@@ -266,6 +248,7 @@
   /* hide default scrollbar in Firefox */
   overflow-x: hidden;
   width: 100vw;
+  height: 100vh;
 }
 
 .scrollbarr::-webkit-scrollbar {
@@ -293,7 +276,7 @@
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  height: 130vh;
+  height: 100vh;
 }
 
 .blog__header {

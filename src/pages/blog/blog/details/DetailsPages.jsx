@@ -73,7 +73,7 @@ export const DetailsPages = () => {
               )}
               <div className="blog__details_button-edit">
                 {auth.currentUser?.uid === post.author.id && (
-                  <button className="button__edit" onClick={handleEditClick}><AiFillEdit style={{fontSize: "2rem", color: "var(-container-color)"}}/></button>
+                  <button className="button__edit" onClick={handleEditClick}><AiFillEdit style={{fontSize: "2rem", color: "var(--container-color"}}/></button>
                 )}
               </div>
             </div>

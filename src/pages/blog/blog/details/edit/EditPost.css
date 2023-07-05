@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    min-height: 113.2vh;
+    min-height: 131.5vh;
     margin-bottom: 4rem;
 }
 
@@ -93,7 +93,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 5rem;
 }
 
 .edit__input-image {
@@ -106,7 +106,7 @@
 .edit__input-image img {
     width: 100vw;
     height: 20rem;
-    border: 1px solid #ccc;
+    border: 1px solid var(--border-text-color);
     object-fit: cover;
     background-color: var(--body-color);
     color: var(--accent-color);
@@ -114,7 +114,7 @@
 
 .edit__input-image input {
     height: 3rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid var(--border-text-color);
     background-color: var(--body-color);
     color: var(--title-color);
 }
