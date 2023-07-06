@@ -292,3 +292,12 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+
+@media (min-width: 1850px) {
+  .menu__item-image_wrapper {
+    position: absolute;
+    top: -20rem;
+    left: 10rem;
+  }
+}

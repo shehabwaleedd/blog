@@ -28,7 +28,7 @@
     width: 100%;
     padding: 2rem;
 
-    
+
 }
 
 .form__container_form-input {
@@ -96,13 +96,13 @@
 }
 
 .login__input input:focus {
-    outline: 0.5px solid  var(--accent-color);
+    outline: 0.5px solid var(--accent-color);
     background: var(--body-color)
 }
 
-.login__input input:-webkit-autofill{
-    -webkit-box-shadow:200px 200px 100px white inset; 
-    box-shadow:200px 200px 100px rgb(251, 252, 244) inset; 
+.login__input input:-webkit-autofill {
+    -webkit-box-shadow: 200px 200px 100px white inset;
+    box-shadow: 200px 200px 100px rgb(251, 252, 244) inset;
     color: #fff;
 }
 
@@ -133,15 +133,16 @@
     background-color: var(--title-color);
     color: black;
     border: 0.001px solid var(--text-color);
-    
+
 }
 
 .facebook__button {
     background-color: var(--title-color);
-    
+
 }
+
 .facebook__button button {
-        display: flex;
+    display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     align-content: flex-start;
@@ -158,7 +159,7 @@
     border-radius: 0;
 }
 
-.login__forgot  {
+.login__forgot {
     font-size: var(--small-font-size);
     color: var(--text-color);
     font-family: "Satoshi-MediumItalic", sans-serif;
@@ -184,9 +185,16 @@
 
 
 .clickhere__button {
-    
+
     color: var(--accent-color);
 }
 
 
 
+@media (min-width: 1850px) {
+    .form__container_form-input {
+        gap: 0.2rem;
+        width: 45vw;
+
+    }
+}

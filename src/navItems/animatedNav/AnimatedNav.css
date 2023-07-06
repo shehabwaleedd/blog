@@ -506,3 +506,8 @@
 }
 
 
+@media (min-width: 1850px) {
+  .navbar__container {
+    grid-template-columns: repeat(5, 1fr) 35.25rem; /* Equal width columns for squares, last column for logo */
+  }
+}
