@@ -76,7 +76,7 @@
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about__maker:hover .about__maker_img {
+.about__maker h1:hover + .about__maker_img {
     opacity: 1;
 }
 
