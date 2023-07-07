@@ -14,7 +14,8 @@
     width: 100vw;
     border-bottom: 0.1px solid var(--border-text-color);
     padding: 2rem 2rem;
-
+    position: relative;
+    z-index: 99999;
 }
 
 .account__upper button h1 {

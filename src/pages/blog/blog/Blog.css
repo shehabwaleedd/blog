@@ -21,7 +21,7 @@
 
 .menu__item-image_wrapper {
   position: absolute;
-  top: 0;
+  top: -15rem;
   left: 10rem;
 }
 

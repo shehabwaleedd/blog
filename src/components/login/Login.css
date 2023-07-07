@@ -91,13 +91,15 @@
     font-size: 1rem;
     color: var(--text-color);
     background: transparent;
-    border-bottom: 1px solid var(--text-color);
-    padding: 1rem
+    border-bottom: 1px solid var(--border-text-color);
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .login__input input:focus {
-    outline: 0.5px solid var(--accent-color);
-    background: var(--body-color)
+    outline: none;
+    border-bottom: 1px solid var(--title-color);
 }
 
 .login__input input:-webkit-autofill {

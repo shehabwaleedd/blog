@@ -41,19 +41,19 @@ const Account = () => {
 
     const handleLogout = async () => {
         try {
-            await logOut()
-            navigate('/login')
-            console.log("logged out successfully")
+            await logOut();
+            console.log("logged out successfully");
+            navigate('/login');
         } catch (e) {
-            console.log(e.message)
+            console.log(e.message);
         }
-    }
+    };
 
 
     return (
-        <motion.section className="account"  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
+        <motion.section className="account" initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
             <div className="account__upper">
-                <h1>{t("account__settings")}</h1>
+                <h1 >{t("account__settings")}</h1>
                 <button onClick={handleLogout}>
                     <h1>Logout</h1>
                 </button>

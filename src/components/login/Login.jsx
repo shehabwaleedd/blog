@@ -49,7 +49,7 @@ function Login() {
 
   return (
     <motion.section className="login " id='skills' initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
-      <h2 className='section__title'>{t("login__form__title")}</h2>
+      <h2 className='section__title'>{t("navbar__login")}</h2>
       <div className="login__container container">
         <div className="login__container-left">
           <form className="login__form" onSubmit={handleSignIn}>

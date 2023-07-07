@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    min-height: 131.5vh;
+    min-height: 121vh;
     margin-bottom: 4rem;
 }
 
@@ -56,6 +56,8 @@
     padding-bottom: 1rem;
     background-color: var(--body-color);
     color: var(--accent-color);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+
 }
 
 .edit__input-post {
@@ -72,14 +74,17 @@
     border-bottom: 1px solid var(--border-text-color);
     background-color: var(--body-color);
     color: var(--accent-color);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .edit__input-post textarea:focus {
     outline: none;
+    border-bottom: 1px solid var(--title-color);
 }
 
 .edit__input-title input:focus {
     outline: none;
+    border-bottom: 1px solid var(--title-color);
 }
 
 .edit__button {
@@ -117,10 +122,12 @@
     border-bottom: 1px solid var(--border-text-color);
     background-color: var(--body-color);
     color: var(--title-color);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .edit__input-image input:focus {
     outline: none;
+    border-bottom: 1px solid var(--title-color);
 }
 
 
@@ -141,11 +148,13 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+
 }
 
 .edit__input-category select:focus {
-    outline: 0.5px solid var(--accent-color);
-    border-radius: 1rem;
+    outline: none;
+    border-bottom: 1px solid var(--title-color);
 }
 
 .edit__input-category {

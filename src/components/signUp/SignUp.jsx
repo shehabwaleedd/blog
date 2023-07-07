@@ -7,6 +7,8 @@ import { useUserAuth } from '../authContext/AuthContext'
 import { useTranslation } from 'react-i18next'
 import { FacebookAuthProvider } from "firebase/auth";
 import Data from './Data'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 
 const SignUp = (Props) => {
@@ -16,6 +18,14 @@ const SignUp = (Props) => {
     const [password, setPassword] = useState('')
     const [username, setUsername] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
+    const [countries, setCountries] = useState([]);
+    const [country, setCountry] = useState('');
+    const [phone, setPhone] = useState('')
+    const [gender, setGender] = useState('')
+    const [agreed, setAgreed] = useState(false)
+    const [formErrors, setFormErrors] = useState({});
+    const [age, setAge] = useState('')
+
 
 
     const { createUser, signInWithGoogle, signInWithFacebook, signInWithApple } = useUserAuth()
@@ -58,6 +68,26 @@ const SignUp = (Props) => {
             console.log(error);
         }
     }
+
+    useEffect(() => {
+        // Fetch the country data when the component mounts
+        fetchCountries();
+    }, []);
+
+    const fetchCountries = async () => {
+        try {
+            const response = await axios.get('https://restcountries.com/v2/all');
+            const countryData = response.data.map((country) => ({
+                name: country.name,
+                code: country.alpha2Code,
+            }));
+            setCountries(countryData);
+        } catch (error) {
+            console.error('Error fetching countries:', error);
+        }
+    };
+
+
     return (
         <section className="signup section">
             <div className="signup__container container">
@@ -68,8 +98,74 @@ const SignUp = (Props) => {
                             <div className="signup__user">
                                 <input type="email" id="email" name='email' className="login__input-field" placeholder={t("signup__form__email")} value={email} onChange={(e) => setEmail(e.target.value)} />
                                 <input type="text" id="user" name='username' className="login__input-field" placeholder={t("signup__form__username")} value={username} onChange={(e) => setUsername(e.target.value)} />
-                                <input type="password" id="password" name='password' className="signup__input-field" placeholder={t("signup__form__password")} value={password} onChange={(e) => setPassword(e.target.value)} />
-                                <input type="password" id="password" name="confirmPassword" className="signup__input-field" placeholder={t("signup__form__password_again")} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                                <div className="signup__passwords">
+                                    <input type="password" id="password" name='password' className="signup__input-field" placeholder={t("signup__form__password")} value={password} onChange={(e) => setPassword(e.target.value)} />
+                                    <input type="password" id="password" name="confirmPassword" className="signup__input-field" placeholder={t("signup__form__password_again")} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                                </div>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" className="signup__input-field" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} />
+                                <div className="age__country">
+                                    <div className="age__gender">
+                                        <div className="age__select">
+                                            <h3>Gender</h3>
+                                            <select
+                                                className={`dropdown-select ${formErrors.city ? 'error' : ''}`}
+                                                name="gender"
+                                                value={gender}
+                                                onChange={(e) => setGender(e.target.value)} required
+                                            >
+                                                <option value="" disabled>
+                                                    Gender
+                                                </option>
+                                                <option value="male">Male</option>
+                                                <option value="female">Female</option>
+                                            </select>
+                                            {formErrors.city && <p className="error-message">{formErrors.city}</p>}
+                                            <div className="dropdown-icon">▼</div>
+                                        </div>
+                                    </div>
+                                    <div className="age__select">
+                                        <h3>Age</h3>
+                                        <select
+                                            className={`dropdown-select ${formErrors.budget ? "error" : ""}`}
+                                            name="age"
+                                            value={age}
+                                            onChange={(e) => setAge(e.target.value)} required
+                                        >
+                                            <option value="age" disabled>
+                                                Age
+                                            </option>
+                                            {Array.from({ length: 56 }, (_, index) => index + 15).map((value) => (
+                                                <option key={value} value={value}>
+                                                    {value}
+                                                </option>
+                                            ))}
+                                        </select>
+                                        {formErrors.budget && <p className="error-message">{formErrors.budget}</p>}
+                                        <div className="dropdown-icon">▼</div>
+                                    </div>
+                                    <div className="age__country">
+                                        <div className="age__select dropdown__country">
+                                            <h3>Country</h3>
+                                            <select
+                                                className={`dropdown-select  ${formErrors.country ? 'error' : ''}`}
+                                                name="country"
+                                                value={country}
+                                                onChange={(e) => setCountry(e.target.value)} required
+                                            >
+                                                <option value="" disabled>
+                                                    Select Country
+                                                </option>
+                                                {countries.map((country) => (
+                                                    <option key={country.code} value={country.code}>
+                                                        {country.name}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            {formErrors.country && <p className="error-message">{formErrors.country}</p>}
+                                            <div className="dropdown-icon-country">▼</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="signup__button">
                                 <div className="signup__button_manual">

@@ -1,5 +1,5 @@
 .signup {
-    height: 85vh;
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,8 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--title-color);
+    border: 1px solid var(--border-text-color);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 
@@ -67,14 +68,15 @@
 
 .signup__user input {
     background: transparent;
-    border-bottom: 1px solid var(--title-color);
+    border-bottom: 1px solid var(--border-text-color);
     padding: 0.7rem;
     color: var(--title-color);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .signup__user input:focus {
-    outline: 0.3px solid var(--accent-color);
-    background: var(--body-color);
+    outline: none;
+    border-bottom: 1px solid var(--title-color);
 
 }
 
@@ -144,4 +146,76 @@
 .signup__button_facebook button {
     background-color: var(--title-color);
     color: var(--overlay-color);
+}
+
+.signup__passwords {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.signup__passwords input {
+    width: 32.5vw;
+}
+
+.signup__passwords input:focus {
+    outline: none;
+}
+
+.age__country {
+    display: flex;
+    gap: 1.7rem;
+}
+
+
+.age__select {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.dropdown-icon {
+    position: absolute;
+    top: 75%;
+    left: 8.5rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--title-color);
+    font-size: 0.8rem;
+}
+
+.dropdown-select {
+    appearance: none;
+    border: none;
+    background: transparent;
+    padding: 1.6rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.age__select select {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 0rem;
+    border: 1px solid var(--border-text-color);
+    background: transparent;
+    color: var(--title-color);
+    outline: none;
+    font-size: var(--normal-font-size);
+    transition: 0.3s ease;
+    width: 10.9vw;
+}
+
+.dropdown__country select {
+    width: 15vw;
+}
+
+.dropdown-icon-country {
+    position: absolute;
+    top: 75%;
+    left: 11.5rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--title-color);
+    font-size: 1rem;
 }

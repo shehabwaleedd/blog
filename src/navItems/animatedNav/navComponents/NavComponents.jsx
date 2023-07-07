@@ -49,6 +49,21 @@ const NavComponents = (Props) => {
                                 <h1>FAQS</h1>
                             </Link>
                         </div>
+                        <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
+                            <Link to="/faqs">
+                                <h1>{t("navbar__contact")}</h1>
+                            </Link>
+                        </div>
+                        <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
+                            <Link to="/faqs">
+                                <h1>Partnerships</h1>
+                            </Link>
+                        </div>
+                        <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
+                            <Link to="/faqs">
+                                <h1>Latest Updates</h1>
+                            </Link>
+                        </div>
                     </div>
                 )}
             </AnimatePresence>

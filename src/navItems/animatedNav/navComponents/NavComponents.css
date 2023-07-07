@@ -1,6 +1,8 @@
 .nav__links-links {
   opacity: 0;
   height: 0;  
+  right: 18rem;
+  top: 30rem;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
