@@ -5,7 +5,7 @@ import Search from "../../../components/search/Search";
 import Toggle from "../../../navItems/darkmode/Toggle";
 import DropDownMenu from "../../../navItems/animatedNav/dropDownMenu/DropDownMenu";
 
-function FilteredCategoriesTabs({ categories, selectedCategory, onCategoryClick, toggleTheme, navOpen  }) {
+function FilteredCategoriesTabs({ categories, selectedCategory, onCategoryClick, toggleTheme, navOpen,language, setLanguage, languageExpanded, setLanguageExpanded  }) {
 
   let [activeTab, setActiveTab] = useState(categories[0]);
 
@@ -31,7 +31,7 @@ function FilteredCategoriesTabs({ categories, selectedCategory, onCategoryClick,
         ))}
         <div className="category__switches">
         <Toggle toggleTheme={toggleTheme} navOpen={navOpen} />
-        <DropDownMenu navOpen={navOpen} />
+        <DropDownMenu navOpen={navOpen}  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}/>
         </div>
       </div>
     </>

@@ -11,8 +11,9 @@ import EditPage from '../../pages/blog/blog/details/edit/EditPost';
 import { useUserAuth } from '../../components/authContext/AuthContext';
 import Account from '../../pages/account/Account';
 import About from '../../pages/about/About';
+import Faqs from '../../pages/faqs/Faqs';
 
-const MainRoutes = ({navOpen, setNavOpen, toggleTheme}) => {
+const MainRoutes = ({navOpen, setNavOpen, toggleTheme, language, setLanguage, languageExpanded, setLanguageExpanded}) => {
   const location = useLocation();
   const { user } = useUserAuth();
 
@@ -23,9 +24,10 @@ const MainRoutes = ({navOpen, setNavOpen, toggleTheme}) => {
     { path: '/passwordreset', element: <PasswordReset /> },
     { path: '/account', element: <Account /> },
     { path: '/about', element: <About />},
+    { path: '/faqs', element: <Faqs />},
     {
       path: '/',
-      element: user ? <Blog navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
+      element: user ? <Blog  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}  navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
     },
     { path: '/filtered/:category', element: <FilteredCategories /> },
     { path: '/details/:id', element: <DetailsPages /> },

@@ -7,8 +7,9 @@ import FilteredCategoriesTabs from "../filteredCategories/FilteredCategoriesTabs
 import { AnimatePresence, motion } from "framer-motion";
 import Loading from "../../loading/Loading.tsx";
 import Search from "../../../components/search/Search";
+import { t } from "i18next";
 
-function Blog({ navOpen, toggleTheme }) {
+function Blog({ navOpen, setNavOpen, toggleTheme, language, setLanguage, languageExpanded, setLanguageExpanded}) {
   const [postLists, setPostList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const postsCollectionRef = collection(db, "posts");
@@ -101,15 +102,16 @@ function Blog({ navOpen, toggleTheme }) {
             categories={categories}
             selectedCategory={selectedCategory}
             onCategoryClick={handleCategoryClick}
+            language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}
           />
-          <Search setSearchQuery={setSearchQuery} />
+          <Search setSearchQuery={setSearchQuery} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}/>
           {isLoading ? (
             <Loading height={70} />
           ) : (
             <div className="blog__container">
               <div className="menu">
                 <motion.div className="text-container">
-                  <h1 className="work__work-text">articles</h1>
+                  <h1 className="work__work-text">{t("navbar__articles")}</h1>
                   <div className="scrollbarr">
                     {filteredPosts.map((item) => (
                       <div className="work__title" key={item.id} onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>

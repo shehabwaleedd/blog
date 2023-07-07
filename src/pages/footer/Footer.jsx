@@ -1,5 +1,6 @@
 import React from 'react'
 import './Footer.css'
+import { t } from 'i18next'
 
 const Footer = () => {
     return (
@@ -9,8 +10,8 @@ const Footer = () => {
                     <h1>lumos</h1>
                 </div>
                 <div className="footer__credits">
-                    <span>© 2023 lumos. All rights reserved.</span>
-                    <p>Created and Desgined by <a href="https://shehabwaleedd.vercel.app/" target='__blank'>Shehab Waleed</a></p>
+                    <span>© 2023 lumos. {t("footer__credits")}</span>
+                    <p>{t("footer__created_designed_by")} <a href="https://shehabwaleedd.vercel.app/" target='__blank'>Shehab Waleed</a></p>
                 </div>
             </div>
         </footer>

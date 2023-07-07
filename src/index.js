@@ -20,7 +20,7 @@ i18next
     debug: false,
     // Options for language detector
     detection: {
-      order: ['path', 'cookie', 'htmlTag'],
+      order: ['cookie', 'path', 'htmlTag'],
       caches: ['cookie'],
     },
     // react: { useSuspense: false },
@@ -28,6 +28,7 @@ i18next
       loadPath: '/assets/locales/{{lng}}/translation.json',
     },
   })
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

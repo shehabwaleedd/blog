@@ -5,6 +5,7 @@ import { useUserAuth } from '../../components/authContext/AuthContext';
 import { db } from '../../firebase-config';
 import "./Account.css"
 import { motion } from 'framer-motion';
+import { t } from 'i18next';
 
 const Account = () => {
     const { user, logOut } = useUserAuth();
@@ -52,7 +53,7 @@ const Account = () => {
     return (
         <motion.section className="account"  initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.55, ease: "easeOut" }} exit={{ opacity: 0 }}>
             <div className="account__upper">
-                <h1>Personal Information</h1>
+                <h1>{t("account__settings")}</h1>
                 <button onClick={handleLogout}>
                     <h1>Logout</h1>
                 </button>
@@ -71,16 +72,16 @@ const Account = () => {
                             <div className="left__bottom_content">
                                 <ul>
                                     <li onClick={handlePersonalOpen}>
-                                        <h1>Personal Information</h1>
+                                        <h1>{t("account__personal_info")}</h1>
                                     </li>
                                     <li>
-                                        <h1>Change Password</h1>
+                                        <h1>{t("account__change_password")}</h1>
                                     </li>
                                     <li>
-                                        <h1>My Posts</h1>
+                                        <h1>{t("account__my_posts")}</h1>
                                     </li>
                                     <li>
-                                        <h1>Analytics</h1>
+                                        <h1>{t("account__analytics")}</h1>
                                     </li>
                                 </ul>
                             </div>
@@ -91,15 +92,15 @@ const Account = () => {
                     {user && handlePersonalOpen && (
                         <div className="right__content">
                             <div className="right__header">
-                                <h1>Personal Information</h1>
-                                <p>Manage your personal information, including phone numbers and email address where you can be contacted</p>
+                                <h1>{t("account__personal_info")}</h1>
+                                <p>{t("account__subtitle")}</p>
                             </div>
                             <div className="right__bottom">
                                 <div className="right__bottom_cards">
                                     <div className="right__bottom_card">
                                         <div className="right__bottom_card_header">
                                             <div className="right__bottom_card_name_icon">
-                                                <h1>Name</h1>
+                                                <h1>{t("account__name")}</h1>
                                                 <i className='bx bx-user'></i>
                                             </div>
                                             <div className="right__bottom_card_text">
@@ -110,7 +111,7 @@ const Account = () => {
                                     <div className="right__bottom_card">
                                         <div className="right__bottom_card_header">
                                             <div className="right__bottom_card_name_icon">
-                                                <h1>Date Of Birth</h1>
+                                                <h1>{t("account__date_of_birth")}</h1>
                                                 <i className='bx bx-calendar-alt'></i>
                                             </div>
                                             <div className="right__bottom_card_text">
@@ -121,7 +122,7 @@ const Account = () => {
                                     <div className="right__bottom_card">
                                         <div className="right__bottom_card_header">
                                             <div className="right__bottom_card_name_icon">
-                                                <h1>Country/Region</h1>
+                                                <h1>{t("account__country/region")}</h1>
                                                 <i className='bx bx-map'></i>
                                             </div>
                                             <div className="right__bottom_card_text">
@@ -132,7 +133,7 @@ const Account = () => {
                                     <div className="right__bottom_card">
                                         <div className="right__bottom_card_header">
                                             <div className="right__bottom_card_name_icon">
-                                                <h1>Language</h1>
+                                                <h1>{t("language")}</h1>
                                                 <i className='bx bx-globe'></i>
                                             </div>
                                             <div className="right__bottom_card_text">
@@ -143,7 +144,7 @@ const Account = () => {
                                     <div className="right__bottom_card">
                                         <div className="right__bottom_card_header">
                                             <div className="right__bottom_card_name_icon">
-                                                <h1>Contact</h1>
+                                                <h1>{t("navbar__contact")}</h1>
                                                 <i className='bx bx-chat'></i>
                                             </div>
                                             <div className="right__bottom_card_text">

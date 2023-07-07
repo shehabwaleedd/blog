@@ -45,12 +45,7 @@ const NavComponents = (Props) => {
                 {user && (
                     <div className='nav__links__container'>
                         <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                            <Link to="/about" >
-                                <h1>{t("navbar__about")}</h1>
-                            </Link>
-                        </div>
-                        <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                            <Link to="/contact">
+                            <Link to="/faqs">
                                 <h1>FAQS</h1>
                             </Link>
                         </div>
