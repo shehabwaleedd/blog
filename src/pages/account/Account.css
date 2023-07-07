@@ -11,17 +11,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100vw;
+    width: 97vw;
     border-bottom: 0.1px solid var(--border-text-color);
     padding: 2rem 2rem;
     position: relative;
-    z-index: 99999;
+    z-index: 999998;
 }
 
 .account__upper button h1 {
     color: #ee7575;
     text-transform: uppercase;
     font-size: 2rem;
+    position: relative;
+    z-index: 999998;
 }
 
 .account__upper  h1 {

@@ -16,24 +16,26 @@ const Toggle = ({ toggleTheme, navOpen }) => {
     setIsOn(!isOn);
     toggleTheme(); // Invoke the function
   };
-  
+  const [isHovered, setIsHovered] = useState(false);
 
+  const handleHover = () => {
+    setIsHovered(!isHovered);
+  };
 
   return (
-      <motion.div 
-        onClick={toggleSwitch} 
-        layout 
-        transition={spring}
-        className={navOpen ? "toggle__container spin" : "toggle__container"}
-        style={{transitionDuration: navOpen ? "1s" : "1.5s", paddingTop: "0.2rem"}}
-      >
-        {isOn ? (
-          <BiSun />
-        ) : (
-          <BiMoon />
-        )}
-      </motion.div>
+    <div
+      className={`circle ${isHovered ? 'hovered' : ''}`}
+      onMouseEnter={handleHover}
+      onMouseLeave={handleHover}
+      onClick={toggleSwitch}
+    >
+      <div className="half-circle blackcircle"></div>
+      <div className="half-circle whitecircle"></div>
+    </div>
   );
+
+
+
 };
 
 export default Toggle;

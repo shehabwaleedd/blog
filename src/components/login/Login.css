@@ -133,7 +133,7 @@
 
 .google__button {
     background-color: var(--title-color);
-    color: black;
+    color: var(--container-color);
     border: 0.001px solid var(--text-color);
 
 }
