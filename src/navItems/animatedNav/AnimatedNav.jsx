@@ -96,18 +96,25 @@ const AnimatedNav = ({ setIsMobile, isMobile, navOpen, setNavOpen, toggleTheme }
                 <h1>lumos</h1>
               </Link>
               <div className={`${navOpen ? "square4OpenMobile" : "square4Mobile"}`} onClick={() => setNavOpen(!navOpen)}>
-                <div className="menu__container" >
+                <div className="menu__container-mobile" >
                   <div className={navOpen ? "hamBox-mobile hamBoxOpen" : "hamBox-mobile"}>
                     <span className={navOpen ? "lineTop-mobile spin" : "lineTop-mobile"}></span>
                     <span className={navOpen ? "lineBottom-mobile spin" : "lineBottom-mobile"}></span>
                   </div>
                 </div>
               </div>
+              <Link to="/createpost" className={`${createOpen ? "square5Open-mobile" : "square5-mobile"}`} onClick={handleCreateOpen}>
+                <div>
+                  <div className="create__container-mobile">
+                    {user ? <h1 className='createpost' style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__create_post")}</h1> : <h1 style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>{t("navbar__register")}</h1>}
+                  </div>
+                </div>
+              </Link>
             </div>
           </nav>
           <div className="nav-overlay" style={{ right: navOpen ? "0%" : "-200%", }}>
             <div className="nav__links">
-              <NavComponents isMobile={isMobile} setIsMobile={setIsMobile}  navOpen={navOpen} />
+              <NavComponents  isMobile={isMobile} setIsMobile={setIsMobile} navOpen={navOpen} />
             </div>
           </div>
         </>
@@ -169,7 +176,7 @@ const AnimatedNav = ({ setIsMobile, isMobile, navOpen, setNavOpen, toggleTheme }
           </nav>
           <div className="nav-overlay" style={{ right: navOpen ? "0%" : "-200%", }}>
             <div className="nav__links">
-              <NavComponents isMobile={isMobile} setIsMobile={setIsMobile} navOpen={navOpen} />
+              <NavComponents navOpen={navOpen} />
             </div>
           </div>
         </>

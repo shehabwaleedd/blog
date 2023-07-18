@@ -110,6 +110,38 @@
   padding-top: 0.5rem;
   text-transform: capitalize;
 }
+.work__title-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 97%;
+  text-align: left;
+  position: relative;
+
+}
+
+.work__title-mobile a {
+  font-size: var(--smaller-font-size);
+  font-weight: var(--font-medium);
+  font-family: "Satoshi", sans-serif;
+  color: var(--accent-color);
+}
+
+.work__title-mobile h1 {
+  width: 100%;
+  color: var(--title-color);
+  font-size: 2rem;
+  font-family: "Krona One", sans-serif;
+  top: 0;
+  font-weight: bolder;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  white-space: nowrap;
+  cursor: pointer;
+  padding-top: 0.5rem;
+  text-transform: capitalize;
+}
 
 .work__title h1::before {
   position: absolute;
@@ -122,6 +154,18 @@
 }
 
 .work__title h1::after {
+  content: "";
+  position: absolute;
+  left: 0rem;
+  top: 4.5rem;
+  width: 97vw;
+  height: 0.5px;
+  background: var(--border-text-color);
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: all 5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.work__title-mobile h1::after {
   content: "";
   position: absolute;
   left: 0rem;
@@ -294,5 +338,17 @@
     position: absolute;
     top: -20rem;
     left: 10rem;
+  }
+}
+
+@media (max-width: 416px) {
+  .work__work-text {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+  .work__title-mobile h1 {
+    font-size: 1.5rem;
+    padding-top: 1.2rem;
+    padding-bottom: 0.4rem;
   }
 }

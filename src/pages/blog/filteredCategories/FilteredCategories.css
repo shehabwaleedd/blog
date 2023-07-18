@@ -210,3 +210,32 @@
     width: 0%;
     height: 100%;
 }
+
+
+@media (max-width: 414px) {
+    .category__switches {
+        position: absolute;
+        top: 10rem;
+        right: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+    .category__button {
+        font-weight: var(--font-medium);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
+        background-color: transparent;
+        position: relative;
+        cursor: pointer;
+        color: var(--title-color);
+        font-size: 0.85rem;
+        letter-spacing: 0.1rem;
+        font-family: "Satoshi-Medium", sans-serif;
+        text-transform: lowercase;
+    }
+
+
+
+}

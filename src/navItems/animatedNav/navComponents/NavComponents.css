@@ -9,8 +9,18 @@
   right: 15rem;
   top: -30rem;
 }
+.nav__links-links-mobile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 0;
+  opacity: 0;
+  right: 0rem;
+}
 
-.nav__links-links.open {
+.nav__links-links-mobile.open {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -18,7 +28,7 @@
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
   height: 70vh;
   opacity: 1;
-  right: 18rem;
+  right: -4em;
   top: 30rem;
   margin-bottom: 10rem;
 
@@ -35,6 +45,17 @@
   text-align: start;
   align-content: flex-start;
 }
+.nav__links__container-mobile {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: start;
+  align-content: flex-start;
+}
 
 .nav__links-links h1 {
   font-size: 5rem;
@@ -44,8 +65,15 @@
   position: absolute;
   top: -27rem;
   right: 8rem;
-
-
+}
+.nav__links-links-mobile h1 {
+  font-size: 2rem;
+  color: var(--text-color);
+  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+  text-transform: lowercase;
+  position: absolute;
+  top: -27rem;
+  right: 8rem;
 }
 
 .nav__links-links h1:hover {

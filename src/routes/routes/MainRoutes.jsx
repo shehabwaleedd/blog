@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation, Navigate, useRoutes } from 'react-router-dom';
+import {Navigate, useRoutes } from 'react-router-dom';
 import Blog from '../../pages/blog/blog/Blog';
 import Login from '../../components/login/Login';
 import SignUp from '../../components/signUp/SignUp';
@@ -13,32 +13,31 @@ import Account from '../../pages/account/Account';
 import About from '../../pages/about/About';
 import Faqs from '../../pages/faqs/Faqs';
 
-const MainRoutes = ({navOpen, setNavOpen, toggleTheme, language, setLanguage, languageExpanded, setLanguageExpanded}) => {
-  const location = useLocation();
+const MainRoutes = ({navOpen, isMobile, setIsMobile, setNavOpen, toggleTheme, language, setLanguage, languageExpanded, setLanguageExpanded}) => {
   const { user } = useUserAuth();
 
   // Custom route configuration
   const routeConfig = [
-    { path: '/login', element: <Login /> },
-    { path: '/signup', element: <SignUp /> },
-    { path: '/passwordreset', element: <PasswordReset /> },
-    { path: '/account', element: <Account /> },
-    { path: '/about', element: <About />},
-    { path: '/faqs', element: <Faqs />},
+    { path: '/login', element: <Login  isMobile={isMobile} setIsMobile={setIsMobile}/> },
+    { path: '/signup', element: <SignUp  isMobile={isMobile} setIsMobile={setIsMobile}/> },
+    { path: '/passwordreset', element: <PasswordReset  isMobile={isMobile} setIsMobile={setIsMobile}/> },
+    { path: '/account', element: <Account  isMobile={isMobile} setIsMobile={setIsMobile}/> },
+    { path: '/about', element: <About  isMobile={isMobile} setIsMobile={setIsMobile}/>},
+    { path: '/faqs', element: <Faqs  isMobile={isMobile} setIsMobile={setIsMobile}/>},
     {
       path: '/',
-      element: user ? <Blog  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}  navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
+      element: user ? <Blog  isMobile={isMobile} setIsMobile={setIsMobile}  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}  navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
     },
     { path: '/filtered/:category', element: <FilteredCategories  toggleTheme={toggleTheme} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}/> },
-    { path: '/details/:id', element: <DetailsPages /> },
+    { path: '/details/:id', element: <DetailsPages  isMobile={isMobile} setIsMobile={setIsMobile}/> },
     {
       path: '/createpost',
-      element: user ? <CreatePost /> : <Navigate to="/login" replace />,
+      element: user ? <CreatePost  isMobile={isMobile} setIsMobile={setIsMobile}/> : <Navigate to="/login" replace />,
     },
 
     {
       path: '/edit/:id',
-      element: user ? <EditPage /> : <Navigate to="/login" replace />,
+      element: user ? <EditPage  isMobile={isMobile} setIsMobile={setIsMobile}/> : <Navigate to="/login" replace />,
     },
   ];
 

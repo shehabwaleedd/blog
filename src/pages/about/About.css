@@ -85,5 +85,38 @@
     height: 10rem;
     object-fit: cover;
     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
+@media (max-width: 450px) {
+    .about__maker__img {
+        display: none;
+    }
+    .about__upper h1 {
+        padding-left: 0.5rem;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid var(--border-text-color);
+        width: 100vw;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        text-transform: lowercase;
+    }
+    .about__upper p {
+        padding-left: 0.5rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        width: 97vw;
+        color: var(--text-color);
+        text-align: justify;
+        font-family: "Satoshi-Italic";
+        text-transform: lowercase;
+        margin-bottom: 4rem;
+    }
+    .about__mission h1 {
+        text-align: start;
+        border-top: 1px solid var(--border-text-color);
+    }
+    .about__maker p {
+        margin-bottom: 0.4rem;
+    }
 }

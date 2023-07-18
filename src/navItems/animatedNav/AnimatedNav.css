@@ -14,7 +14,7 @@
 
 .navbar__container-mobile {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   height: 7vh;
 }
 
@@ -436,7 +436,7 @@
   background-color: transparent;
   cursor: pointer;
   position: relative;
-  padding-bottom: 2rem;
+
 }
 
 .square5 {
@@ -445,6 +445,16 @@
   justify-content: center;
   position: relative;
   width: 28.5vw;
+  text-align: center;
+  transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
+  cursor: pointer;
+}
+.square5-mobile {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  position: relative;
+  width: 18.5vw;
   text-align: center;
   transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
   cursor: pointer;
@@ -511,6 +521,12 @@
   align-items: center;
   cursor: pointer;
 }
+.menu__container-mobile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
 
 .create__container h1 {
   font-size: 1.3rem;
@@ -536,7 +552,7 @@
   cursor: pointer;
 }
 .logo-mobile {
-  width: 85vw;
+  width: 60vw;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -672,13 +688,13 @@
 
 .lineTop-mobile.spin {
   transform: rotate(45deg);
-  top: 0.35em;
+  top: -0.65em;
   background-color: var(--container-color);
 }
 
 .lineBottom-mobile.spin {
   transform: rotate(-45deg);
-  top: 0.35em;
+  top: -0.65em;
   background-color: var(--container-color);
 }
 
