@@ -9,6 +9,7 @@ import { storage } from "../../../../../firebase-config";
 import { v4 } from "uuid";
 import Loading from "../../../../loading/Loading.tsx";
 import "./EditPost.css";
+import {motion} from "framer-motion";
 
 const EditPage = () => {
   const { id } = useParams();
@@ -76,7 +77,11 @@ const EditPage = () => {
   }
 
   return (
-    <section className="edit ">
+    <motion.section section className="edit "
+    initial={{ opacity: 0, y: 100, transition: { delay: 0.3, staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}
+    animate={{ opacity: 1, y: 0, transition: { delay: 0.5, staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] } }}
+    exit={{ opacity: 0, y: 500, transition: { delay: 0.3, velocity: 2, staggerChildren: 1.5, duration: 1, ease: [0.42, 0, 0.58, 1] } }}
+    >
       <div className="edit__page">
         <div className="edit__container ">
           <form onSubmit={handleUpdate}>
@@ -110,7 +115,7 @@ const EditPage = () => {
           </form>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

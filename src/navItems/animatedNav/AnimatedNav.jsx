@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase-config";
 
-const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
+const AnimatedNav = ({ setIsMobile, isMobile, navOpen, setNavOpen, toggleTheme }) => {
 
   const { t } = useTranslation()
   const location = useLocation();
@@ -21,16 +21,6 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
   const [createOpen, setCreateOpen] = useState(false);
   const [postCount, setPostCount] = useState(0);
 
-
-  const handleLogout = async () => {
-    try {
-      await logOut()
-      navigate('/login')
-      console.log("logged out successfully")
-    } catch (e) {
-      console.log(e.message)
-    }
-  }
 
   useEffect(() => {
     const fetchPostCount = async () => {
@@ -81,73 +71,109 @@ const AnimatedNav = ({ navOpen, setNavOpen, toggleTheme }) => {
     // eslint-disable-next-line 
   }, [location, setNavOpen]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 468);
+    };
+
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   return (
 
 
     <>
-      <nav className='navbar'>
-        <div className="navbar__container">
-          <div className="logo square">
-            <h1>lumos</h1>
-          </div>
-          <Link to="/" className={`${articlesOpen ? "square1Open" : "square1"}`} onClick={handleArticlesOpen}>
-            <div>
-              <div className="articles__container">
-                <div className="squared2">
-                  <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__articles")}</h1>
-                  <div className="articles__count">
-                    <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative"}}>({postCount})</h1>
+      {isMobile ? (
+        <>
+          <nav className='navbar'>
+            <div className="navbar__container-mobile">
+              <Link to="/" className="logo-mobile square">
+                <h1>lumos</h1>
+              </Link>
+              <div className={`${navOpen ? "square4OpenMobile" : "square4Mobile"}`} onClick={() => setNavOpen(!navOpen)}>
+                <div className="menu__container" >
+                  <div className={navOpen ? "hamBox-mobile hamBoxOpen" : "hamBox-mobile"}>
+                    <span className={navOpen ? "lineTop-mobile spin" : "lineTop-mobile"}></span>
+                    <span className={navOpen ? "lineBottom-mobile spin" : "lineBottom-mobile"}></span>
                   </div>
                 </div>
               </div>
             </div>
-          </Link>
-          <Link to="/about" className={`${aboutOpen ? "square2Open" : "square2"}`} onClick={handleAboutOpen}>
-            <div className="about__container">
-              <div className="squared2">
-                <h1 style={{ color: aboutOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", top: "0"}}>{t("navbar__about")}</h1>
-              </div>
-            </div>
-          </Link>
-          <Link to={`${user ? "/account" : "/login"}`} className={`${accountOpen ? "square3Open" : "square3"}`} onClick={handleAccountOpen}>
-            <div >
-              <div className="account__container">
-                <div className="squared3">
-                  {user ? (
-                    <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative"}}>{t("navbar__account")}</h1>
-                  ) : (
-                    <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative"}}>{t("navbar__login")}</h1>
-                  )}
-                </div>
-              </div>
-            </div>
-          </Link>
-          <div className={`${navOpen ? "square4Open" : "square4"}`} onClick={() => setNavOpen(!navOpen)}>
-            <div className="menu__container" >
-              <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
-                <span className={navOpen ? "lineTop spin" : "lineTop"}></span>
-                <span className={navOpen ? "lineBottom spin" : "lineBottom"}></span>
-              </div>
+          </nav>
+          <div className="nav-overlay" style={{ right: navOpen ? "0%" : "-200%", }}>
+            <div className="nav__links">
+              <NavComponents isMobile={isMobile} setIsMobile={setIsMobile}  navOpen={navOpen} />
             </div>
           </div>
-          <Link to="/createpost" className={`${createOpen ? "square5Open" : "square5"}`}  onClick={handleCreateOpen}>
-            <div>
-              <div className="create__container">
-                {user ? <h1 className='createpost' style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative"}}>{t("navbar__create_post")}</h1> : <h1 style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>{t("navbar__register")}</h1>}
+        </>
+      ) : (
+        <>
+          <nav className='navbar'>
+            <div className="navbar__container">
+              <div className="logo square">
+                <h1>lumos</h1>
               </div>
+              <Link to="/" className={`${articlesOpen ? "square1Open" : "square1"}`} onClick={handleArticlesOpen}>
+                <div>
+                  <div className="articles__container">
+                    <div className="squared2">
+                      <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__articles")}</h1>
+                      <div className="articles__count">
+                        <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>({postCount})</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <Link to="/about" className={`${aboutOpen ? "square2Open" : "square2"}`} onClick={handleAboutOpen}>
+                <div className="about__container">
+                  <div className="squared2">
+                    <h1 style={{ color: aboutOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", top: "0" }}>{t("navbar__about")}</h1>
+                  </div>
+                </div>
+              </Link>
+              <Link to={`${user ? "/account" : "/login"}`} className={`${accountOpen ? "square3Open" : "square3"}`} onClick={handleAccountOpen}>
+                <div >
+                  <div className="account__container">
+                    <div className="squared3">
+                      {user ? (
+                        <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__account")}</h1>
+                      ) : (
+                        <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__login")}</h1>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <div className={`${navOpen ? "square4Open" : "square4"}`} onClick={() => setNavOpen(!navOpen)}>
+                <div className="menu__container" >
+                  <div className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}>
+                    <span className={navOpen ? "lineTop spin" : "lineTop"}></span>
+                    <span className={navOpen ? "lineBottom spin" : "lineBottom"}></span>
+                  </div>
+                </div>
+              </div>
+              <Link to="/createpost" className={`${createOpen ? "square5Open" : "square5"}`} onClick={handleCreateOpen}>
+                <div>
+                  <div className="create__container">
+                    {user ? <h1 className='createpost' style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__create_post")}</h1> : <h1 style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>{t("navbar__register")}</h1>}
+                  </div>
+                </div>
+              </Link>
             </div>
-          </Link>
-        </div>
-      </nav>
-      <div className="nav-overlay" style={{
-        right: navOpen ? "0%" : "-200%",
-
-
-      }}>
-        <div className="nav__links">
-          <NavComponents navOpen={navOpen} />
-        </div>
-      </div>
+          </nav>
+          <div className="nav-overlay" style={{ right: navOpen ? "0%" : "-200%", }}>
+            <div className="nav__links">
+              <NavComponents isMobile={isMobile} setIsMobile={setIsMobile} navOpen={navOpen} />
+            </div>
+          </div>
+        </>
+      )}
     </>
   )
 }

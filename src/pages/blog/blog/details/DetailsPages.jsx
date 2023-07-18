@@ -9,8 +9,9 @@ import { useUserAuth } from "../../../../components/authContext/AuthContext"
 import { auth, db } from "../../../../firebase-config";
 import ScrollAnimation from "./ScrollAnimation";
 import Loading from "../../../loading/Loading.tsx";
-import {BiX} from "react-icons/bi";
-import {AiFillEdit} from "react-icons/ai";
+import { BiX } from "react-icons/bi";
+import { AiFillEdit } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 
 export const DetailsPages = () => {
@@ -56,7 +57,11 @@ export const DetailsPages = () => {
   return (
     <>
       <ScrollAnimation />
-      <div className="blog__details">
+      <motion.div className="blog__details"
+        initial={{ opacity: 0, y: 100, transition: { delay: 0.3, staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}
+        animate={{ opacity: 1, y: 0, transition: { delay: 0.5, staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] } }}
+        exit={{ opacity: 0, y: 500, transition: { delay: 0.3, velocity: 2, staggerChildren: 1.5, duration: 1, ease: [0.42, 0, 0.58, 1] } }}
+      >
         <div className='blog__card_details'>
           <div className='blog__image_container'>
             <img src={post.imageUrls} alt='' />
@@ -68,12 +73,12 @@ export const DetailsPages = () => {
             <div className="blog__details_button">
               {auth.currentUser?.uid === post.author.id && (
                 <div className="blog__details_button-delete">
-                  <button className="button__delete" onClick={() => { deletePost(post.id) }}><BiX style={{fontSize: "2rem"}}/></button>
+                  <button className="button__delete" onClick={() => { deletePost(post.id) }}><BiX style={{ fontSize: "2rem" }} /></button>
                 </div>
               )}
               <div className="blog__details_button-edit">
                 {auth.currentUser?.uid === post.author.id && (
-                  <button className="button__edit" onClick={handleEditClick}><AiFillEdit style={{fontSize: "2rem", color: "var(--container-color"}}/></button>
+                  <button className="button__edit" onClick={handleEditClick}><AiFillEdit style={{ fontSize: "2rem", color: "var(--container-color" }} /></button>
                 )}
               </div>
             </div>
@@ -88,13 +93,13 @@ export const DetailsPages = () => {
           <div className='post__date-details container'>
             <div className="details__post__date-imgname">
               <div className="details__post__date_imgname-combined">
-                <img src={post.photoURL} alt=""/>
+                <img src={post.photoURL} alt="" />
                 <span className="blog__post-author">@{post.author.name}</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   )
 }

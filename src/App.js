@@ -9,6 +9,9 @@ import ScrollUp from './components/scrollup/ScrollUp';
 import Footer from './pages/footer/Footer';
 import i18next from 'i18next';
 
+import { Routes, Route, useLocation } from 'react-router-dom';
+
+
 export const ThemeContext = createContext(null);
 
 function App() {
@@ -16,6 +19,8 @@ function App() {
   const [navOpen, setNavOpen] = useState(false);
   const [language, setLanguage] = useState(i18next.language);
   const [languageExpanded, setLanguageExpanded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const location = useLocation();
   // const toggleTheme = () => {
   //   theme === 'dark' ? setTheme('light') : setTheme('dark');
   // };
@@ -27,15 +32,17 @@ function App() {
 
   return (
     <div className="App" id={theme}>
-            <AnimatedNav navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/>
-            <ThemeContext.Provider value={{ theme, toggleTheme }}>
-              <AnimatePresence>
-                <MainRoutes navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded} />
-              </AnimatePresence>
-              <ScrollUp />
-              <Footer />
-            </ThemeContext.Provider>
-      </div>
+      <AnimatedNav isMobile={isMobile} setIsMobile={setIsMobile} navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme} />
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <AnimatePresence mode='wait'>
+          <Routes location={location} key={location.pathname} >
+            <Route path='/*' element={<MainRoutes isMobile={isMobile} setIsMobile={setIsMobile} navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded} />} />
+          </Routes>
+        </AnimatePresence>
+        <ScrollUp />
+        <Footer />
+      </ThemeContext.Provider>
+    </div>
   );
 }
 

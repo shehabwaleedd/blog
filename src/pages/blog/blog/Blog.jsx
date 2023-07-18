@@ -77,7 +77,6 @@ function Blog({ navOpen, setNavOpen, toggleTheme, language, setLanguage, languag
   const handleMouseEnter = (postId) => {
     setHoveredPostId(postId);
     setIsImageVisible(true);
-
   };
 
   const handleMouseLeave = () => {
@@ -90,10 +89,9 @@ function Blog({ navOpen, setNavOpen, toggleTheme, language, setLanguage, languag
     <React.Fragment>
       <motion.div
         data-barba="container"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, ease: "easeOut" }}
-        exit={{ opacity: 0 }}
+        initial={{ opacity: 0, y: 100, transition: { delay: 0.3, staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}
+        animate={{ opacity: 1, y: 0, transition: { delay: 0.5, staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] } }}
+        exit={{ opacity: 0, y: 500, transition: { delay: 0.3, velocity: 2, staggerChildren: 1.5, duration: 1, ease: [0.42, 0, 0.58, 1] } }}
       >
         <section className="blog">
           <FilteredCategoriesTabs

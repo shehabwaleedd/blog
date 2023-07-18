@@ -29,7 +29,7 @@ const MainRoutes = ({navOpen, setNavOpen, toggleTheme, language, setLanguage, la
       path: '/',
       element: user ? <Blog  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}  navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
     },
-    { path: '/filtered/:category', element: <FilteredCategories /> },
+    { path: '/filtered/:category', element: <FilteredCategories  toggleTheme={toggleTheme} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}/> },
     { path: '/details/:id', element: <DetailsPages /> },
     {
       path: '/createpost',
@@ -53,3 +53,4 @@ const MainRoutes = ({navOpen, setNavOpen, toggleTheme, language, setLanguage, la
 };
 
 export default MainRoutes;
+
