@@ -86,7 +86,7 @@ const AnimatedNav = ({ isTablet, setIsTablet, setIsMobile, isMobile, navOpen, se
   }, []);
   useEffect(() => {
     const handleResize = () => {
-      setIsTablet(window.innerWidth <= 835);
+      setIsTablet(window.innerWidth <= 935);
     };
 
     handleResize();

@@ -21,7 +21,7 @@ const MainRoutes = ({isTablet, setIsTablet,navOpen, isMobile, setIsMobile, setNa
     { path: '/login', element: <Login  isMobile={isMobile} setIsMobile={setIsMobile}/> },
     { path: '/signup', element: <SignUp  isMobile={isMobile} setIsMobile={setIsMobile}/> },
     { path: '/passwordreset', element: <PasswordReset  isMobile={isMobile} setIsMobile={setIsMobile}/> },
-    { path: '/account', element: <Account  isMobile={isMobile} setIsMobile={setIsMobile}/> },
+    { path: '/account', element: <Account isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile}/> },
     { path: '/about', element: <About  isMobile={isMobile} setIsMobile={setIsMobile}/>},
     { path: '/faqs', element: <Faqs  isMobile={isMobile} setIsMobile={setIsMobile}/>},
     {

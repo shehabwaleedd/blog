@@ -7,7 +7,14 @@
     height: 100vh;
 }
 
-
+.account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 130vh;
+}
 
 .accountt {
     display: flex;
@@ -23,7 +30,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 97vw;
+    width: 100vw;
     border-bottom: 0.1px solid var(--border-text-color);
     padding: 2rem 2rem;
     position: relative;
@@ -94,7 +101,11 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 40%;
+    width: 30vw;
+    flex: 1;
+    height: 100vh;
+    position: sticky;
+    top: -2rem;
 
 }
 .left__container-mobile {
@@ -231,6 +242,19 @@
     width: 100%;
     border-left: 0.1px solid var(--border-text-color);
     padding-left: 2rem;
+    flex: 3;
+
+}
+
+.right__content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: all 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+
 }
 .right__container-mobile {
     display: flex;
@@ -281,6 +305,21 @@
     gap: 2rem;
     width: 100%;
 }
+.right__bottom_cards-posts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 2rem;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.right__bottom_cards-posts::-webkit-scrollbar {
+    width: 0;
+    /* hide default scrollbar in Chrome and Safari */
+}
+
 .right__bottom_cards-mobile {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -370,6 +409,34 @@
 }
 
 .right__bottom_card_text h1 {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
+    font-family: "Satoshi-Regular";
+    letter-spacing: 0.1rem;
+    text-transform: lowercase;
+}
+
+.title__details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.title__details p {
+    color: var(--text-color);
+    font-size: 0.8rem;
+    font-weight: 400;
+    transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
+    font-family: "Satoshi-Regular";
+    letter-spacing: 0.1rem;
+    text-transform: lowercase;
+}
+
+.post__user_p {
     color: var(--text-color);
     font-size: 1rem;
     font-weight: 400;
