@@ -212,10 +212,10 @@
 }
 
 
-@media (max-width: 414px) {
+@media (max-width: 454px) {
     .category__switches {
         position: absolute;
-        top: 10rem;
+        top: 11rem;
         right: 1rem;
         display: flex;
         gap: 1rem;
@@ -247,5 +247,15 @@
         object-fit: cover;
         border-radius: 0.1375rem;
         margin-bottom: 1.25rem;
+    }
+}
+
+@media (min-width: 469px) {
+    .category__switches {
+        position: absolute;
+        top: 18rem;
+        right: 1rem;
+        display: flex;
+        gap: 1rem;
     }
 }

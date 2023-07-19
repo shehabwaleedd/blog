@@ -13,7 +13,7 @@ import Account from '../../pages/account/Account';
 import About from '../../pages/about/About';
 import Faqs from '../../pages/faqs/Faqs';
 
-const MainRoutes = ({navOpen, isMobile, setIsMobile, setNavOpen, toggleTheme, language, setLanguage, languageExpanded, setLanguageExpanded}) => {
+const MainRoutes = ({isTablet, setIsTablet,navOpen, isMobile, setIsMobile, setNavOpen, toggleTheme, language, setLanguage, languageExpanded, setLanguageExpanded}) => {
   const { user } = useUserAuth();
 
   // Custom route configuration
@@ -26,7 +26,7 @@ const MainRoutes = ({navOpen, isMobile, setIsMobile, setNavOpen, toggleTheme, la
     { path: '/faqs', element: <Faqs  isMobile={isMobile} setIsMobile={setIsMobile}/>},
     {
       path: '/',
-      element: user ? <Blog  isMobile={isMobile} setIsMobile={setIsMobile}  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}  navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
+      element: user ? <Blog isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile}  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}  navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
     },
     { path: '/filtered/:category', element: <FilteredCategories  toggleTheme={toggleTheme} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}/> },
     { path: '/details/:id', element: <DetailsPages  isMobile={isMobile} setIsMobile={setIsMobile}/> },
