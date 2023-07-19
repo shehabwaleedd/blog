@@ -6,6 +6,7 @@ import FilteredCategoriesTabs from "./FilteredCategoriesTabs";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Loading from "../../loading/Loading.tsx";
+import "./FilteredCategories.css";
 
 const FilteredCategories = ({ navOpen, toggleTheme }) => {
     const { category } = useParams();
@@ -59,7 +60,7 @@ const FilteredCategories = ({ navOpen, toggleTheme }) => {
                         return (
                             <motion.div layout animate={{ opacity: 1, scale: 1 }} initial={{ opacity: 0, scale: 1 }} exit={{ opacity: 0, scale: 1 }} transition={{ duration: 0.5 }} className="post__box post__boxItems" key={post.id}>
                                 <AnimatePresence>
-                                    <div className="blog__card_details">
+                                    <div className="blog__card_details_filter">
                                         <Link to={`/details/${post.id}`} className="link">
                                             <div className="post__img-filtered">
                                                 <img src={post.imageUrls} alt="" />

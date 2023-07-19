@@ -76,7 +76,7 @@
 
 .post__img-filtered img {
     width: 100%;
-    height: 150px;
+    height: 9.375rem;
     object-fit: cover;
     border-radius: 0.9375rem;
     margin-bottom: 1.25rem;
@@ -116,7 +116,7 @@
 }
 
 
-.blog__card_details {
+.blog__card_details_filter {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -236,6 +236,16 @@
         text-transform: lowercase;
     }
 
+    .filtered__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+    }
 
-
+    .post__img-filtered img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.1375rem;
+        margin-bottom: 1.25rem;
+    }
 }
