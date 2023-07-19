@@ -230,3 +230,21 @@
 .creat__image_wrap {
     position: relative;
 }
+
+@media (max-width: 466px) {
+    .create__input-title input {
+        width: 24rem;
+    }
+
+    .create__input-post textarea {
+        width: 24rem;
+    }
+
+    .create__input-image input {
+        width: 30rem;
+    }
+
+    .create__input-category select {
+        width: 24rem;
+    }
+}
