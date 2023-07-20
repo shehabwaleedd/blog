@@ -19,7 +19,6 @@ export const DetailsPages = () => {
   const postDocRef = doc(db, "posts", id);
   const [post, setPost] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("");
-  const { currentUser } = useUserAuth();
   const navigate = useNavigate();
 
 
