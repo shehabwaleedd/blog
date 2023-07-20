@@ -5,7 +5,6 @@ import { collection, query, where, getDocs, onSnapshot } from 'firebase/firestor
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useUserAuth } from '../../components/authContext/AuthContext';
 import { db, auth, storage } from '../../firebase-config';
-import "./Account.css"
 import { motion } from 'framer-motion';
 import { t } from 'i18next';
 import { updateProfile } from 'firebase/auth';
@@ -16,6 +15,7 @@ import PasswordOpen from './accountComponents/PasswordOpen';
 import PersonalInfo from './accountComponents/PersonalInfo';
 import UserPosts from './accountComponents/UserPosts';
 import LeftContainer from './accountComponents/LeftContainer';
+import AccountDesktop from './accountResponsive/accountDesktop/AccountDesktop';
 
 const Account = ({ isTablet, setIsTablet, isMobile, setIsMobile }) => {
     const { user, logOut, passwordReset } = useUserAuth();
@@ -146,46 +146,83 @@ const Account = ({ isTablet, setIsTablet, isMobile, setIsMobile }) => {
     }
 
     return (
-        <motion.section 
+        <motion.section
             initial={{ opacity: 0, y: 100, transition: { delay: 0.3, staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}
             animate={{ opacity: 1, y: 0, transition: { delay: 0.5, staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] } }}
             exit={{ opacity: 0, y: 500, transition: { delay: 0.3, velocity: 2, staggerChildren: 1.5, duration: 1, ease: [0.42, 0, 0.58, 1] } }}
         >
             {isMobile ? (
-                <AccountMobile isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile}/>
+                <AccountMobile
+                    isTablet={isTablet}
+                    setIsTablet={setIsTablet}
+                    isMobile={isMobile}
+                    setIsMobile={setIsMobile}
+                    user={user}
+                    handleLogout={handleLogout}
+                    handlePersonalOpen={handlePersonalOpen}
+                    handlePasswordOpen={handlePasswordOpen}
+                    handlePostsOpen={handlePostsOpen}
+                    handleAnalyticsOpen={handleAnalyticsOpen}
+                    personalOpen={personalOpen}
+                    passwordOpen={passwordOpen}
+                    postOpen={postOpen}
+                    analyticsOpen={analyticsOpen}
+                    userPosts={userPosts}
+                    postList={postList}
+                    handleImageChange={handleImageChange}
+                    email={email}
+                    setEmail={setEmail}
+                    error={error}
+                    handlePasswordReset={handlePasswordReset}
+                />
             ) : isTablet ? (
-                <AccountTablet isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile}/>
+                <AccountTablet
+                    isTablet={isTablet}
+                    setIsTablet={setIsTablet}
+                    isMobile={isMobile}
+                    setIsMobile={setIsMobile}
+                    user={user}
+                    handleLogout={handleLogout}
+                    handlePersonalOpen={handlePersonalOpen}
+                    handlePasswordOpen={handlePasswordOpen}
+                    handlePostsOpen={handlePostsOpen}
+                    handleAnalyticsOpen={handleAnalyticsOpen}
+                    personalOpen={personalOpen}
+                    passwordOpen={passwordOpen}
+                    postOpen={postOpen}
+                    analyticsOpen={analyticsOpen}
+                    userPosts={userPosts}
+                    postList={postList}
+                    handleImageChange={handleImageChange}
+                    email={email}
+                    setEmail={setEmail}
+                    error={error}
+                    handlePasswordReset={handlePasswordReset}
+                />
             ) : (
-                <section className='account'>
-                    <div className="account__upper">
-                        <h1 >{t("account__settings")}</h1>
-                        <button onClick={handleLogout}>
-                            <h1>Logout</h1>
-                        </button>
-                    </div>
-                    <div className="account__container">
-                        <LeftContainer  
-                            handlePersonalOpen={handlePersonalOpen}
-                            handlePasswordOpen={handlePasswordOpen}
-                            handlePostsOpen={handlePostsOpen}   
-                            handleImageChange={handleImageChange}
-                            user={user}
-                        />
-                        <div className="right__container">
-                            <div className="right__content">
-                                {user && personalOpen && user.metadata && (
-                                    <PersonalInfo user={user}/>
-                                )}
-                                {user && passwordOpen && (
-                                    <PasswordOpen handlePasswordReset={handlePasswordReset} email={email} setEmail={setEmail}/>
-                                )}
-                                {postOpen && (
-                                    <UserPosts userPosts={userPosts} />
-                                )}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <AccountDesktop
+                    isTablet={isTablet}
+                    setIsTablet={setIsTablet}
+                    isMobile={isMobile}
+                    setIsMobile={setIsMobile}
+                    user={user}
+                    handleLogout={handleLogout}
+                    handlePersonalOpen={handlePersonalOpen}
+                    handlePasswordOpen={handlePasswordOpen}
+                    handlePostsOpen={handlePostsOpen}
+                    handleAnalyticsOpen={handleAnalyticsOpen}
+                    personalOpen={personalOpen}
+                    passwordOpen={passwordOpen}
+                    postOpen={postOpen}
+                    analyticsOpen={analyticsOpen}
+                    userPosts={userPosts}
+                    postList={postList}
+                    handleImageChange={handleImageChange}
+                    email={email}
+                    setEmail={setEmail}
+                    error={error}
+                    handlePasswordReset={handlePasswordReset}
+                />
             )}
         </motion.section>
     );

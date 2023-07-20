@@ -1,0 +1,124 @@
+.account__upper-tablet {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 97vw;
+    border-bottom: 0.1px solid var(--border-text-color);
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 999998;
+}
+
+.account__upper-tablet button h1 {
+    color: #ee7575;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    position: relative;
+    z-index: 999998;
+}
+
+.account__container-tablet {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 2rem;
+    width: 100%;
+    gap: 2rem;
+    padding: 0 1rem;
+
+}
+.left__container-tablet {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    border-right: 1px solid var(--border-text-color);
+    padding-right: 3rem;
+
+}
+
+.left__content-tablet{
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 20vw;
+}
+
+.right__container-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-left: 1.6rem;
+    
+}
+
+.right__header-tablet {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 70vw;
+    padding: 1rem 0;
+    border-bottom: 0.1px solid var(--border-text-color);
+}
+
+.right__header-tablet p {
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    width: 90%;
+}
+
+.right__header-tablet h1 {
+    color: var(--title-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.right__bottom-tablet{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 2rem;
+}
+
+.right__bottom_cards-tablet {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 0rem;
+    width: 100%;
+}
+
+.right__bottom_card-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 0.5px solid var(--border-text-color);
+    transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
+
+}
+
+.right__bottom_card_name_icon-tablet {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 14vw;
+    gap: 1rem;
+    padding-bottom: 1em;
+}
+
+.account__upper-tablet  h1 {
+    color: var(--title-color);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
