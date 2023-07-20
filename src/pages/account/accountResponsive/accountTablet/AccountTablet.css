@@ -32,16 +32,16 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 100%;
     border-right: 1px solid var(--border-text-color);
     padding-right: 3rem;
+    margin-top: 0.8rem;
 
 }
 
 .left__content-tablet{
     align-items: flex-start;
     justify-content: flex-start;
-    width: 20vw;
+    width: 22vw;
 }
 
 .right__container-tablet {
@@ -50,7 +50,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding-left: 1.6rem;
+
     
 }
 

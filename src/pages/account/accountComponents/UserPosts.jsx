@@ -25,8 +25,8 @@ const UserPosts = ({ userPosts, isMobile, isTablet }) => {
                         <h1>{t('account__my_posts')}</h1>
                     </div>
                     {userPosts.length >= 0 ? (
-                        <div className="right__bottom">
-                            <div className="right__bottom_cards-posts">
+                        <div className="right__bottom-mobile">
+                            <div className="right__bottom_cards-mobile">
                                 {userPosts.map((post) => (
                                     <Link to={`/details/${post.id}`} key={post.id} className="right__bottom_card">
                                         <div className="title__details">

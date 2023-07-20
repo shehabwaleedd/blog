@@ -6,7 +6,7 @@ const PasswordOpen = ({ handlePasswordReset, setEmail, email, isTablet, isMobile
     return (
         <>
             {isMobile ? (
-                <>
+                <div className='right__content'>
                     <div className="right__header">
                         <h1>Change Password</h1>
                         <p>In Case You wanted to change your password or just forgot it, you can simply enter your Email Address and follow instructions to reset/change your password..</p>
@@ -26,7 +26,7 @@ const PasswordOpen = ({ handlePasswordReset, setEmail, email, isTablet, isMobile
                             </form>
                         </div>
                     </div>
-                </>
+                </div>
             ) : isTablet ? (
                 <>
                     <div className="right__header-tablet">
