@@ -3,9 +3,6 @@ import "./Details.css"
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { getDoc, deleteDoc, doc } from "firebase/firestore";
-// import { UserAuth } from "../../pages/authContext/AuthContext"
-import { useUserAuth } from "../../../../components/authContext/AuthContext"
-// import { auth, db } from "../../firebase-config";
 import { auth, db } from "../../../../firebase-config";
 import ScrollAnimation from "./ScrollAnimation";
 import Loading from "../../../loading/Loading.tsx";
