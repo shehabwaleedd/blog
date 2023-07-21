@@ -1,0 +1,133 @@
+.contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 72.1vh;
+    padding-bottom: 10rem;
+}
+
+.contact__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transform: translate(3rem, 2rem);
+    width: 70vw;
+}
+
+.contact__left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.left__upper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.left__upper h1 {
+    font-size: 1.5rem;
+    font-family: "Panchang-Medium", sans-serif;
+    color: var(--title-color);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.left__upper span a {
+    font-size: 1.2rem;
+    font-family: "Satoshi-Light", sans-serif;
+    color: var(--text-color);
+    text-transform: lowercase;
+}
+
+.left__lower {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 80%;
+}
+
+.left__lower h1 {
+    font-size: 1.5rem;
+    font-family: "Panchang-Medium", sans-serif;
+    color: var(--title-color);
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.lower__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.lower__content h1 {
+    font-size: 1rem;
+    font-family: "Satoshi-Medium", sans-serif;
+    color: var(--text-color);
+    text-transform: lowercase;
+}
+
+.lower__content span a {
+    font-size: 1rem;
+    font-family: "Satoshi-Light", sans-serif;
+    color: var(--text-color);
+    text-transform: lowercase;
+}
+
+.lower__content p {
+    font-size: 1rem;
+    font-family: "Satoshi-Light", sans-serif;
+    color: var(--text-color);
+    text-transform: lowercase;
+}
+
+.contact__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+@media (max-width: 470px) {
+    .contact__container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .contact__container h1 {
+        font-size: 0.9rem;
+    }
+
+    .contact__container p {
+        font-size: 0.8rem;
+    }
+
+    .contact__container span {
+        font-size: 0.8rem;
+    }
+
+    .contact__container span a {
+        font-size: 0.85rem;
+    }
+
+    .contact__right {
+        transform: translate(-2rem, 0rem);
+    }
+
+
+}

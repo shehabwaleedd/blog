@@ -38,7 +38,7 @@
 
 .category__switches {
     position: absolute;
-    top: 2rem;
+    top: -2rem;
     right: 10rem;
     display: flex;
     gap: 1rem;
@@ -219,6 +219,7 @@
         right: 1rem;
         display: flex;
         gap: 1rem;
+        z-index: 9999999999;
     }
     .category__button {
         font-weight: var(--font-medium);
@@ -253,9 +254,10 @@
 @media (min-width: 469px) {
     .category__switches {
         position: absolute;
-        top: 18rem;
+        top: 13rem;
         right: 1rem;
         display: flex;
         gap: 1rem;
+        z-index: 9999999999;
     }
 }

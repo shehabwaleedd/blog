@@ -12,6 +12,7 @@ import { useUserAuth } from '../../components/authContext/AuthContext';
 import Account from '../../pages/account/Account';
 import About from '../../pages/about/About';
 import Faqs from '../../pages/faqs/Faqs';
+import Contact from '../../pages/contact/Contact';
 
 const MainRoutes = ({isTablet, setIsTablet,navOpen, isMobile, setIsMobile, setNavOpen, toggleTheme, language, setLanguage, languageExpanded, setLanguageExpanded}) => {
   const { user } = useUserAuth();
@@ -24,6 +25,7 @@ const MainRoutes = ({isTablet, setIsTablet,navOpen, isMobile, setIsMobile, setNa
     { path: '/account', element: <Account isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile}/> },
     { path: '/about', element: <About  isMobile={isMobile} setIsMobile={setIsMobile}/>},
     { path: '/faqs', element: <Faqs  isMobile={isMobile} setIsMobile={setIsMobile}/>},
+    { path: '/contact', element: <Contact language={language} isMobile={isMobile} setIsMobile={setIsMobile}/>},
     {
       path: '/',
       element: user ? <Blog isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile}  language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}  navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme}/> : <Navigate to="/login" replace />,
