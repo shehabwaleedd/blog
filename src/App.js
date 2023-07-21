@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="App" id={theme}>
-      <AnimatedNav isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile} navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme} />
+      <AnimatedNav language={language} isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile} navOpen={navOpen} setNavOpen={setNavOpen} toggleTheme={toggleTheme} />
       <ThemeContext.Provider value={{ theme, toggleTheme }}>
         <AnimatePresence mode='wait'>
           <Routes location={location} key={location.pathname} >

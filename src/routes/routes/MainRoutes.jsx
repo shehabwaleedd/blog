@@ -18,8 +18,8 @@ const MainRoutes = ({isTablet, setIsTablet,navOpen, isMobile, setIsMobile, setNa
 
   // Custom route configuration
   const routeConfig = [
-    { path: '/login', element: <Login  isMobile={isMobile} setIsMobile={setIsMobile}/> },
-    { path: '/signup', element: <SignUp  isMobile={isMobile} setIsMobile={setIsMobile}/> },
+    { path: '/login', element: <Login language={language} isMobile={isMobile} setIsMobile={setIsMobile} isTablet={isTablet}/> },
+    { path: '/signup', element: <SignUp language={language} isMobile={isMobile} setIsMobile={setIsMobile} isTablet={isTablet}/> },
     { path: '/passwordreset', element: <PasswordReset  isMobile={isMobile} setIsMobile={setIsMobile}/> },
     { path: '/account', element: <Account isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile}/> },
     { path: '/about', element: <About  isMobile={isMobile} setIsMobile={setIsMobile}/>},

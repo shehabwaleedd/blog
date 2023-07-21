@@ -1,5 +1,5 @@
 .signup {
-    min-height: 85vh;
+    min-height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -103,7 +103,7 @@
     display: flex;
     justify-content: flex-start;
     gap: 0.4rem;
-    width: 12.5vw;
+    width: 10.5vw;
     background-color: var(--title-color);
     color: var(--container-color);
     padding: 0.95rem;
@@ -218,4 +218,232 @@
     pointer-events: none;
     color: var(--title-color);
     font-size: 1rem;
+}
+
+
+.signup__button_combined button {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    width: 15.1vw;
+    background-color: var(--title-color);
+    color: var(--container-color);
+    padding: 0.95rem;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    text-transform: lowercase;
+    font-size: 1.1rem;
+}
+/* ================================================================================ */
+
+.signup__button_combined-mobile {
+    display: flex;
+    gap: 2rem;
+}
+
+.signup__button_combined-mobile button {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    width: 35.1vw;
+    background-color: var(--title-color);
+    color: var(--container-color);
+    padding: 0.95rem;
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    text-transform: lowercase;
+    font-size: 1.1rem;
+}
+
+.signup__button-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    color: var(--container-color);
+    gap: 1rem;
+}
+
+.signup__button-mobile button h3 {
+    color: var(--container-color);
+}
+
+.signup__button-sign-mobile {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--title-color);
+    color: var(--container-color);
+    padding: 0.95rem;
+}
+
+.age__select-mobile select {
+    padding: 1rem;
+    border-radius: 0rem;
+    border: 1px solid var(--border-text-color);
+    background: transparent;
+    color: var(--title-color);
+    outline: none;
+    font-size: var(--normal-font-size);
+    transition: 0.3s ease;
+    width: 20.9vw;
+}
+
+.dropdown__country-icon-mobile select {
+    width: 25vw;
+}
+
+.dropdown-icon-country-mobile {
+    position: absolute;
+    top: 5%;
+    left: 8.5rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--title-color);
+    font-size: 1rem;
+}
+
+.dropdown-icon-mobile {
+    position: absolute;
+    transform: translate(4rem, -2.4rem);
+    z-index: 9999999999;
+    pointer-events: none;
+    color: var(--title-color);
+    font-size: 0.8rem;
+}
+
+.signup__passwords-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.signup__passwords-mobile input {
+    width: 36.3vw;
+}
+
+.signup__passwords-mobile input:focus {
+    outline: none;
+}
+
+
+@media (max-width: 416px) {
+    .dropdown-icon-mobile {
+        position: absolute;
+        transform: translate(3.3rem, -2rem);
+        z-index: 9999999999;
+        pointer-events: none;
+        color: var(--title-color);
+        font-size: 0.8rem;
+    }
+
+    .age__select-mobile select {
+        padding: 0.6rem 1rem;
+        border-radius: 0rem;
+        border: 1px solid var(--border-text-color);
+        background: transparent;
+        color: var(--title-color);
+        outline: none;
+        font-size: var(--normal-font-size);
+        transition: 0.3s ease;
+        width: 18.6vw;
+    }
+    .signup__passwords-mobile input {
+        width: 33.5vw;
+    }
+
+    .signup__button_combined-mobile button {
+        display: flex;
+        justify-content: flex-start;
+        gap: 0.4rem;
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        text-transform: lowercase;
+        width: 31.1vw;
+
+    }
+    
+}
+
+
+.signup__container-tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    min-height: 83vh;
+    padding: 1rem;
+}
+.signup__passwords-tablet {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.signup__passwords-tablet input {
+    width: 45vw;
+}
+
+.signup__passwords-tablet input:focus {
+outline: none;
+}
+
+.age__select-tablet select {
+    padding: 0.6rem 1rem;
+    border-radius: 0rem;
+    border: 1px solid var(--border-text-color);
+    background: transparent;
+    color: var(--title-color);
+    outline: none;
+    font-size: var(--normal-font-size);
+    transition: 0.3s ease;
+    width: 24.9vw;
+}
+
+.dropdown__country-icon-tablet select {
+    width: 25vw;
+}
+
+.dropdown-icon-country-tablet {
+    position: absolute;
+    top: 5%;
+    left: 8.5rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--title-color);
+    font-size: 1rem;
+}
+
+.dropdown-icon-tablet {
+    position: absolute;
+    transform: translate(12.4rem, -2rem);
+    z-index: 9999999999;
+    pointer-events: none;
+    color: var(--title-color);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 675px) {
+    .dropdown-icon-tablet {
+        position: absolute;
+        transform: translate(8.4rem, -2rem);
+        z-index: 9999999999;
+        pointer-events: none;
+        color: var(--title-color);
+        font-size: 0.8rem;
+    }
+    .signup__passwords-tablet input {
+        width: 41vw;
+    }
+
+}
+.signup__button_manual-tablet {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    width: 31.1vw;
+    background-color: var(--title-color);
+    color: var(--container-color);
+    transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+    text-transform: lowercase;
+    font-size: 1.1rem;
 }

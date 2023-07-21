@@ -532,14 +532,16 @@
   font-size: 1.3rem;
   text-transform: lowercase;
   color: var(--title-color);
-  font-family: "Satoshi-Bold", sans-serif;
+  font-family: "El Messiri", sans-serif;
+  font-weight: 800;
   letter-spacing: 0.12rem;
 }
 .create__container-mobile h1 {
   font-size: 1rem;
   text-transform: lowercase;
   color: var(--title-color);
-  font-family: "Satoshi-Bold", sans-serif;
+  font-family: "El Messiri", sans-serif;
+  font-weight: 800;
   letter-spacing: 0.07rem;
 }
 
@@ -561,17 +563,18 @@
 }
 
 .logo h1 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   text-transform: uppercase;
   color: var(--title-color);
-  font-family: "Satoshi-Bold", sans-serif;
+  font-family: "El Messiri", sans-serif;
+  font-weight: 800;
   letter-spacing: 0.56rem;
 }
 .logo-mobile h1 {
   font-size: 1.7rem;
   text-transform: uppercase;
   color: var(--title-color);
-  font-family: "Satoshi-Bold", sans-serif;
+  font-family: "El Messiri", sans-serif;
   letter-spacing: 0.56rem;
 }
 
@@ -579,15 +582,17 @@
   font-size: 1.3rem;
   text-transform: lowercase;
   color: var(--title-color);
-  font-family: "Satoshi-Bold", sans-serif;
+  font-family: "El Messiri", sans-serif;
   letter-spacing: 0.12rem;
+  font-weight: 800;
 }
 
 .squared3 h1 {
   font-size: 1.3rem;
   text-transform: lowercase;
   color: var(--title-color);
-  font-family: "Satoshi-Bold", sans-serif;
+  font-family: "El Messiri", sans-serif;
+  font-weight: 800;
   letter-spacing: 0.12rem;
 
 }
@@ -709,7 +714,8 @@
   font-size: 0.8rem;
   text-transform: lowercase;
   color: var(--text-color);
-  font-family: "Satoshi-Bold", sans-serif;
+  font-family: "El Messiri", sans-serif;
+  font-weight: 800;
   letter-spacing: 0.12rem;
 }
 

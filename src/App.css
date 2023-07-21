@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@200;300;400;500;600;700;800;900&family=Expletus+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Krona+One&family=Noto+Sans+Arabic:wght@100;200;300&display=swap');
-/* ============ VARIABLES CSS ============ */
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@200;300;400;500;600;700;800;900&family=El+Messiri:wght@400;500;600;700&family=Expletus+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Krona+One&family=Noto+Sans+Arabic:wght@100;200;300&display=swap');/* ============ VARIABLES CSS ============ */
 
 
 
@@ -219,8 +218,14 @@ img {
 .section__title {
   font-size: 7rem;
   color: var(--title-color);
-  font-family: "Satoshi-Bold", sans-serif;
   letter-spacing: 1rem;
+  text-transform: uppercase;
+}
+
+.section__title_mobile {
+  font-size: 3.5rem;
+  color: var(--title-color);
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 
