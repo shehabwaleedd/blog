@@ -8,8 +8,6 @@ import { storage } from "../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { v4 as uuidv4 } from "uuid";
 import { AnimatePresence, motion } from "framer-motion";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 
 const CreatePost = () => {
   const [title, setTitle] = useState("");
@@ -135,7 +133,7 @@ const CreatePost = () => {
                 </select>
               </div>
               <div className="create__input-post" >
-                <ReactQuill value={postText} onChange={setPostText} modules={{ toolbar: toolbarOptions }} style={{ height: '15.75rem' }} />
+                <textarea placeholder="Tell Your Story..." onChange={(e) => setPostText(e.target.value)} />
               </div>
               {error && <p className="create__error">{error}</p>}
               <div className="create__button-div">
