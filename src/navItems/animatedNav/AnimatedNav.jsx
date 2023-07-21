@@ -107,9 +107,9 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
             <div className="navbar__container-mobile">
               <Link to="/" className="logo-mobile square">
                 <h1 style={{
-                    fontFamily: language === "ar" ? "El Messiri" : "Satoshi-Bold",
-                    letterSpacing: language === "ar" ? "0rem" : "0.2rem",
-                  }}
+                  fontFamily: language === "ar" ? "El Messiri" : "Satoshi-Bold",
+                  letterSpacing: language === "ar" ? "0rem" : "0.2rem",
+                }}
                 >lumos</h1>
               </Link>
               <div className={`${navOpen ? "square4OpenMobile" : "square4Mobile"}`} onClick={() => setNavOpen(!navOpen)}>
@@ -123,7 +123,24 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
               <Link to="/createpost" className={`${createOpen ? "square5Open-mobile" : "square5-mobile"}`} onClick={handleCreateOpen}>
                 <div>
                   <div className="create__container-mobile">
-                    {user ? <h1 className='createpost' style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__create_post")}</h1> : <h1 style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>{t("navbar__register")}</h1>}
+                    {user ? <h1
+                      className='createpost'
+                      style={{
+                        color: createOpen ? "var(--container-color)" : "var(--title-color)",
+                        zIndex: "99999",
+                        position: "relative"
+                      }}>
+                      {t("navbar__create_post")}
+                    </h1> :
+                      <h1
+                        style={{
+                          color: createOpen ? "var(--container-color)" : "var(--title-color)",
+                          zIndex: "99999",
+                          position: "relative"
+                        }}>
+                        {t("navbar__register")}
+                      </h1>
+                    }
                   </div>
                 </div>
               </Link>
@@ -140,9 +157,9 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
           <nav className='navbar'>
             <div className="navbar__container-mobile">
               <Link to="/" className="logo-mobile square">
-              <h1 style={{
-                    letterSpacing: language === "ar" ? "0rem" : "0.2rem",
-                  }}
+                <h1 style={{
+                  letterSpacing: language === "ar" ? "0rem" : "0.2rem",
+                }}
                 >lumos</h1>
               </Link>
 
@@ -174,13 +191,13 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
           <nav className='navbar'>
             <div className="navbar__container">
               <div className="logo square">
-                <h1 style={{letterSpacing: language === "ar" ? "0rem" : "0.2rem",}}>lumos</h1>
+                <h1 style={{ letterSpacing: language === "ar" ? "0rem" : "0.2rem", }}>lumos</h1>
               </div>
               <Link to="/" className={`${articlesOpen ? "square1Open" : "square1"}`} onClick={handleArticlesOpen}>
                 <div>
                   <div className="articles__container">
                     <div className="squared2">
-                      <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__articles")}</h1>
+                      <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", letterSpacing: language === "ar" ? "0rem" : "0.2rem" }}>{t("navbar__articles")}</h1>
                       <div className="articles__count">
                         <h1 style={{ color: articlesOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>({postCount})</h1>
                       </div>
@@ -191,7 +208,7 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
               <Link to="/about" className={`${aboutOpen ? "square2Open" : "square2"}`} onClick={handleAboutOpen}>
                 <div className="about__container">
                   <div className="squared2">
-                    <h1 style={{ color: aboutOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", top: "0", letterSpacing: language === "ar" ? "0rem" : "0.2rem"}}>{t("navbar__about")}</h1>
+                    <h1 style={{ color: aboutOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", top: "0", letterSpacing: language === "ar" ? "0rem" : "0.2rem" }}>{t("navbar__about")}</h1>
                   </div>
                 </div>
               </Link>
@@ -200,9 +217,9 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
                   <div className="account__container">
                     <div className="squared3">
                       {user ? (
-                        <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__account")}</h1>
+                        <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", letterSpacing: language === "ar" ? "0rem" : "0.2rem"}}>{t("navbar__account")}</h1>
                       ) : (
-                        <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__login")}</h1>
+                        <h1 style={{ color: accountOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative", letterSpacing: language === "ar" ? "0rem" : "0.2rem" }}>{t("navbar__login")}</h1>
                       )}
                     </div>
                   </div>
@@ -219,7 +236,22 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
               <Link to="/createpost" className={`${createOpen ? "square5Open" : "square5"}`} onClick={handleCreateOpen}>
                 <div>
                   <div className="create__container">
-                    {user ? <h1 className='createpost' style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)", zIndex: "99999", position: "relative" }}>{t("navbar__create_post")}</h1> : <h1 style={{ color: createOpen ? "var(--container-color)" : "var(--title-color)" }}>{t("navbar__register")}</h1>}
+                    {user ? 
+                    <h1 className='createpost' 
+                    style={{ 
+                      color: createOpen ? "var(--container-color)" : "var(--title-color)",
+                      zIndex: "99999", 
+                      position: "relative",
+                      letterSpacing: language === "ar" ? "0rem" : "0.2rem"
+                    }}>
+                      {t("navbar__create_post")}
+                    </h1> : <h1 
+                    style={{ 
+                      color: createOpen ? "var(--container-color)" : "var(--title-color)", 
+                      zIndex: "99999",
+                      position: "relative",
+                      letterSpacing: language === "ar" ? "0rem" : "0.2rem"
+                      }}>{t("navbar__register")}</h1>}
                   </div>
                 </div>
               </Link>

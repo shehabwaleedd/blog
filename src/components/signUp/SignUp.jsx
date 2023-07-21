@@ -312,7 +312,10 @@ const SignUp = (Props) => {
                 </div>
             ) : (
                 <div className="signup__container container">
-                    <h2 className='section__title'>{t("signup__form__title")}</h2>
+                    <h2 className='section__title' style={{
+                        fontFamily: Props.language === "ar" ? "El Messiri" : "Satoshi-Bold",
+                        letterSpacing: Props.language === "ar" ? "0rem" : "0.2rem",
+                    }}>{t("signup__form__title")}</h2>
                     <div className="signup__content">
                         <form className="signup__form" onSubmit={handleSubmit}>
                             <div className="signup__form-container">
@@ -327,7 +330,7 @@ const SignUp = (Props) => {
                                     <div className="age__country">
                                         <div className="age__gender">
                                             <div className="age__select">
-                                                <h3>Gender</h3>
+                                                <h3>{t("signup__gender")}</h3>
                                                 <select
                                                     className={`dropdown-select ${formErrors.city ? 'error' : ''}`}
                                                     name="gender"
@@ -335,17 +338,17 @@ const SignUp = (Props) => {
                                                     onChange={(e) => setGender(e.target.value)} required
                                                 >
                                                     <option value="" disabled>
-                                                        Gender
+                                                        {t("signup__gender")}
                                                     </option>
-                                                    <option value="male">Male</option>
-                                                    <option value="female">Female</option>
+                                                    <option value="male">{t("signup__gender_male")}</option>
+                                                    <option value="female">{t("signup__gender_female")}</option>
                                                 </select>
                                                 {formErrors.city && <p className="error-message">{formErrors.city}</p>}
                                                 <div className="dropdown-icon">▼</div>
                                             </div>
                                         </div>
                                         <div className="age__select">
-                                            <h3>Age</h3>
+                                            <h3>{t("signup__age")}</h3>
                                             <select
                                                 className={`dropdown-select ${formErrors.budget ? "error" : ""}`}
                                                 name="age"
@@ -353,7 +356,7 @@ const SignUp = (Props) => {
                                                 onChange={(e) => setAge(e.target.value)} required
                                             >
                                                 <option value="age" disabled>
-                                                    Age
+                                                    {t("signup__age")}
                                                 </option>
                                                 {Array.from({ length: 56 }, (_, index) => index + 15).map((value) => (
                                                     <option key={value} value={value}>
@@ -366,7 +369,7 @@ const SignUp = (Props) => {
                                         </div>
                                         <div className="age__country">
                                             <div className="age__select dropdown__country">
-                                                <h3>Country</h3>
+                                                <h3>{t("signup__country")}</h3>
                                                 <select
                                                     className={`dropdown-select  ${formErrors.country ? 'error' : ''}`}
                                                     name="country"
@@ -374,7 +377,7 @@ const SignUp = (Props) => {
                                                     onChange={(e) => setCountry(e.target.value)} required
                                                 >
                                                     <option value="" disabled>
-                                                        Select Country
+                                                        {t("signup__select_country")}
                                                     </option>
                                                     {countries.map((country) => (
                                                         <option key={country.code} value={country.code}>
@@ -391,7 +394,7 @@ const SignUp = (Props) => {
                                 <div className="signup__button">
                                     <div className="signup__button_manual">
                                         <button type="submit" className="signup__button-sign">
-                                            <h3>Register</h3>
+                                            <h3>{t("login__form__register")}</h3>
                                             <i className="uil uil-arrow-right button__icon-login"></i>
                                         </button>
                                     </div>

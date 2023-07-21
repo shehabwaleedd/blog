@@ -44,3 +44,33 @@
     color: var(--title-color);
 }
 
+@media (max-width: 460px) {
+    .footer__container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer__logo h1 {
+        font-size: 1.5rem;
+        font-weight: var(--font-bold);
+        margin-left: 0;
+        color: var(--title-color);
+    }
+
+    .footer__credits p {
+        font-size: 0.8rem;
+        font-weight: var(--font-medium);
+        margin-left: 0rem;
+        color: var(--title-color);
+    }
+
+    .footer__credits span {
+        font-size: 0.7rem;
+        font-weight: var(--font-medium);
+        margin-left: 0;
+        color: var(--title-color);
+    }
+}

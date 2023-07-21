@@ -112,7 +112,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
               <div className="blog__container">
                 <div className="menu">
                   <motion.div className="text-container">
-                    <h1 className="work__work-text">{t("navbar__articles")}</h1>
+                    <h1 className="work__work-text" style={{letterSpacing: language === "ar" ? "0rem" : "0.2rem"}}>{t("navbar__articles")}</h1>
                     <div className="scrollbarr">
                       {filteredPosts.map((item) => (
                         <div className="work__title-mobile" key={item.id} onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>
@@ -168,7 +168,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
             <div className="blog__container">
               <div className="menu">
                 <motion.div className="text-container">
-                  <h1 className="work__work-text">{t("navbar__articles")}</h1>
+                  <h1 className="work__work-text" style={{letterSpacing: language === "ar" ? "0rem" : "0.2rem"}}>{t("navbar__articles")}</h1>
                   <div className="scrollbarr">
                     {filteredPosts.map((item) => (
                       <div className="work__title-mobile" key={item.id} onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>
@@ -222,7 +222,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
               <div className="blog__container">
                 <div className="menu">
                   <motion.div className="text-container">
-                    <h1 className="work__work-text">{t("navbar__articles")}</h1>
+                    <h1 className="work__work-text" style={{letterSpacing: language === "ar" ? "0rem" : "0.2rem"}}>{t("navbar__articles")}</h1>
                     <div className="scrollbarr">
                       {filteredPosts.map((item) => (
                         <div className="work__title" key={item.id} onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>

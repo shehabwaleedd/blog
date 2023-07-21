@@ -122,6 +122,11 @@
   "signup__form__incorrect_email": "Wrong E-Mail/Password",
   "signup__form__passwords_not_match": "Passwords don't match",
   "signup__form__passwords_match": "Passwords match",
-  "signup__form__dont_have_account": "Don't have an account?"
-
+  "signup__form__dont_have_account": "Don't have an account?",
+  "signup__gender": "Gender",
+  "signup__gender_male": "Male",
+  "signup__gender_female": "Female",
+  "signup__age": "Age",
+  "signup__country": "Country",
+  "signup__select_country": "Select Country"
 }
