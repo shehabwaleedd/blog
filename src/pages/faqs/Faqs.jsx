@@ -42,9 +42,9 @@ const Faqs = () => {
 
     return (
         <motion.section className="faqs section"
-        initial={{ opacity: 0, y: 100, transition: { delay: 0.3, staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}
-        animate={{ opacity: 1, y: 0, transition: { delay: 0.5, staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] } }}
-        exit={{ opacity: 0, y: 500, transition: { delay: 0.3, velocity: 2, staggerChildren: 1.5, duration: 1, ease: [0.42, 0, 0.58, 1] } }}
+            initial={{ opacity: 0, y: 100, transition: { delay: 0.3, staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}
+            animate={{ opacity: 1, y: 0, transition: { delay: 0.5, staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] } }}
+            exit={{ opacity: 0, y: 500, transition: { delay: 0.3, velocity: 2, staggerChildren: 1.5, duration: 1, ease: [0.42, 0, 0.58, 1] } }}
         >
             <div className="faq__text">
                 <h1>FREQUEST ANSWERED QUESTIONS</h1>
@@ -53,7 +53,11 @@ const Faqs = () => {
                 {FaqsData.map(({ id, question, answer }) => (
                     <div className={`item-1 ${activeAccordion === { id } ? 'open' : ''}`} key={id}>
                         <div className="accordion" onClick={() => toggleAccordion(id - 1)}>
-                            <div className="title"><h1><span>- {id} </span>{question}</h1></div>
+
+                            <div className="accordion__title">
+                                <span>- {id} </span>
+                                <h1>{question}</h1>
+                            </div>
                             <div className="icon">{activeAccordion === 0 ? '-' : '+'}</div>
                         </div>
                         <div className="panel">

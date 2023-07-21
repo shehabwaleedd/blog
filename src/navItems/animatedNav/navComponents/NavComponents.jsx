@@ -160,11 +160,6 @@ const NavComponents = (Props) => {
                                         </Link>
                                     </div>
                                     <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                                        <Link to="/partnerships">
-                                            <h1>Partnerships</h1>
-                                        </Link>
-                                    </div>
-                                    <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
                                         <Link to="/latestupadtes">
                                             <h1>Latest Updates</h1>
                                         </Link>
@@ -208,16 +203,6 @@ const NavComponents = (Props) => {
                                                 transitionDuration: Props.navOpen ? "0.5s" : "0",
                                             }}
                                         >
-                                            <h1>Partnerships</h1>
-                                        </Link>
-                                    </div>
-                                    <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                                        <Link to="/faqs" className={Props.navOpen ? "nav__text-spinned" : "nav__text"}
-                                            style={{
-                                                opacity: Props.navOpen ? "1" : "0",
-                                                transitionDuration: Props.navOpen ? "0.5s" : "0",
-                                            }}
-                                        >
                                             <h1>Latest Updates</h1>
                                         </Link>
                                     </div>
@@ -233,11 +218,6 @@ const NavComponents = (Props) => {
                                     <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
                                         <Link to="/about">
                                             <h1>{t("navbar__about")}</h1>
-                                        </Link>
-                                    </div>
-                                    <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
-                                        <Link to="/partnerships">
-                                            <h1>Partnerships</h1>
                                         </Link>
                                     </div>
                                     <div className={Props.navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: Props.navOpen ? "1" : "1", padding: Props.navOpen ? "0.6rem" : "0" }}>
