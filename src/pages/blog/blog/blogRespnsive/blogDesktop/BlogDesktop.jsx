@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import FilteredCategoriesTabs from '../../../filteredCategories/FilteredCategoriesTabs'
+import { FilteredCategoriesTabs } from "../../../filteredCategories/FilteredCategoriesTabs";
 import Search from '../../../../../components/supplements/search/Search'
-import Loading from '../../../../loading/Loading.tsx'
+import Loading from '../../../../../components/supplements/loading/Loading.tsx'
 import TextContainer from '../../blogComponents/TextContainer'
 import ImageWrapper from '../../blogComponents/ImageWrapper'
 
@@ -25,7 +25,8 @@ const BlogDesktop = ({
     imageSize,
     isMobile,
     isTablet,
-    
+    onCategoryClick
+
 }) => {
     return (
         <motion.div
@@ -40,8 +41,10 @@ const BlogDesktop = ({
                     toggleTheme={toggleTheme}
                     categories={categories}
                     selectedCategory={selectedCategory}
-                    onCategoryClick={handleCategoryClick}
-                    language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}
+                    handleCategoryClick={handleCategoryClick}
+                    language={language} setLanguage={setLanguage}
+                    languageExpanded={languageExpanded}
+                    setLanguageExpanded={setLanguageExpanded}
                 />
                 <Search setSearchQuery={setSearchQuery} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded} />
                 {isLoading ? (
@@ -56,10 +59,11 @@ const BlogDesktop = ({
                                 handleMouseEnter={handleMouseEnter}
                                 handleMouseLeave={handleMouseLeave}
                                 language={language}
-                                handleCategoryClick={handleCategoryClick}
+                                onCategoryClick={handleCategoryClick}
                                 hoveredPostId={hoveredPostId}
                                 cursorPosition={cursorPosition}
                                 handleImageLoad={handleImageLoad}
+                                handleCategoryClick={handleCategoryClick}
                             />
                             <div className="menu__item-image_wrapper">
                                 <ImageWrapper

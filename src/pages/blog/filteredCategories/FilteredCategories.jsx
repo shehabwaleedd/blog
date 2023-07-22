@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase-config";
-import FilteredCategoriesTabs from "./FilteredCategoriesTabs";
+import { FilteredCategoriesTabs } from "./FilteredCategoriesTabs";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import Loading from "../../loading/Loading.tsx";
+import Loading from "../../../components/supplements/loading/Loading.tsx";
 import "./FilteredCategories.css";
 
 const FilteredCategories = ({ navOpen, toggleTheme }) => {
@@ -53,7 +53,7 @@ const FilteredCategories = ({ navOpen, toggleTheme }) => {
 
     return (
         <>
-            <FilteredCategoriesTabs navOpen={navOpen} toggleTheme={toggleTheme} categories={categories} selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
+            <FilteredCategoriesTabs navOpen={navOpen} toggleTheme={toggleTheme} categories={categories} selectedCategory={selectedCategory} handleCategoryClick={handleCategoryClick} />
             <section className="filtered section">
                 <div className="filtered__container grid3 container">
                     {filteredPosts.map((post) => {

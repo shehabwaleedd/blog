@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { getDoc, doc } from 'firebase/firestore';
-import { collection, query, where, getDocs, onSnapshot } from 'firebase/firestore';
+import { useNavigate } from 'react-router-dom';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useUserAuth } from '../../components/authContext/AuthContext';
 import { db, auth, storage } from '../../firebase-config';
 import { motion } from 'framer-motion';
-import { t } from 'i18next';
 import { updateProfile } from 'firebase/auth';
-import Loading from '../loading/Loading.tsx';
+import Loading from '../../components/supplements/loading/Loading.tsx';
 import AccountMobile from './accountResponsive/accountMobile/AccountMobile';
 import AccountTablet from './accountResponsive/accountTablet/AccountTablet';
-import PasswordOpen from './accountComponents/PasswordOpen';
-import PersonalInfo from './accountComponents/PersonalInfo';
-import UserPosts from './accountComponents/UserPosts';
-import LeftContainer from './accountComponents/LeftContainer';
 import AccountDesktop from './accountResponsive/accountDesktop/AccountDesktop';
 
 const Account = ({ isTablet, setIsTablet, isMobile, setIsMobile }) => {

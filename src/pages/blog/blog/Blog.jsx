@@ -77,7 +77,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
           toggleTheme={toggleTheme}
           categories={categories}
           selectedCategory={selectedCategory}
-          onCategoryClick={handleCategoryClick}
+          handleCategoryClick={handleCategoryClick}
           setSearchQuery={setSearchQuery}
           language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}
           isLoading={isLoading}
@@ -98,7 +98,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
           toggleTheme={toggleTheme}
           categories={categories}
           selectedCategory={selectedCategory}
-          onCategoryClick={handleCategoryClick}
+          handleCategoryClick={handleCategoryClick}
           setSearchQuery={setSearchQuery}
           language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}
           isLoading={isLoading}
@@ -119,7 +119,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
           toggleTheme={toggleTheme}
           categories={categories}
           selectedCategory={selectedCategory}
-          onCategoryClick={handleCategoryClick}
+          handleCategoryClick={handleCategoryClick}
           setSearchQuery={setSearchQuery}
           language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}
           isLoading={isLoading}

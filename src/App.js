@@ -2,7 +2,7 @@
 import './App.css';
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import MainRoutes from './routes/routes/MainRoutes';
+import MainRoutes from './routes/MainRoutes';
 import { createContext } from 'react';
 import AnimatedNav from './navItems/animatedNav/AnimatedNav';
 import ScrollUp from './components/supplements/scrollup/ScrollUp';

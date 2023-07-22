@@ -5,7 +5,7 @@ import { useEffect } from "react"
 import { getDoc, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../../../../firebase-config";
 import ScrollAnimation from "./ScrollAnimation";
-import Loading from "../../../loading/Loading.tsx";
+import Loading from "../../../../components/supplements/loading/Loading.tsx";
 import {BiX} from "react-icons/bi";
 import {AiFillEdit} from "react-icons/ai";
 import { motion } from "framer-motion";

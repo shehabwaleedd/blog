@@ -1,7 +1,7 @@
 import React from 'react'
 import PersonalInfo from '../../accountComponents/PersonalInfo';
 import LeftContainer from '../../accountComponents/LeftContainer';
-import Loading from '../../../loading/Loading.tsx';
+import Loading from '../../../../components/supplements/loading/Loading.tsx';
 import { t } from 'i18next';
 import "./AccountMobile.css"
 import UserPosts from '../../accountComponents/UserPosts';

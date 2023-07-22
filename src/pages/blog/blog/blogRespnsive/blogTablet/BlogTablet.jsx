@@ -1,8 +1,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import FilteredCategoriesTabs from '../../../filteredCategories/FilteredCategoriesTabs'
+import { FilteredCategoriesTabs } from "../../../filteredCategories/FilteredCategoriesTabs";
 import Search from '../../../../../components/supplements/search/Search'
-import Loading from '../../../../loading/Loading.tsx'
+import Loading from '../../../../../components/supplements/loading/Loading.tsx'
 import TextContainer from '../../blogComponents/TextContainer'
 
 const BlogTablet = ({
@@ -36,7 +36,7 @@ const BlogTablet = ({
                     toggleTheme={toggleTheme}
                     categories={categories}
                     selectedCategory={selectedCategory}
-                    onCategoryClick={handleCategoryClick}
+                    handleCategoryClick={handleCategoryClick}
                     language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded}
                 />
                 <Search setSearchQuery={setSearchQuery} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded} />

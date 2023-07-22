@@ -7,7 +7,7 @@ import { db } from "../../../../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../../../../../firebase-config";
 import { v4 } from "uuid";
-import Loading from "../../../../loading/Loading.tsx";
+import Loading from "../../../../../components/supplements/loading/Loading.tsx";
 import "./EditPost.css";
 import {motion} from "framer-motion";
 

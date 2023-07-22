@@ -5,6 +5,8 @@ import PasswordOpen from '../../accountComponents/PasswordOpen'
 import UserPosts from '../../accountComponents/UserPosts'
 import { t } from 'i18next';
 import "./AccountDesktop.css"
+import Loading from '../../../../components/supplements/loading/Loading.tsx';
+
 
 const AccountDesktop = ({
     handleLogout,
@@ -20,7 +22,12 @@ const AccountDesktop = ({
     userPosts,
     email,
     setEmail,
+    postList
 }) => {
+    if (!postList) {
+        return <Loading height={100} />
+    }
+
     return (
         <section className='account'>
             <div className="account__upper">

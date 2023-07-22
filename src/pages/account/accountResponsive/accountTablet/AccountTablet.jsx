@@ -1,6 +1,6 @@
 import React from 'react'
 import PasswordOpen from '../../accountComponents/PasswordOpen';
-import Loading from '../../../loading/Loading.tsx';
+import Loading from '../../../../components/supplements/loading/Loading.tsx';
 import { t } from 'i18next';
 import "./AccountTablet.css"
 import UserPosts from '../../accountComponents/UserPosts';
