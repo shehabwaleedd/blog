@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../../firebase-config";
-import { FilteredCategoriesTabs } from "./FilteredCategoriesTabs";
-import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import Loading from "../../../components/supplements/loading/Loading.tsx";
 import "./FilteredCategories.css";
 import Blog from "../blog/Blog";
 
 const FilteredCategories = ({ navOpen, toggleTheme }) => {
     const { category } = useParams();
-    const navigate = useNavigate();
     const [postLists, setPostList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 

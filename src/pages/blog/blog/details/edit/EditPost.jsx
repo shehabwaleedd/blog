@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import { useParams, useNavigate } from "react-router-dom";
 import { getDoc, doc, updateDoc } from "firebase/firestore";
-import { useUserAuth } from "../../../../../components/authContext/AuthContext";
 import { useState, useEffect } from "react";
 import { db } from "../../../../../firebase-config";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -15,7 +14,6 @@ const EditPage = () => {
   const { id } = useParams();
   const postDocRef = doc(db, "posts", id);
   const [post, setPost] = useState(null);
-  const { currentUser } = useUserAuth();
   const navigate = useNavigate();
   const [imageFile, setImageFile] = useState(null);
   const [error, setError] = useState(null);

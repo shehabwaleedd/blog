@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./FilteredCategories.css"
-import Search from "../../../components/supplements/search/Search";
 import Toggle from "../../../components/supplements/darkmode/Toggle";
 import DropDownMenu from "../../../navItems/animatedNav/dropDownMenu/DropDownMenu";
 
