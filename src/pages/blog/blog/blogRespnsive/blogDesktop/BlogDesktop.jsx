@@ -6,28 +6,7 @@ import Loading from '../../../../../components/supplements/loading/Loading.tsx'
 import TextContainer from '../../blogComponents/TextContainer'
 import ImageWrapper from '../../blogComponents/ImageWrapper'
 
-const BlogDesktop = ({
-    navOpen,
-    toggleTheme,
-    categories,
-    selectedCategory,
-    handleCategoryClick,
-    filteredPosts,
-    setSearchQuery,
-    language, setLanguage, languageExpanded, setLanguageExpanded,
-    isLoading,
-    handleMouseEnter,
-    handleMouseLeave,
-    hoveredPostId,
-    cursorPosition,
-    handleImageLoad,
-    isImageVisible,
-    imageSize,
-    isMobile,
-    isTablet,
-    onCategoryClick
-
-}) => {
+const BlogDesktop = ({ navOpen, toggleTheme, categories, selectedCategory, handleCategoryClick, filteredPosts, setSearchQuery, language, setLanguage, languageExpanded, setLanguageExpanded, isLoading, handleMouseEnter, handleMouseLeave, hoveredPostId, cursorPosition, handleImageLoad, isImageVisible, imageSize, isMobile, isTablet, postLists}) => {
     return (
         <motion.div
             data-barba="container"
@@ -45,6 +24,7 @@ const BlogDesktop = ({
                     language={language} setLanguage={setLanguage}
                     languageExpanded={languageExpanded}
                     setLanguageExpanded={setLanguageExpanded}
+                    postLists={postLists}
                 />
                 <Search setSearchQuery={setSearchQuery} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded} />
                 {isLoading ? (
@@ -64,6 +44,7 @@ const BlogDesktop = ({
                                 cursorPosition={cursorPosition}
                                 handleImageLoad={handleImageLoad}
                                 handleCategoryClick={handleCategoryClick}
+                                postLists={postLists}
                             />
                             <div className="menu__item-image_wrapper">
                                 <ImageWrapper
@@ -75,6 +56,7 @@ const BlogDesktop = ({
                                     imageSize={imageSize}
                                     handleImageLoad={handleImageLoad}
                                     isImageVisible={isImageVisible}
+                                    postLists={postLists}
                                 />
                             </div>
                         </div>

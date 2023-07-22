@@ -4,16 +4,7 @@ import { t } from 'i18next';
 import { Link } from 'react-router-dom'
 import ImageWrapper from './ImageWrapper';
 
-const TextContainer = ({
-    isMobile,
-    isTablet,
-    filteredPosts,
-    isImageVisible,
-    handleMouseEnter,
-    handleMouseLeave,
-    handleCategoryClick,
-    language
-}) => {
+const TextContainer = ({ isMobile, isTablet, filteredPosts, isImageVisible, handleMouseEnter, handleMouseLeave, handleCategoryClick, language, postLists}) => {
     return (
         <>
             {

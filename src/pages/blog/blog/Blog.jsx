@@ -89,6 +89,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
           handleImageLoad={handleImageLoad}
           imageSize={imageSize}
           isImageVisible={isImageVisible}
+          postLists={postLists}
         />
       ) : isTablet ? (
         <BlogTablet
@@ -110,6 +111,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
           handleImageLoad={handleImageLoad}
           imageSize={imageSize}
           isImageVisible={isImageVisible}
+          postLists={postLists}
         />
       ) : (
         <BlogDesktop
@@ -131,6 +133,7 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
           handleImageLoad={handleImageLoad}
           imageSize={imageSize}
           isImageVisible={isImageVisible}
+          postLists={postLists}
         />
       )}
     </React.Fragment>

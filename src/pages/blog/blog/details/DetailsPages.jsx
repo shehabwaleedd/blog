@@ -41,9 +41,9 @@ export const DetailsPages = () => {
     navigate(`/edit/${id}`);
   };
 
-  const handleCategoryClick = (selectedCategory) => {
-    setSelectedCategory(selectedCategory);
-    navigate(`/filtered/${selectedCategory}`); // Navigate to the filtered categories
+  const handleCategoryClick = () => {
+    setSelectedCategory(post.category);
+    navigate(`/filtered/${post.category}`); // Navigate to the filtered category
   };
 
   if (!post) {
