@@ -7,6 +7,7 @@ const TabletSquares = ({
     setNavOpen,
     createOpen,
     user,
+    handleCreateOpen,
 }) => {
     return (
         <>
@@ -16,6 +17,7 @@ const TabletSquares = ({
             />
             <TabletCreatePostSquare
                 createOpen={createOpen}
+                handleCreateOpen={handleCreateOpen}
                 user={user}
             />
         </>
