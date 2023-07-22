@@ -1,25 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import './AnimatedNav.css'
 import { useTranslation } from 'react-i18next'
-import NavComponents from './navComponents/NavComponents'
 import { useLocation } from 'react-router-dom'
 import { useUserAuth } from '../../components/authContext/AuthContext'
-import { useNavigate } from 'react-router-dom'
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase-config";
-import NavBar from './animatedNavComponents/NavBar'
-import Navbar from './animatedNavComponents/NavBar'
 import AnimatedNavDesktop from './animatedNavResponsive/AnimatedNavDesktop/DesktopAnimatedNav'
 import MobileAnimatedNav from './animatedNavResponsive/AnimatedNavDesktop/MobileAnimatedNav'
 import TabletAnimatedNav from './animatedNavResponsive/AnimatedNavDesktop/TabletAnimatedNav'
 
 const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, navOpen, setNavOpen, toggleTheme }) => {
 
-  const { t } = useTranslation()
   const location = useLocation();
-  const { user, logOut } = useUserAuth()
-  const navigate = useNavigate()
+  const { user } = useUserAuth()
   const [articlesOpen, setArticlesOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);

@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { t } from 'i18next';
 import DesktopSquares from './navSquares/DesktopSquares';
 import MobilesSquares from './navSquares/MobilesSquares';
-import TabletAnimatedNav from '../animatedNavResponsive/AnimatedNavDesktop/TabletAnimatedNav';
 import TabletSquares from './navSquares/TabletSquares';
 
 const Navbar = ({
