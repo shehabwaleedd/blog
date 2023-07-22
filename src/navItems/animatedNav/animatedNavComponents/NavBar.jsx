@@ -30,7 +30,6 @@ const Navbar = ({
                 <div className="navbar__container-mobile">
                     <Link to="/" className="logo-mobile square">
                         <h1 style={{
-                            fontFamily: language === "ar" ? "El Messiri" : "Satoshi-Bold",
                             letterSpacing: language === "ar" ? "0rem" : "0.2rem",
                         }}
                         >lumos</h1>

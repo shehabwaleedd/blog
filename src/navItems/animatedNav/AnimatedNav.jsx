@@ -5,9 +5,9 @@ import { useLocation } from 'react-router-dom'
 import { useUserAuth } from '../../components/authContext/AuthContext'
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase-config";
-import AnimatedNavDesktop from './animatedNavResponsive/AnimatedNavDesktop/DesktopAnimatedNav'
-import MobileAnimatedNav from './animatedNavResponsive/AnimatedNavDesktop/MobileAnimatedNav'
-import TabletAnimatedNav from './animatedNavResponsive/AnimatedNavDesktop/TabletAnimatedNav'
+import AnimatedNavDesktop from './animatedNavResponsive/DesktopAnimatedNav'
+import MobileAnimatedNav from './animatedNavResponsive/MobileAnimatedNav'
+import TabletAnimatedNav from './animatedNavResponsive/TabletAnimatedNav'
 
 const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, navOpen, setNavOpen, toggleTheme }) => {
 

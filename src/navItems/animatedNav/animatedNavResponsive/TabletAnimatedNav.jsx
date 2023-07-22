@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../../animatedNavComponents/NavBar'
-import NavComponents from '../../navComponents/NavComponents'
+import Navbar from '../animatedNavComponents/NavBar'
+import NavComponents from '../navComponents/NavComponents'
 
-const MobileAnimatedNav = ({
+const TabletAnimatedNav = ({
     postCount,
     navOpen,
     setNavOpen,
@@ -51,4 +51,4 @@ const MobileAnimatedNav = ({
     )
 }
 
-export default MobileAnimatedNav
+export default TabletAnimatedNav

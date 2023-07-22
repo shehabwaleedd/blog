@@ -1,26 +1,28 @@
 import React from 'react'
-import Navbar from '../../animatedNavComponents/NavBar'
-import NavComponents from '../../navComponents/NavComponents'
+import Navbar from '../animatedNavComponents/NavBar'
+import NavComponents from '../navComponents/NavComponents'
 
-const TabletAnimatedNav = ({
-    postCount,
-    navOpen,
-    setNavOpen,
-    handleArticlesOpen,
-    handleAboutOpen,
-    handleAccountOpen,
-    articlesOpen,
-    aboutOpen,
-    accountOpen,
-    handleCreateOpen,
-    createOpen,
-    user,
-    language,
-    isTablet,
-    setIsTablet,
-    isMobile,
-    setIsMobile,
-}) => {
+const AnimatedNavDesktop = (
+    {
+        postCount,
+        navOpen,
+        setNavOpen,
+        handleArticlesOpen,
+        handleAboutOpen,
+        handleAccountOpen,
+        articlesOpen,
+        aboutOpen,
+        accountOpen,
+        handleCreateOpen,
+        createOpen,
+        user,
+        language,
+        isTablet,
+        setIsTablet,
+        isMobile,
+        setIsMobile,
+    }
+) => {
     return (
         <>
             <Navbar
@@ -44,11 +46,11 @@ const TabletAnimatedNav = ({
             />
             <div className="nav-overlay" style={{ right: navOpen ? "0%" : "-200%", }}>
                 <div className="nav__links">
-                    <NavComponents isTablet={isTablet} setIsTablet={setIsTablet} isMobile={isMobile} setIsMobile={setIsMobile} navOpen={navOpen} />
+                    <NavComponents isTablet={isTablet} setIsTablet={setIsTablet} navOpen={navOpen} />
                 </div>
             </div>
         </>
     )
 }
 
-export default TabletAnimatedNav
+export default AnimatedNavDesktop
