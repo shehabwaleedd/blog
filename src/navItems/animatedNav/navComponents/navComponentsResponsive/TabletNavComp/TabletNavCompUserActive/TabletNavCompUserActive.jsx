@@ -27,16 +27,6 @@ const TabletNavCompUserActive = ({
                 </Link>
             </div>
             <div className={navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: navOpen ? "1" : "1", padding: navOpen ? "0.6rem" : "0" }}>
-                <Link to="/createpost">
-                    <h1>{t("navbar__create_post")}</h1>
-                </Link>
-            </div>
-            <div className={navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: navOpen ? "1" : "1", padding: navOpen ? "0.6rem" : "0" }}>
-                <Link to="/partnerships">
-                    <h1>Partnerships</h1>
-                </Link>
-            </div>
-            <div className={navOpen ? "nav__home spin" : "nav__home"} style={{ opacity: navOpen ? "1" : "1", padding: navOpen ? "0.6rem" : "0" }}>
                 <Link to="/latestupadtes">
                     <h1>Latest Updates</h1>
                 </Link>
