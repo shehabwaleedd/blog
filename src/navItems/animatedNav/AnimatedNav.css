@@ -12,11 +12,6 @@
   grid-template-rows: 20vh;
 }
 
-.navbar__container-mobile {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  height: 7vh;
-}
 
 
 
@@ -57,14 +52,6 @@
 .square5:hover {
   border-bottom: 1px solid var(--title-color);
 }
-.square4Mobile:hover {
-  border-bottom: 1px solid var(--title-color);
-}
-
-.square5-mobile:hover {
-  border-bottom: 1px solid var(--title-color);
-}
-
 
 
 
@@ -187,29 +174,7 @@
   animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.square4Mobile:not(.square4OpenMobile) {
-  display: flex;
-  align-items: center;  
-  justify-content: center;
-  border-right: 0.5px solid var(--border-text-color);
-  width: 11.5vw;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  
-}
 
-.square4Mobile:not(.square4OpenMobile)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--title-color);
-  animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
 
 .square5:not(.square5Open) {
   display: flex;
@@ -224,28 +189,6 @@
 }
 
 .square5:not(.square5Open)::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--title-color);
-  animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-.square5-mobile:not(.square5Open-mobile) {
-  display: flex;
-  align-items: center;  
-  justify-content: center;
-  width: 28.5vw;
-  text-align: center;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  
-}
-
-.square5-mobile:not(.square5Open-mobile)::before {
   content: "";
   position: absolute;
   top: 0;
@@ -310,27 +253,9 @@
   background-color: var(--title-color);
   animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.square4OpenMobile::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: var(--title-color);
-  animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
 
-.square5Open-mobile::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: var(--title-color);
-  animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
+
+
 
 
 @keyframes fillAnimation {
@@ -403,16 +328,6 @@
   transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
   position: relative;
 }
-.square4Mobile {
-  display: flex;
-  align-items: center;  
-  justify-content: center;
-  border-right: 0.5px solid var(--border-text-color);
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
-  position: relative;
-}
 
 .square4Open {
   display: flex;
@@ -426,18 +341,7 @@
   position: relative;
   padding-bottom: 2rem;
 }
-.square4OpenMobile {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-right: 0.5px solid var(--border-text-color);
-  width: 11.5vw;
-  text-align: center;
-  background-color: transparent;
-  cursor: pointer;
-  position: relative;
 
-}
 
 .square5 {
   display: flex;
@@ -449,30 +353,9 @@
   transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
   cursor: pointer;
 }
-.square5-mobile {
-  display: flex;
-  align-items: center;  
-  justify-content: center;
-  position: relative;
-  width: 18.5vw;
-  text-align: center;
-  transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
-  cursor: pointer;
-}
+
 
 .square5Open {
-  display: flex;
-  align-items: center;  
-  justify-content: center;
-  border-right: 0.5px solid var(--border-text-color);
-  width: 28.5vw;
-  text-align: center;
-  background-color: var(--title-color);
-  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: pointer;
-  position: relative;
-}
-.square5Open-mobile {
   display: flex;
   align-items: center;  
   justify-content: center;
@@ -497,11 +380,7 @@
   justify-content: center;
   align-items: center;
 }
-.create__container-mobile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .about__container {
   display: flex;
@@ -521,12 +400,7 @@
   align-items: center;
   cursor: pointer;
 }
-.menu__container-mobile {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
+
 
 .create__container h1 {
   font-size: 1.3rem;
@@ -536,14 +410,7 @@
   font-weight: 800;
   letter-spacing: 0.12rem;
 }
-.create__container-mobile h1 {
-  font-size: 1rem;
-  text-transform: lowercase;
-  color: var(--title-color);
-  font-family: "El Messiri", sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.07rem;
-}
+
 
 .logo {
   width: 25vw;
@@ -553,14 +420,7 @@
   padding-left: 4rem;
   cursor: pointer;
 }
-.logo-mobile {
-  width: 60vw;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding-left: 2rem;
-  cursor: pointer;
-}
+
 
 .logo h1 {
   font-size: 2.3rem;
@@ -570,13 +430,7 @@
   font-weight: 800;
   letter-spacing: 0.56rem;
 }
-.logo-mobile h1 {
-  font-size: 1.7rem;
-  text-transform: uppercase;
-  color: var(--title-color);
-  font-family: "El Messiri", sans-serif;
-  letter-spacing: 0.56rem;
-}
+
 
 .squared2 h1 {
   font-size: 1.3rem;
@@ -607,17 +461,7 @@
 	transition: 0.3s ease;
   top: 2rem;
 }
-.hamBox-mobile {
-	position: relative;
-	width: 2.75rem;
-	height: 2.75rem;
-	cursor: pointer;
-	border-radius: 50%;
-	transition: 0.3s ease;
-  top: 2rem;
-  padding: 1rem;
-  right: 0;
-}
+
 
 .lineTop {
 	margin: 0 auto;
@@ -661,47 +505,8 @@
   background-color: var(--container-color);
 }
 
-.lineTop-mobile {
-	margin: 0 auto;
-	position: absolute;
-	display: block;
-	width: 1.8rem;
-	height: 0.125rem;
-	border-radius: 0.625rem;
-	background: var(--title-color);
-	left: 0;
-	right: 0;
-	transform: rotate(0deg);
-	transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-	top: -0.3em;
-}
 
-.lineBottom-mobile {
-	margin: 0 auto;
-	position: absolute;
-	display: block;
-	width: 1.8rem;
-	height: 0.125rem;
-	border-radius: 0.625rem;
-	background: var(--title-color);
-	left: 0;
-	right: 0;
-	transform: rotate(0deg);
-	transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-	top: -0.95em;;
-}
 
-.lineTop-mobile.spin {
-  transform: rotate(45deg);
-  top: -0.65em;
-  background-color: var(--container-color);
-}
-
-.lineBottom-mobile.spin {
-  transform: rotate(-45deg);
-  top: -0.65em;
-  background-color: var(--container-color);
-}
 
 
 .articles__count {

@@ -5,7 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import MainRoutes from './routes/routes/MainRoutes';
 import { createContext } from 'react';
 import AnimatedNav from './navItems/animatedNav/AnimatedNav';
-import ScrollUp from './components/scrollup/ScrollUp';
+import ScrollUp from './components/supplements/scrollup/ScrollUp';
 import Footer from './pages/footer/Footer';
 import i18next from 'i18next';
 

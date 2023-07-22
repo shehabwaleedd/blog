@@ -13,7 +13,6 @@
     font-family: "Satoshi-Medium", sans-serif;
     text-transform: lowercase;
 }
-
 .category__active {
     background-color: var(--title-color);
     color: var(--container-color);
@@ -23,9 +22,6 @@
     transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
 
 }
-
-
-
 .category__tabs {
     display: flex;
     justify-content: center;
@@ -35,7 +31,6 @@
     transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
     position: relative;
 }
-
 .category__switches {
     position: absolute;
     top: -2rem;
@@ -43,7 +38,6 @@
     display: flex;
     gap: 1rem;
 }
-
 .filtered {
     display: flex;
     flex-direction: column;

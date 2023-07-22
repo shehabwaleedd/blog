@@ -7,7 +7,6 @@
   width: 100vw;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .menu {
   display: flex;
   justify-content: center;
@@ -16,34 +15,28 @@
   width: 100vw;
   position: relative;
   transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-
 }
-
 .menu__item-image_wrapper {
   position: absolute;
   top: -15rem;
   left: 10rem;
 }
-
 .menu__item-image_wrapper img {
   width: 15rem;
   height: 15rem;
   object-fit: cover;
   transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
 .menu__item-image {
   opacity: 0;
   transform: translateY(-50px);
   position: relative;
   z-index: 999999;
 }
-
 .menu__item-image.fade-in {
   opacity: 1;
   transform: translateY(0);
 }
-
 .image-wrapper {
   position: relative;
   z-index: 999999;
@@ -51,10 +44,6 @@
   flex-direction: column;
   justify-content: center;
 }
-
-
-
-
 .text-container {
   display: flex;
   flex-direction: column;
@@ -73,10 +62,6 @@
   position: relative;
   z-index: 1;
 }
-
-
-
-
 .work__title {
   display: flex;
   justify-content: space-between;
@@ -85,52 +70,17 @@
   width: 97%;
   text-align: left;
   position: relative;
-
 }
-
 .work__title a {
   font-size: var(--smaller-font-size);
   font-weight: var(--font-medium);
   font-family: "Satoshi", sans-serif;
   color: var(--accent-color);
 }
-
 .work__title h1 {
   width: 100%;
   color: transparent;
   -webkit-text-stroke: 0.2px var(--project-text-animation-color);
-  font-size: 2rem;
-  font-family: "Krona One", sans-serif;
-  top: 0;
-  font-weight: bolder;
-  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  white-space: nowrap;
-  cursor: pointer;
-  padding-top: 0.5rem;
-  text-transform: capitalize;
-}
-.work__title-mobile {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-  transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-  width: 97%;
-  text-align: left;
-  position: relative;
-
-}
-
-.work__title-mobile a {
-  font-size: var(--smaller-font-size);
-  font-weight: var(--font-medium);
-  font-family: "Satoshi", sans-serif;
-  color: var(--accent-color);
-}
-
-.work__title-mobile h1 {
-  width: 100%;
-  color: var(--title-color);
   font-size: 2rem;
   font-family: "Krona One", sans-serif;
   top: 0;
@@ -152,20 +102,7 @@
   width: 0%;
   overflow: hidden;
 }
-
 .work__title h1::after {
-  content: "";
-  position: absolute;
-  left: 0rem;
-  top: 4.5rem;
-  width: 97vw;
-  height: 0.5px;
-  background: var(--border-text-color);
-  transform: scaleX(1);
-  transform-origin: left;
-  transition: all 5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.work__title-mobile h1::after {
   content: "";
   position: absolute;
   left: 0rem;
@@ -181,7 +118,6 @@
 .work__title:hover h1::before {
   width: 100%;
 }
-
 .blog__details-titlecat {
   display: flex;
   justify-content: flex-end;
@@ -189,22 +125,16 @@
   font-size: 0.8rem;
   text-align: right;
 }
-
 .blog__date {
   font-size: 0.6rem;
   color: var(--accent-color);
-
 }
-
 .blog__author {
   font-size: 0.60rem;
   margin-bottom: 0.2rem;
   color: var(--accent-color);
 
 }
-
-
-
 .work__work-text {
   display: flex;
   justify-content: left;
@@ -219,7 +149,6 @@
   letter-spacing: 0.5rem;
   padding-bottom: 1rem;
 }
-
 .work__work-text::after {
   position: absolute;
   content: "";
@@ -231,10 +160,6 @@
   left: -1rem;
   top: 5.5rem;
 }
-
-
-
-
 .post__date-imgname {
   opacity: 1;
   transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -250,13 +175,9 @@
   display: flex;
   flex-direction: column;
 }
-
 .post__date-imagename.fade-in {
   opacity: 1;
 }
-
-
-
 .projects__load-container {
   position: fixed;
   top: 0;
@@ -267,8 +188,6 @@
   z-index: 10;
   pointer-events: none;
 }
-
-
 .projects__load-screen {
   position: relative;
   padding-top: 0px;
@@ -278,14 +197,9 @@
   width: 100%;
   height: 0%;
 }
-
-
-
-
 .scrollbarr {
   overflow-y: scroll;
   scrollbar-width: none;
-  /* hide default scrollbar in Firefox */
   overflow-x: hidden;
   width: 100vw;
   height: 100vh;
@@ -295,35 +209,26 @@
   width: 0;
   /* hide default scrollbar in Chrome and Safari */
 }
-
 /* Add custom scrollbar styles */
 .scrollbarr::-webkit-scrollbar-track {
   background-color: #f5f5f5;
 }
-
 .scrollbarr::-webkit-scrollbar-thumb {
   background-color: #aaa;
   border-radius: 10px;
 }
-
 .scrollbarr::-webkit-scrollbar-thumb:hover {
   background-color: #555;
 }
-
-
 .blog {
-
   gap: 1rem;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
 .blog__header {
   padding-top: 6rem;
 }
-
-
 .section__subtitle-blog {
   color: var(--accent-color);
   display: flex;
@@ -332,8 +237,6 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
-
-
 @media (min-width: 1850px) {
   .menu__item-image_wrapper {
     position: absolute;
@@ -341,7 +244,6 @@
     left: 10rem;
   }
 }
-
 @media (max-width: 416px) {
   .work__work-text {
     font-size: 2rem;

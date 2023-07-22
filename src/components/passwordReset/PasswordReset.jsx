@@ -46,7 +46,7 @@ const PasswordReset = (Props) => {
             </div>
             <div className="forgot__back">
               <Link to="/login" className="forgot__content_link">
-                <p>Back</p>
+                <p>Back To Login</p>
               </Link>
             </div>
           </div>

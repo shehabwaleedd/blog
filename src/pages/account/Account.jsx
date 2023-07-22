@@ -35,20 +35,15 @@ const Account = ({ isTablet, setIsTablet, isMobile, setIsMobile }) => {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                console.log("Fetching all posts...");
                 const postsSnapshot = await getDocs(postsCollectionRef);
                 const allPosts = postsSnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-                console.log("All Posts:", allPosts);
                 setPostList(allPosts);
 
                 if (user && user.uid) {
-                    console.log("User ID:", user.uid);
-                    console.log("Fetching user posts...");
                     const userPostsSnapshot = await getDocs(
                         query(postsCollectionRef, where("author.id", "==", user.uid))
                     );
                     const userPostsData = userPostsSnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-                    console.log("User Posts:", userPostsData);
                     setUserPosts(userPostsData);
                 }
             } catch (error) {
@@ -66,8 +61,6 @@ const Account = ({ isTablet, setIsTablet, isMobile, setIsMobile }) => {
         const storageRef = ref(storage, `profilePictures/${user.uid}`);
         uploadBytes(storageRef, file)
             .then((snapshot) => {
-                console.log('Profile picture uploaded to Firebase Storage');
-
                 // Get the download URL of the uploaded image
                 getDownloadURL(snapshot.ref)
                     .then((url) => {
@@ -76,7 +69,6 @@ const Account = ({ isTablet, setIsTablet, isMobile, setIsMobile }) => {
                         if (user) {
                             updateProfile(user, { photoURL: url })
                                 .then(() => {
-                                    console.log('Profile picture updated in Firebase Authentication');
                                     setProfilePicture(url); // Optional: Update the state to show the new profile picture
                                 })
                                 .catch((error) => {

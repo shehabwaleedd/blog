@@ -1,0 +1,114 @@
+.create__container-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create__container-mobile h1 {
+    font-size: 1rem;
+    text-transform: lowercase;
+    color: var(--title-color);
+    font-family: "El Messiri", sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.07rem;
+}
+
+.square5Open-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 0.5px solid var(--border-text-color);
+    width: 28.5vw;
+    text-align: center;
+    background-color: var(--title-color);
+    transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+
+.square5Open-mobile::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--title-color);
+    animation: fillAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.square5-mobile:not(.square5Open-mobile)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--title-color);
+    animation: closeAnimation 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.square5-mobile:not(.square5Open-mobile) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28.5vw;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.square5-mobile:hover {
+    border-bottom: 1px solid var(--title-color);
+}
+
+.square5-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 18.5vw;
+    text-align: center;
+    transition: all 0.06s cubic-bezier(0.86, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.logo-mobile {
+    width: 60vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+
+.logo-mobile h1 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color: var(--title-color);
+    font-family: "El Messiri", sans-serif;
+    letter-spacing: 0.56rem;
+}
+
+@keyframes fillAnimation {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes closeAnimation {
+    0% {
+        height: 100%;
+    }
+
+    100% {
+        height: 0;
+        top: 100%;
+    }
+}

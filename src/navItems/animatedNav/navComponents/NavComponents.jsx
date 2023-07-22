@@ -16,7 +16,6 @@ const NavComponents = (Props) => {
         try {
             await logOut()
             navigate('/login')
-            console.log("logged out successfully")
         } catch (e) {
             console.log(e.message)
         }
