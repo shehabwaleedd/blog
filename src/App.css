@@ -47,7 +47,7 @@
   --mode: light; /* Initial mode set to 'light' */
 
   background-color: #ffffeb;
-  
+  --title-color: #ffffda; 
   /* Default Colors */
   --hue: 0;
   --sat: 0%;
