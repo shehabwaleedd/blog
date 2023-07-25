@@ -1,43 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Krona+One&display=swap');
 /* Dark Mode */
-#dark {
-  /* Colors */
-  --title-color: #ffffda;
-  --title-color-dark: hsl(var(--hue), var(--sat), 80%);
-  --text-color:#ffffdabf;
-  --border-text-color: hsl(var(--hue), var(--sat), 25%);
-  --nav-open-color: hsl(var(--hue), var(--sat), 15%);
-  --body-color: #10100e;
-  --container-color: #1b1b1b;
-  --glass-background: rgba(72, 72, 69, 0.1);
-  --box-shadow-img: 0 0 0 9px rgba(254, 254, 254, 1);
-  --rim-color: rgba(254, 254, 254, 0.9);
-  --nav-color: wheat;
-  --accent-color: #ffffda;
-  --box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
-  --webkit-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
-  --moz-box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
-  --insider-color: #373737;
-  --accent-color-darker: #ffe5b9;
-  --border-color: #c2b08f;
-  --blog-text-color: hsl(var(--hue), var(--sat), 65%);
-  --progressive-bar-color: #d9c39d;
-  --stack-accent-color: #1b1b1b;
-  --stack-icons-background-color: #fbefde;
-  --overlay-color: #10100e;
-  --nav-overlay-color: #eee7e1;
-  --project-text-animation-color: #f3e9e1;
-  --logo-color: #FFFFE3;
-  --experience-text-color: #76ae7b;
-  --education-text-color: #b682c4;
-  --footer-border-color: 1px solid rgba(255, 255, 255, 0.098);
-  --about-transition-color: #eee7e1;
-  --projects-transition-color: #eee7e1;
-  --contact-transition-color: #eee7e1;
-  --blog-text-color: #e6e6c8;
-  
-  /* Background */
-  background-color: var(--body-color);
-}
+#dark { --title-color: #ffffda; --title-color-dark: hsl(var(--hue), var(--sat), 80%); --text-color:#ffffdabf; --border-text-color: hsl(var(--hue), var(--sat), 25%); --nav-open-color: hsl(var(--hue), var(--sat), 15%); --body-color: #10100e; --container-color: #1b1b1b; --glass-background: rgba(72, 72, 69, 0.1); --box-shadow-img: 0 0 0 9px rgba(254, 254, 254, 1); --rim-color: rgba(254, 254, 254, 0.9); --nav-color: wheat; --accent-color: #ffffda; --box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75); --webkit-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75); --moz-box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75); --insider-color: #373737; --accent-color-darker: #ffe5b9; --border-color: #c2b08f; --blog-text-color: hsl(var(--hue), var(--sat), 65%); --progressive-bar-color: #d9c39d; --stack-accent-color: #1b1b1b; --stack-icons-background-color: #fbefde; --overlay-color: #10100e; --nav-overlay-color: #eee7e1; --project-text-animation-color: #f3e9e1; --logo-color: #FFFFE3; --experience-text-color: #76ae7b; --education-text-color: #b682c4; --footer-border-color: 1px solid rgba(255, 255, 255, 0.098); --about-transition-color: #eee7e1; --projects-transition-color: #eee7e1; --contact-transition-color: #eee7e1; --blog-text-color: #e6e6c8; background-color: var(--body-color);}
 
 /* Light Mode */
 #light {
