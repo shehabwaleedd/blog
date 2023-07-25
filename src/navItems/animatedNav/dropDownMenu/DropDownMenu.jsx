@@ -1,10 +1,9 @@
-import React, { useState ,useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import i18next from 'i18next';
 import './DropDownMenu.css';
 import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 import {FaAngleDown} from 'react-icons/fa';
-import { useLocation } from 'react-router-dom';
 
 const DropDownMenu = (Props) => {
 
@@ -13,7 +12,7 @@ const DropDownMenu = (Props) => {
   };
 
 
-  const smallScreen = window.innerWidth <= 414 ? true : false;
+  // const smallScreen = window.innerWidth <= 414 ? true : false;
 
 
 
