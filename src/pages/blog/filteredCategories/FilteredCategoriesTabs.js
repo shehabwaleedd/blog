@@ -26,9 +26,9 @@ export function FilteredCategoriesTabs({
 
   return (
     <>
-      <div className="category__tabs">
+      <motion.div className="category__tabs">
         {categories.map((category) => (
-          <button
+          <motion.button
             key={category}
             className={`category__button`}
             onClick={() => handleTabClick(category)}
@@ -37,13 +37,13 @@ export function FilteredCategoriesTabs({
             {(category === "All" && activeTab === null) || (selectedCategory === category && !(category === "All" && activeTab === null)) ? (
               <motion.span key={category} layoutId="bubble" className="category__active" style={{ borderRadius: 9999 }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} onClick={() => handleCategoryClick(category)} />) : null}
             {category}
-          </button>
+          </motion.button>
         ))}
         <div className="category__switches">
           <Toggle toggleTheme={toggleTheme} navOpen={navOpen} />
           <DropDownMenu navOpen={navOpen} language={language} setLanguage={setLanguage} languageExpanded={languageExpanded} setLanguageExpanded={setLanguageExpanded} />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

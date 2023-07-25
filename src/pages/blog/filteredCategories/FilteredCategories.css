@@ -18,7 +18,8 @@
     color: var(--container-color);
     padding: 0.1rem 1.7rem;
     position: absolute;
-    top: 2rem;
+    top: 2.2rem;
+    width: 60%;
     transition: all 0.8s cubic-bezier(0.96, 1, 0.8, 0.7);
 
 }

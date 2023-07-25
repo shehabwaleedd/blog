@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { useUserAuth } from '../authContext/AuthContext'
 import { useTranslation } from 'react-i18next'
-
+import { BsArrowLeft } from 'react-icons/bs'
 
 const PasswordReset = (Props) => {
 
@@ -46,6 +46,11 @@ const PasswordReset = (Props) => {
             </div>
             <div className="forgot__back">
               <Link to="/login" className="forgot__content_link">
+              <BsArrowLeft style={{
+                    fontSize: "1.5rem",
+                    marginRight: "0.5rem",
+                    marginTop: "0.2rem",
+                  }} />
                 <p>Back To Login</p>
               </Link>
             </div>
@@ -57,7 +62,10 @@ const PasswordReset = (Props) => {
               </div>
               <div className="forgot__button">
                 <button type="submit" className="forgot__button-sign">
-                  <i className="uil uil-arrow-left button__icon-forgot"></i>
+                  <BsArrowLeft style={{
+                    fontSize: "1.5rem",
+                    marginRight: "0.5rem"
+                  }} />
                   Reset Password
                 </button>
               </div>

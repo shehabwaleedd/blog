@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { BsArrowLeft } from 'react-icons/bs'
 
 const PasswordOpen = ({ handlePasswordReset, setEmail, email, isTablet, isMobile }) => {
     return (
@@ -17,7 +19,11 @@ const PasswordOpen = ({ handlePasswordReset, setEmail, email, isTablet, isMobile
                                 </div>
                                 <div className="forgot__button">
                                     <button type="submit" className="forgot__button-sign">
-                                        <i className="uil uil-arrow-left button__icon-forgot"></i>
+                                        <BsArrowLeft style={{
+                                            fontSize: "2rem",
+                                            marginTop: "0.5rem",
+                                            marginRight: "0.5rem",
+                                        }} />
                                         Reset Password
                                     </button>
                                 </div>
@@ -39,7 +45,10 @@ const PasswordOpen = ({ handlePasswordReset, setEmail, email, isTablet, isMobile
                                 </div>
                                 <div className="forgot__button">
                                     <button type="submit" className="forgot__button-sign">
-                                        <i className="uil uil-arrow-left button__icon-forgot"></i>
+                                        <BsArrowLeft style={{
+                                            fontSize: "1.5rem",
+                                            marginRight: "0.5rem"
+                                        }} />
                                         Reset Password
                                     </button>
                                 </div>
@@ -49,27 +58,44 @@ const PasswordOpen = ({ handlePasswordReset, setEmail, email, isTablet, isMobile
                 </>
 
             ) : (
-                <>
-                    <div className="right__header">
-                        <h1>Change Password</h1>
-                        <p>In Case You wanted to change your password or just forgot it, you can simply enter your Email Address and follow instructions to reset/change your password..</p>
-                    </div>
-                    <div className="right__bottom">
-                        <div className="forgot__content_right">
-                            <form className="forgot__form" onSubmit={handlePasswordReset}>
-                                <div className="forgot__input">
-                                    <input type="email" id="email" className="forgot__input-field" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                <section className="forgot section" id='skills'>
+                    <div className="forgot__container container grid">
+                        <div className="forgot__content">
+                            <div className="forgot__content_left">
+                                <div className="forgot__content_text">
+                                    <h1 className="forgot__title">Change Password</h1>
+                                    <p className='forgot__subtitle'>In Case You wanted to change your password or just forgot it, you can simply enter your Email Address and follow instructions to reset/change your password.</p>
                                 </div>
-                                <div className="forgot__button">
-                                    <button type="submit" className="forgot__button-sign">
-                                        <i className="uil uil-arrow-left button__icon-forgot"></i>
-                                        Reset Password
-                                    </button>
+                                <div className="forgot__back">
+                                    <Link to="/login" className="forgot__content_link">
+                                        <BsArrowLeft style={{
+                                            fontSize: "1.5rem",
+                                            marginRight: "0.5rem",
+                                            marginTop: "0.2rem",
+                                        }} />
+                                        <p>Back To Login</p>
+                                    </Link>
                                 </div>
-                            </form>
+                            </div>
+                            <div className="forgot__content_right">
+                                <form className="forgot__form" onSubmit={handlePasswordReset}>
+                                    <div className="forgot__input">
+                                        <input type="email" id="email" className="forgot__input-field" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    </div>
+                                    <div className="forgot__button">
+                                        <button type="submit" className="forgot__button-sign">
+                                            <BsArrowLeft style={{
+                                                fontSize: "1.5rem",
+                                                marginRight: "0.5rem"
+                                            }} />
+                                            Reset Password
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </>
+                </section>
             )}
         </>
     )

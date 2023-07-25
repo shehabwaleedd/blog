@@ -58,9 +58,9 @@ const DropDownMenu = (Props) => {
                     exit={{ x: 15, opacity: 0 }}
                     className="language__dropdown"
                     style={{
-                      top: Props.navOpen ? "-3rem" : "4.5rem",
-                      left: Props.navOpen ? Props.language === "ar" ? "-4rem" : "-8rem" : Props.language === "ar" ? "-12rem" : smallScreen ? "-10rem" : "-8rem",
+                      top: Props.navOpen ? "-3rem" : "-0.5rem",
                       flexDirection: Props.language === 'ar' ? 'row-reverse' : 'row',
+                      left: "-20rem",
                       width: "16rem"
                     }}
                   >
