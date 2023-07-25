@@ -1,6 +1,7 @@
 import React from 'react'
 import './Footer.css'
 import { t } from 'i18next'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
     return (
@@ -11,7 +12,9 @@ const Footer = () => {
                 </div>
                 <div className="footer__credits">
                     <span>© 2023 lumos. {t("footer__credits")}</span>
-                    <p>{t("footer__created_designed_by")} <a href="https://shehabwaleedd.vercel.app/" target='__blank'>Shehab Waleed</a></p>
+                    <Link to="https://shehabwaleedd.vercel.app/" target='__blank'>
+                        <p>{t("footer__created_designed_by")} Shehab Waleed</p>
+                    </Link>
                 </div>
             </div>
         </footer>
