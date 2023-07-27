@@ -134,7 +134,9 @@ function Blog({ isTablet, setIsTablet, isMobile, setIsMobile, navOpen, setNavOpe
           imageSize={imageSize}
           isImageVisible={isImageVisible}
           postLists={postLists}
-        />
+          hoveredPostId={hoveredPostId}
+          cursorPosition={cursorPosition}
+          />
       )}
     </React.Fragment>
   );

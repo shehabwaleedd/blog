@@ -36,9 +36,7 @@ const AccountTablet = ({
         <div className='account-tablet'>
             <div className="account__upper-tablet">
                 <h1 >{t("account__settings")}</h1>
-                <button onClick={handleLogout}>
-                    <h1>Logout</h1>
-                </button>
+                <h2 onClick={handleLogout}>Logout</h2>
             </div>
             <div className="account__container-tablet">
                 <LeftContainer

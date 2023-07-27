@@ -1,6 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Krona+One&display=swap');
-/* Dark Mode */
-#dark { --title-color: #ffffda; --title-color-dark: hsl(var(--hue), var(--sat), 80%); --text-color:#ffffdabf; --border-text-color: hsl(var(--hue), var(--sat), 25%); --nav-open-color: hsl(var(--hue), var(--sat), 15%); --body-color: #10100e; --container-color: #1b1b1b; --glass-background: rgba(72, 72, 69, 0.1); --box-shadow-img: 0 0 0 9px rgba(254, 254, 254, 1); --rim-color: rgba(254, 254, 254, 0.9); --nav-color: wheat; --accent-color: #ffffda; --box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75); --webkit-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75); --moz-box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75); --insider-color: #373737; --accent-color-darker: #ffe5b9; --border-color: #c2b08f; --blog-text-color: hsl(var(--hue), var(--sat), 65%); --progressive-bar-color: #d9c39d; --stack-accent-color: #1b1b1b; --stack-icons-background-color: #fbefde; --overlay-color: #10100e; --nav-overlay-color: #eee7e1; --project-text-animation-color: #f3e9e1; --logo-color: #FFFFE3; --experience-text-color: #76ae7b; --education-text-color: #b682c4; --footer-border-color: 1px solid rgba(255, 255, 255, 0.098); --about-transition-color: #eee7e1; --projects-transition-color: #eee7e1; --contact-transition-color: #eee7e1; --blog-text-color: #e6e6c8; background-color: var(--body-color);}
+
+#dark {
+  /* Colors */
+  --title-color: #ffffda;
+  --title-color-dark: hsl(var(--hue), var(--sat), 80%);
+  --text-color: #ffffdabf;
+  --border-text-color: hsl(var(--hue), var(--sat), 25%);
+  --nav-open-color: hsl(var(--hue), var(--sat), 15%);
+  --body-color: #10100e;
+  --container-color: #1b1b1b;
+  --glass-background: rgba(72, 72, 69, 0.1);
+  --box-shadow-img: 0 0 0 9px rgba(254, 254, 254, 1);
+  --rim-color: rgba(254, 254, 254, 0.9);
+  --nav-color: wheat;
+  --accent-color: #ffffda;
+  --box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
+  --webkit-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
+  --moz-box-shadow: 1px 0px 19px -1px rgba(245, 222, 179, 0.75);
+  --insider-color: #373737;
+  --accent-color-darker: #ffe5b9;
+  --border-color: #c2b08f;
+  --blog-text-color: hsl(var(--hue), var(--sat), 65%);
+  --progressive-bar-color: #d9c39d;
+  --stack-accent-color: #1b1b1b;
+  --stack-icons-background-color: #fbefde;
+  --overlay-color: #10100e;
+  --nav-overlay-color: #eee7e1;
+  --project-text-animation-color: #f3e9e1;
+  --logo-color: #FFFFE3;
+  --experience-text-color: #76ae7b;
+  --education-text-color: #b682c4;
+  --footer-border-color: 1px solid rgba(255, 255, 255, 0.098);
+  --about-transition-color: #eee7e1;
+  --projects-transition-color: #eee7e1;
+  --contact-transition-color: #eee7e1;
+  --blog-text-color: #e6e6c8;
+
+  /* Background */
+  background-color: var(--body-color);
+}
 
 /* Light Mode */
 #light {
@@ -15,7 +53,7 @@
   --nav-color: #698269;
   --rim-color: #212121;
   --glass-background: rgba(255, 251, 247, 0.2);
-  --accent-color:  hsl(var(--hue), var(--sat), 0%);
+  --accent-color: hsl(var(--hue), var(--sat), 0%);
   --box-shadow: -4px 2px 20px 1px rgba(63, 63, 63, 0.3);
   --webkit-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
   --moz-box-shadow: -4px 6px 31px 0px rgba(93, 110, 96, 0.6);
@@ -37,30 +75,24 @@
   --projects-transition-color: #1b1b1b;
   --contact-transition-color: #1b1b1b;
   --blog-text-color: hsl(var(--hue), var(--sat), 55%);
-
   /* Background */
   background-color: var(--body-color);
 }
 
 :root {
   /* Common Colors */
-  --mode: light; /* Initial mode set to 'light' */
-
+  --mode: light;
+  /* Initial mode set to 'light' */
   background-color: #ffffeb;
-  --title-color: #ffffda; 
+
   /* Default Colors */
   --hue: 0;
   --sat: 0%;
   --title-color: hsl(var(--hue), var(--sat), 30%);
   --title-color-dark: hsl(var(--hue), var(--sat), 0%);
   --text-color: hsl(var(--hue), var(--sat), 46%);
-
-
-
   /* =========== Font And Typography =========== */
-
   --body-font: "Poppins", sans-serif;
-
   /* 0.5rem = 8px | 1rem = 16px ...*/
   --big-font-size: 3.5rem;
   --h1-font-size: 2.25rem;
@@ -72,13 +104,10 @@
   --tiny-font-size: 0.625rem;
   --border-radius: 1rem;
   --speed: 500ms;
-
   /* ========== Font Weight ========== */
-
   --font-normal: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
-
   /* ========== Margins Bottom ========== */
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
@@ -89,38 +118,26 @@
   --mb-2-5: 2.5rem;
   --mb-3: 3rem;
   /* ========== Z Index ========== */
-
-
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
-
   /* Responsive Typography */
-
 }
 
-
-
 /* ========== Base ========== */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-
 }
 
 html {
   scroll-behavior: smooth;
-
 }
 
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  overscroll-behavior-x: none;
-  touch-action: pan-y;
 }
 
 #root {
@@ -137,9 +154,7 @@ input,
 textarea {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
-
 }
-
 
 h1,
 h2,
@@ -161,7 +176,6 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
-
 }
 
 img {
@@ -170,8 +184,6 @@ img {
 }
 
 /* ========== REUSABLE CSS CLASSES ========== */
-
-
 .section {
   padding: 1.5rem 0 2rem;
 }
@@ -205,7 +217,6 @@ img {
 }
 
 /* ========== REUSABLE CSS CLASSES ========== */
-
 .container {
   max-width: 968px;
   margin-left: auto;
@@ -228,9 +239,7 @@ img {
   gap: 1.5rem;
 }
 
-
 /* ========== REUSABLE CSS CLASSES ========== */
-
 .button {
   display: inline-block;
   background-color: var(--title-color);
@@ -238,8 +247,6 @@ img {
   padding: 1rem 2rem;
   font-weight: var(--font-medium);
 }
-
-
 
 .button__icon {
   margin-left: var(--mb-0-5);
@@ -254,7 +261,6 @@ img {
   background-color: var(--title-color-dark);
   border-radius: 0rem;
 }
-
 
 #trailer {
   height: 20px;
@@ -279,14 +285,12 @@ img {
 ::-webkit-scrollbar-thumb {
   background: var(--text-color);
   border-radius: 10px;
-
 }
 
 ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 50px;
 }
-
 
 .grid3 {
   display: grid;
@@ -307,10 +311,7 @@ img {
 }
 
 /* ========== BREAKPOINTS ========== */
-
 /* For Larger Devices */
-
-
 ::selection {
   background: var(--title-color);
   color: var(--container-color);
@@ -329,7 +330,6 @@ img {
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'Satoshi-Light';
   src: url('../public/fonts/Satoshi-Light.woff2') format('woff2'),
@@ -339,8 +339,6 @@ img {
   font-display: swap;
   font-style: normal;
 }
-
-
 
 @font-face {
   font-family: 'Satoshi-Regular';
@@ -352,7 +350,6 @@ img {
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'Satoshi-Italic';
   src: url('../public/fonts/Satoshi-Italic.woff2') format('woff2'),
@@ -362,7 +359,6 @@ img {
   font-display: swap;
   font-style: italic;
 }
-
 
 @font-face {
   font-family: 'Satoshi-Medium';
@@ -374,7 +370,6 @@ img {
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'Satoshi-MediumItalic';
   src: url('../public/fonts/Satoshi-MediumItalic.woff2') format('woff2'),
@@ -384,7 +379,6 @@ img {
   font-display: swap;
   font-style: italic;
 }
-
 
 @font-face {
   font-family: 'Satoshi-Bold';
@@ -396,7 +390,6 @@ img {
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'Satoshi-BoldItalic';
   src: url('../public/fonts/Satoshi-BoldItalic.woff2') format('woff2'),
@@ -406,7 +399,6 @@ img {
   font-display: swap;
   font-style: italic;
 }
-
 
 @font-face {
   font-family: 'Satoshi-Black';

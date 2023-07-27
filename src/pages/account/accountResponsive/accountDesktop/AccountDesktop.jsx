@@ -32,9 +32,7 @@ const AccountDesktop = ({
         <section className='account'>
             <div className="account__upper">
                 <h1 >{t("account__settings")}</h1>
-                <button onClick={handleLogout}>
-                    <h1>Logout</h1>
-                </button>
+                    <h2 onClick={handleLogout}>Logout</h2>
             </div>
             <div className="account__container">
                 <LeftContainer

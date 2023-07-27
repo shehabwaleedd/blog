@@ -6,8 +6,8 @@ import { getDoc, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../../../../firebase-config";
 import ScrollAnimation from "./ScrollAnimation";
 import Loading from "../../../../components/supplements/loading/Loading.tsx";
-import {BiX} from "react-icons/bi";
-import {AiFillEdit} from "react-icons/ai";
+import { BiX } from "react-icons/bi";
+import { AiFillEdit } from "react-icons/ai";
 import { motion } from "framer-motion";
 
 
@@ -45,6 +45,23 @@ export const DetailsPages = () => {
     setSelectedCategory(post.category);
     navigate(`/filtered/${post.category}`); // Navigate to the filtered category
   };
+  const handleShareClick = () => {
+    if (navigator.share) {
+      // Use the navigator.share() method if supported
+      navigator.share({
+        title: post.title,
+        text: post.postText,
+        url: window.location.href,
+      })
+        .then(() => console.log("Shared successfully"))
+        .catch((error) => console.error("Error sharing:", error));
+    } else {
+      // Fallback for browsers that do not support navigator.share()
+      console.log("Share not supported in this browser.");
+      // Implement a custom share modal or open a share URL here
+      // For example, you can use a third-party library like `react-share`
+    }
+  };
 
   if (!post) {
     return <Loading height={100} />
@@ -58,19 +75,19 @@ export const DetailsPages = () => {
           <div className='blog__image_container'>
             <img src={post.imageUrls} alt='' />
           </div>
-          <div className="blog__details_button container">
+          <div className="blog__details_button_container container">
             <div className='post__tag-details'>
               <a href="/" className="post__hashtag-details" onClick={(e) => { e.preventDefault(); handleCategoryClick(post.category); }} >#{post.category}</a>
             </div>
             <div className="blog__details_button">
               {auth.currentUser?.uid === post.author.id && (
                 <div className="blog__details_button-delete">
-                  <button className="button__delete" onClick={() => { deletePost(post.id) }}><BiX style={{fontSize: "2rem"}}/></button>
+                  <button className="button__delete" onClick={() => { deletePost(post.id) }}><BiX style={{ fontSize: "2rem" }} /></button>
                 </div>
               )}
               <div className="blog__details_button-edit">
                 {auth.currentUser?.uid === post.author.id && (
-                  <button className="button__edit" onClick={handleEditClick}><AiFillEdit style={{fontSize: "2rem", color: "var(--container-color"}}/></button>
+                  <button className="button__edit" onClick={handleEditClick}><AiFillEdit style={{ fontSize: "2rem", color: "var(--container-color" }} /></button>
                 )}
               </div>
             </div>
@@ -85,7 +102,7 @@ export const DetailsPages = () => {
           <div className='post__date-details container'>
             <div className="details__post__date-imgname">
               <div className="details__post__date_imgname-combined">
-                <img src={post.photoURL} alt=""/>
+                <img src={post.photoURL} alt="" />
                 <span className="blog__post-author">@{post.author.name}</span>
               </div>
             </div>

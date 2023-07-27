@@ -78,11 +78,11 @@ function Login({ isMobile, isTablet, language }) {
                       <div className="form__container_form-buttons-mobile">
                         <div className="signup__social-button facebook__button">
                           <i className='bx bxl-facebook' ></i>
-                          <button onClick={handleGoogle} className=""><p>facebook</p></button>
+                          <h2 onClick={handleGoogle} className="">facebook</h2>
                         </div>
                         <div className="signup__social-button google__button">
                           <i className='bx bxl-google' ></i>
-                          <button onClick={handleGoogle}><p>google</p></button>
+                          <h2 onClick={handleGoogle}>google</h2>
                         </div>
                       </div>
                     </div>
@@ -116,16 +116,13 @@ function Login({ isMobile, isTablet, language }) {
                     <div className="login__button-mobile">
                       <button type="submit" className="login__button-sign-tablet">
                         <h3>{t("login__form__button")}</h3>
-                        <i className="uil uil-arrow-right button__icon-login"></i>
                       </button>
                       <div className="form__container_form-buttons-tablet">
                         <div className="signup__social-button facebook__button">
-                          <i className='bx bxl-facebook' ></i>
-                          <button onClick={handleGoogle} className=""><p>facebook</p></button>
+                          <h2 onClick={handleGoogle} className="">facebook</h2>
                         </div>
                         <div className="signup__social-button google__button">
-                          <i className='bx bxl-google' ></i>
-                          <button onClick={handleGoogle}><p>google</p></button>
+                          <h2 onClick={handleGoogle}><p>google</p></h2>
                         </div>
                       </div>
                     </div>
@@ -165,11 +162,11 @@ function Login({ isMobile, isTablet, language }) {
                       <div className="form__container_form-buttons">
                         <div className="signup__social-button facebook__button">
                           <i className='bx bxl-facebook' ></i>
-                          <button onClick={handleGoogle} className=""><p>facebook</p></button>
+                          <h2 onClick={handleGoogle} className="">facebook</h2>
                         </div>
                         <div className="signup__social-button google__button">
                           <i className='bx bxl-google' ></i>
-                          <button onClick={handleGoogle}><p>google</p></button>
+                          <h2 onClick={handleGoogle}>google</h2>
                         </div>
                       </div>
                     </div>

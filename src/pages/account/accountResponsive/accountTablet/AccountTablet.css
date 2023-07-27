@@ -9,7 +9,7 @@
     z-index: 999998;
 }
 
-.account__upper-tablet button h1 {
+.account__upper-tablet h2{
     color: #ee7575;
     text-transform: uppercase;
     font-size: 0.8rem;

@@ -136,21 +136,24 @@
 
 .facebook__button {
     background-color: var(--title-color);
+    color: #000;
 
 }
 
-.facebook__button button {
+.facebook__button h2 {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     align-content: flex-start;
     font-family: "Satoshi-Bold", sans-serif;
     font-size: 1.2rem;
+    color: var(--container-color);
 }
 
-.google__button button {
+.google__button h2 {
     font-family: "Satoshi-Bold", sans-serif;
     font-size: 1.2rem;
+    color: var(--container-color);
 }
 
 .signup__social-button:hover {

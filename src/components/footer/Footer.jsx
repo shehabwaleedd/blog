@@ -1,9 +1,10 @@
 import React from 'react'
 import './Footer.css'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 
 const Footer = () => {
+    const { t } = useTranslation()
     return (
         <footer className='footer'>
             <div className="footer__container">

@@ -3,84 +3,89 @@
   flex-direction: column;
   min-height: 100vh;
 }
+
 .blog__card_details {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 3rem;
-  }
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
 
-  .blog__details_texts h1 {
-    font-size: 1.875rem;
-    font-weight: 500;
-    margin: 0 10rem;
-  }
-  .blog__details_texts p {
-    margin: 1rem 10rem;
-    font-size: 18px;
-    line-height: 2;
-    text-transform: capitalize;
-  }
-  .blog__details_post-date {
-    margin: 1rem 0;
-  }
+.blog__details_texts h1 {
+  font-size: 1.875rem;
+  font-weight: 500;
+  margin: 0 10rem;
+}
 
-  .post__tag-details a {
-    color: var(--accent-color);
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin-right: 1rem;
-  }
+.blog__details_texts p {
+  margin: 1rem 10rem;
+  font-size: 18px;
+  line-height: 2;
+  text-transform: capitalize;
+}
 
-  .blog__details_post-textanddate {
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-  }
+.blog__details_post-date {
+  margin: 1rem 0;
+}
 
-  .post__title_name-details {
-    font-family: "El Messiri", sans-serif;
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: var(--accent-color);
-  }
-  .post__date-details span {
-    color: var(--accent-color);
-    font-size: 0.85rem;
-    font-weight: 400;
-    margin-right: 1rem;
-  }
-  .post__date-details img {
-    width: 30px;
-    height: 30px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
+.post__tag-details a {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-right: 1rem;
+}
+
+.blog__details_post-textanddate {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+}
+
+.post__title_name-details {
+  font-family: "El Messiri", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--accent-color);
+}
+
+.post__date-details span {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  font-weight: 400;
+  margin-right: 1rem;
+}
+
+.post__date-details img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
 
 .blog__image_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.875rem;    
-    border-radius: 0.625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.875rem;
+  border-radius: 0.625rem;
 
 }
 
-  .blog__image_container img {
-    width: 100vw;
-    height: 30rem;
-    object-fit: cover;
+.blog__image_container img {
+  width: 100vw;
+  height: 30rem;
+  object-fit: cover;
 
-  }
+}
 
-  .blog__details_post-titleDate {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-  }
+.blog__details_post-titleDate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
 
 .blog__details_post-text {
   display: flex;
@@ -100,6 +105,15 @@
   line-height: 1.3;
   text-transform: capitalize;
   color: var(--blog-text-color);
+}
+.blog__details_button_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 999999999;
+  width: 100%;
 }
 
 .blog__details_button {
@@ -168,7 +182,7 @@
   line-height: 2;
 }
 
-.details__post__date-imgname{
+.details__post__date-imgname {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -181,13 +195,13 @@
   display: block;
   width: 160px;
   height: 2px;
-  background:var(--text-color);
+  background: var(--text-color);
   color: var(--accent-color);
   transition: width 0.3s;
 }
 
 
-.details__post__date_imgname-combined{
+.details__post__date_imgname-combined {
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -210,6 +224,7 @@
     height: 100%;
     object-fit: cover;
   }
+
   .blog__details_post-textanddate {
     display: flex;
     flex-direction: column;
@@ -223,6 +238,7 @@
     font-weight: 500;
     color: var(--accent-color);
   }
+
   .blog__details_post-text p {
     margin: 1rem 0;
     font-size: 0.8rem;
@@ -230,5 +246,5 @@
     text-transform: capitalize;
     color: var(--blog-text-color);
   }
-  
+
 }
