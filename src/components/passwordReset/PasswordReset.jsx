@@ -44,16 +44,14 @@ const PasswordReset = (Props) => {
               <h1 className="forgot__title">Don't Worry</h1>
               <p className='forgot__subtitle'>We are here to help you to recover your password. Enter the email address you used when you joined us and we'll send you the instructions to reset your password.</p>
             </div>
-            <div className="forgot__back">
-              <Link to="/login" className="forgot__content_link">
+            <Link to="/login" className="forgot__back">
               <BsArrowLeft style={{
                     fontSize: "1.5rem",
                     marginRight: "0.5rem",
-                    marginTop: "0.2rem",
+                    marginTop: "1.2rem",
                   }} />
-                <p>Back To Login</p>
-              </Link>
-            </div>
+                <h3>Back To Login</h3>
+            </Link>
           </div>
           <div className="forgot__content_right">
             <form className="forgot__form" onSubmit={handlePasswordReset}>
