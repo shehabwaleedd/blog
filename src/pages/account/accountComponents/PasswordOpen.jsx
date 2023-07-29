@@ -63,18 +63,8 @@ const PasswordOpen = ({ handlePasswordReset, setEmail, email, isTablet, isMobile
                         <div className="forgot__content">
                             <div className="forgot__content_left">
                                 <div className="forgot__content_text">
-                                    <h1 className="forgot__title">Change Password</h1>
-                                    <p className='forgot__subtitle'>In Case You wanted to change your password or just forgot it, you can simply enter your Email Address and follow instructions to reset/change your password.</p>
-                                </div>
-                                <div className="forgot__back">
-                                    <Link to="/login" className="forgot__content_link">
-                                        <BsArrowLeft style={{
-                                            fontSize: "1.5rem",
-                                            marginRight: "0.5rem",
-                                            marginTop: "0.2rem",
-                                        }} />
-                                        <p>Back To Login</p>
-                                    </Link>
+                                    <h1 className="forgot__title">Don't Worry</h1>
+                                    <p className='forgot__subtitle'>We are here to help you to recover your password. Enter the email address you used when you joined us and we'll send you the instructions to reset your password.</p>
                                 </div>
                             </div>
                             <div className="forgot__content_right">
