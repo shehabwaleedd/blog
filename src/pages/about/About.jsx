@@ -3,7 +3,7 @@ import "./About.css"
 import img from "../../assets/profile51.jpg"
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import Waypoint from 'react-waypoint';
+
 import { t } from 'i18next';
 
 const About = () => {
