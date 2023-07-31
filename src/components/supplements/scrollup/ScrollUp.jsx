@@ -38,7 +38,7 @@ const ScrollUp = () => {
     transition={{ duration: 0.2 }}
     >
       <div className="home__scroll-up" onClick={scrollToTop}>
-        <FaArrowUp style={{fontSize: "1.8rem"}}/>
+        <FaArrowUp style={{fontSize: "1.6rem"}}/>
       </div>
     </motion.div>
   );

@@ -29,7 +29,7 @@
   "navbar__logout": "Logout",
   "navbar__register": "Register",
   "navbar__create_post": "create post",
-  "search__placeholder": "Search For Products",
+  "search__placeholder": "Search For Articles",
   "account__settings": "Account Settings",
   "account__personal_info": "Personal Info",
   "account__change_password": "Change Password",

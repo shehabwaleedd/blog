@@ -1,39 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useUserAuth } from '../authContext/AuthContext';
+import { useTranslation } from 'react-i18next';
+import { BsArrowLeft } from 'react-icons/bs';
 import './PasswordReset.css'
-import { useNavigate } from 'react-router-dom'
-import { Link } from 'react-router-dom'
-import { useState } from 'react'
-import { useUserAuth } from '../authContext/AuthContext'
-import { useTranslation } from 'react-i18next'
-import { BsArrowLeft } from 'react-icons/bs'
+const PasswordReset = () => {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const { passwordReset } = useUserAuth();
 
-const PasswordReset = (Props) => {
-
-  const [email, setEmail] = useState('')
-  const [error, setError] = React.useState('')
-  const { passwordReset } = useUserAuth()
-
-  let navigate = useNavigate()
-  const { t } = useTranslation()
-
+  let navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handlePasswordReset = async (e) => {
     e.preventDefault();
     setError('');
     try {
       await passwordReset(email);
-      navigate('/login')
+      navigate('/login');
+      alert("A Reset Link Has Been Sent To Your Email");
     } catch (e) {
       setError(e.message);
-      console.log(error);
     }
-    navigate('/login')
-    alert("A Reset Link Has Been Sent To Your Email")
-
-  }
-
-
-
+  };
 
   return (
     <section className="forgot section" id='skills'>
@@ -41,16 +30,16 @@ const PasswordReset = (Props) => {
         <div className="forgot__content">
           <div className="forgot__content_left">
             <div className="forgot__content_text">
-              <h1 className="forgot__title">Don't Worry</h1>
-              <p className='forgot__subtitle'>We are here to help you to recover your password. Enter the email address you used when you joined us and we'll send you the instructions to reset your password.</p>
+              <h1 className="forgot__title">Password Reset</h1>
+              <p className='forgot__subtitle'>We are here to help you recover your password. Enter the email address you used when you joined us, and we'll send you the instructions to reset your password.</p>
             </div>
             <Link to="/login" className="forgot__back">
               <BsArrowLeft style={{
-                    fontSize: "1.5rem",
-                    marginRight: "0.5rem",
-                    marginTop: "1.2rem",
-                  }} />
-                <h3>Back To Login</h3>
+                fontSize: "1.5rem",
+                marginRight: "0.5rem",
+                marginTop: "1.2rem",
+              }} />
+              <h3>Back To Login Page</h3>
             </Link>
           </div>
           <div className="forgot__content_right">
@@ -72,7 +61,7 @@ const PasswordReset = (Props) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default PasswordReset
+export default PasswordReset;

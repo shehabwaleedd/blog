@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import "./Details.css"
 import { useNavigate, useParams } from "react-router-dom"
 import { useEffect } from "react"
+import { collection, query, where, getDocs } from 'firebase/firestore';
 import { getDoc, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../../../../firebase-config";
 import ScrollAnimation from "./ScrollAnimation";
@@ -9,13 +10,16 @@ import Loading from "../../../../components/supplements/loading/Loading.tsx";
 import { BiX } from "react-icons/bi";
 import { AiFillEdit } from "react-icons/ai";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 
 export const DetailsPages = () => {
   const { id } = useParams()
   const postDocRef = doc(db, "posts", id);
+  const postsCollectionRef = collection(db, "posts");
   const [post, setPost] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [recommendedArticles, setRecommendedArticles] = useState([]);
   const navigate = useNavigate();
 
 
@@ -24,12 +28,21 @@ export const DetailsPages = () => {
       const docSnap = await getDoc(postDocRef);
       if (docSnap.exists()) {
         setPost({ ...docSnap.data(), id: docSnap.id });
+        if (post && post.category) {
+          const recommendedArticlesSnapshot = await getDocs(
+            query(postsCollectionRef, where("category", "==", post.category))
+          );
+          const recommendedArticlesData = recommendedArticlesSnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+          setRecommendedArticles(recommendedArticlesData);
+        }
       } else {
         // Handle error when post is not found
       }
     };
     getPost();
+    console.log(recommendedArticles)
   }, [postDocRef]);
+
 
   const deletePost = async (id) => {
     const postDoc = doc(db, "posts", id);
@@ -67,6 +80,7 @@ export const DetailsPages = () => {
     return <Loading height={100} />
   }
 
+
   return (
     <>
       <ScrollAnimation />
@@ -78,6 +92,7 @@ export const DetailsPages = () => {
           <div className="blog__details_button_container container">
             <div className='post__tag-details'>
               <a href="/" className="post__hashtag-details" onClick={(e) => { e.preventDefault(); handleCategoryClick(post.category); }} >#{post.category}</a>
+              <span className="blog__post-author">@{post.author.name}</span>
             </div>
             <div className="blog__details_button">
               {auth.currentUser?.uid === post.author.id && (
@@ -99,14 +114,32 @@ export const DetailsPages = () => {
             </div>
             <p className="post__subtitle">{post.postText}</p>
           </div>
-          <div className='post__date-details container'>
-            <div className="details__post__date-imgname">
+          {post.category && ( // Add this condition to check if post.category exists
+
+            <div className="details__post__date-imgname container">
               <div className="details__post__date_imgname-combined">
-                <img src={post.photoURL} alt="" />
-                <span className="blog__post-author">@{post.author.name}</span>
+                <h1>Articles You Might Be Interested In...</h1>
+                <div className="recommended-articles">
+                  {recommendedArticles.map((article) => (
+                    <div key={article.id} className="recommended-article">
+                      <Link to={`/details/${article.id}`} className="recommendation__card">
+                        <img src={article.imageUrls} alt="" />
+                        <div className="articles__title_name">
+                          <h1 >{article.title.slice(0, 65)}</h1>
+                          <span>@{article.author.name}</span>
+                        </div>
+                        <div className="articles__cat_date">
+                          <span>#{article.category}</span>
+                          <span>#{article.date}</span>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+
+          )}
         </div>
       </motion.div>
     </>

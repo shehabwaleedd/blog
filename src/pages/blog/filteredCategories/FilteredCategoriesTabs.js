@@ -30,12 +30,12 @@ export function FilteredCategoriesTabs({
         {categories.map((category) => (
           <motion.button
             key={category}
-            className={`category__button`}
+            className={`${activeTab === category? "category__button-active" : "category__button"}`}
             onClick={() => handleTabClick(category)}
           >
 
             {(category === "All" && activeTab === null) || (selectedCategory === category && !(category === "All" && activeTab === null)) ? (
-              <motion.span key={category} layoutId="bubble" className="category__active" style={{ borderRadius: 9999 }} transition={{ type: "spring", bounce: 0.2, duration: 0.6 }} onClick={() => handleCategoryClick(category)} />) : null}
+              <motion.span key={category} style={{ borderRadius: 9999 }}  onClick={() => handleCategoryClick(category)} />) : null}
             {category}
           </motion.button>
         ))}

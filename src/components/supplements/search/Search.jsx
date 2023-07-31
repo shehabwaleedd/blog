@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Search.css'
 import { BiSearch } from 'react-icons/bi'
 import { t } from 'i18next';

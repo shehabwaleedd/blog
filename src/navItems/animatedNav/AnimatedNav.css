@@ -486,7 +486,7 @@
 	height: 0.125rem;
 	border-radius: 0.625rem;
 	background: var(--title-color);
-	left: 0;
+	left: 0.2rem;
 	right: 0;
 	transform: rotate(0deg);
 	transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
