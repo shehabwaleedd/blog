@@ -35,6 +35,20 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
     fetchPostCount();
   }, []);
 
+  useEffect(() => {
+
+    if(location.pathname === "/") {
+      setArticlesOpen(true);
+    } else if (location.pathname === "/about") {
+      setAboutOpen(true);
+    } else if (location.pathname === "/account") {
+      setAccountOpen(true);
+    } else if (location.pathname === "/createpost") {
+      setCreateOpen(true);
+    } 
+
+  }, [location.pathname]);
+
   const handleArticlesOpen = () => {
     setArticlesOpen(true);
     setAboutOpen(false);
@@ -121,24 +135,24 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
 
         />
       ) : isTablet ? (
-        <TabletAnimatedNav 
-        isTablet={isTablet}
-        setIsTablet={setIsTablet}
-        isMobile={isMobile}
-        setIsMobile={setIsMobile}
-        navOpen={navOpen}
-        setNavOpen={setNavOpen}
-        handleArticlesOpen={handleArticlesOpen}
-        handleAboutOpen={handleAboutOpen}
-        handleAccountOpen={handleAccountOpen}
-        handleCreateOpen={handleCreateOpen}
-        user={user}
-        language={language}
-        articlesOpen={articlesOpen}
-        aboutOpen={aboutOpen}
-        accountOpen={accountOpen}
-        createOpen={createOpen}
-        postCount={postCount}
+        <TabletAnimatedNav
+          isTablet={isTablet}
+          setIsTablet={setIsTablet}
+          isMobile={isMobile}
+          setIsMobile={setIsMobile}
+          navOpen={navOpen}
+          setNavOpen={setNavOpen}
+          handleArticlesOpen={handleArticlesOpen}
+          handleAboutOpen={handleAboutOpen}
+          handleAccountOpen={handleAccountOpen}
+          handleCreateOpen={handleCreateOpen}
+          user={user}
+          language={language}
+          articlesOpen={articlesOpen}
+          aboutOpen={aboutOpen}
+          accountOpen={accountOpen}
+          createOpen={createOpen}
+          postCount={postCount}
         />
       ) : (
         <AnimatedNavDesktop

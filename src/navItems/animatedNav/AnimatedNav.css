@@ -5,6 +5,10 @@
   border-bottom: 0.5px solid var(--border-text-color);
 }
 
+.logo::selection {
+  background-color: transparent;
+}
+
 .navbar__container {
   display: grid;
   grid-template-columns: repeat(5, 1fr) 500px; /* Equal width columns for squares, last column for logo */
