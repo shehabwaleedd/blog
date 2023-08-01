@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import './AnimatedNav.css'
-import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 import { useUserAuth } from '../../components/authContext/AuthContext'
 import { collection, getDocs } from "firebase/firestore";

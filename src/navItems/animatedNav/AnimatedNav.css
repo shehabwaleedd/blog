@@ -3,10 +3,12 @@
   position: relative;
   border-top: 0.5px solid var(--border-text-color);
   border-bottom: 0.5px solid var(--border-text-color);
+  /* make user's selection not activated */
+  user-select: none;
 }
 
-.logo::selection {
-  background-color: transparent;
+.navbar::selection {
+  user-select: none;
 }
 
 .navbar__container {
