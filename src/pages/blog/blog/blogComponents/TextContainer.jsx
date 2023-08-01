@@ -72,7 +72,7 @@ const TextContainer = ({ isMobile, isTablet, filteredPosts, isImageVisible, hand
                                 <div className="work__title" key={item.id} onMouseEnter={() => handleMouseEnter(item.id)} onMouseLeave={handleMouseLeave}>
                                     <Link to={`/details/${item.id}`}>
                                         <h1 data-text={item.title + "..."}>
-                                            {item.title.slice(0, 27)}...
+                                            {item.title.slice(0, 27)}
                                         </h1>
                                     </Link>
                                     <div className="blog__details-titlecat">

@@ -20,6 +20,7 @@ export const DetailsPages = () => {
   const [post, setPost] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [recommendedArticles, setRecommendedArticles] = useState([]);
+  const [deleteConfirmation, setDeleteConfirmation] = useState(false);
   const navigate = useNavigate();
 
 
@@ -58,23 +59,18 @@ export const DetailsPages = () => {
     setSelectedCategory(post.category);
     navigate(`/filtered/${post.category}`); // Navigate to the filtered category
   };
-  const handleShareClick = () => {
-    if (navigator.share) {
-      // Use the navigator.share() method if supported
-      navigator.share({
-        title: post.title,
-        text: post.postText,
-        url: window.location.href,
-      })
-        .then(() => console.log("Shared successfully"))
-        .catch((error) => console.error("Error sharing:", error));
-    } else {
-      // Fallback for browsers that do not support navigator.share()
-      console.log("Share not supported in this browser.");
-      // Implement a custom share modal or open a share URL here
-      // For example, you can use a third-party library like `react-share`
-    }
+
+  const handleDeleteConfirmationShown = () => {
+    setDeleteConfirmation(true);
   };
+
+  useEffect(() => {
+    if(deleteConfirmation) {
+      document.body.classList.add('no-scroll');
+    } else {
+        document.body.classList.remove('no-scroll');
+    }
+  }, [deleteConfirmation])
 
   if (!post) {
     return <Loading height={100} />
@@ -96,10 +92,24 @@ export const DetailsPages = () => {
             </div>
             <div className="blog__details_button">
               {auth.currentUser?.uid === post.author.id && (
-                <div className="blog__details_button-delete">
-                  <button className="button__delete" onClick={() => { deletePost(post.id) }}><BiX style={{ fontSize: "2rem" }} /></button>
-                </div>
-              )}
+                <>
+                  <div className="blog__details_button-delete">
+                    <button className="button__delete" onClick={handleDeleteConfirmationShown}><BiX style={{ fontSize: "2rem" }} /></button>
+                  </div>
+                  <>
+                    {deleteConfirmation && (
+                      <div className="blog__details_button-delete-confirmation">
+                        <p>Are you sure you want to delete this post?</p>
+                        <div className="blog__details_button-delete-confirmation-buttons">
+                          <button className="button__delete_delete" onClick={() => { deletePost(post.id) }}>Yes</button>
+                          <button className="button__delete" onClick={() => { setDeleteConfirmation(false) }}>No</button>
+                        </div>
+                        <span>
+                          please note that this action is irreversible, and the post will be deleted permanently.
+                        </span>
+                      </div>)}
+                  </>
+                </>)}
               <div className="blog__details_button-edit">
                 {auth.currentUser?.uid === post.author.id && (
                   <button className="button__edit" onClick={handleEditClick}><AiFillEdit style={{ fontSize: "2rem", color: "var(--container-color" }} /></button>
