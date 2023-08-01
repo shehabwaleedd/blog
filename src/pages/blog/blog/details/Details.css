@@ -300,9 +300,8 @@
   box-shadow: 0 8px 32px 0 rgba(229, 226, 194, 0.37);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  top: -10rem;
+  top: -16rem;
   left: -43rem;
   height: 25rem;
   width: 55rem;

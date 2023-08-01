@@ -9,7 +9,7 @@ import ScrollAnimation from "./ScrollAnimation";
 import Loading from "../../../../components/supplements/loading/Loading.tsx";
 import { BiX } from "react-icons/bi";
 import { AiFillEdit } from "react-icons/ai";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 
 
@@ -96,9 +96,9 @@ export const DetailsPages = () => {
                   <div className="blog__details_button-delete">
                     <button className="button__delete" onClick={handleDeleteConfirmationShown}><BiX style={{ fontSize: "2rem" }} /></button>
                   </div>
-                  <>
+                  <AnimatePresence mode="wait"> 
                     {deleteConfirmation && (
-                      <div className="blog__details_button-delete-confirmation">
+                      <motion.div className="blog__details_button-delete-confirmation"  initial={{ opacity: 0, transition: { staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }} animate={{ opacity: 1, transition: { staggerChildren: 3.5, duration: 0.6, ease: [0.42, 0, 0.58, 1] } }} exit={{ opacity: 0, transition: { velocity: 2, staggerChildren: 1.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}>
                         <p>Are you sure you want to delete this post?</p>
                         <div className="blog__details_button-delete-confirmation-buttons">
                           <button className="button__delete_delete" onClick={() => { deletePost(post.id) }}>Yes</button>
@@ -107,8 +107,8 @@ export const DetailsPages = () => {
                         <span>
                           please note that this action is irreversible, and the post will be deleted permanently.
                         </span>
-                      </div>)}
-                  </>
+                      </motion.div>)}
+                  </AnimatePresence>
                 </>)}
               <div className="blog__details_button-edit">
                 {auth.currentUser?.uid === post.author.id && (
