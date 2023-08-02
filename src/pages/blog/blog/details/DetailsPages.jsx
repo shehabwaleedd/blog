@@ -41,8 +41,7 @@ export const DetailsPages = () => {
       }
     };
     getPost();
-    console.log(recommendedArticles)
-  }, [postDocRef]);
+  }, []);
 
 
   const deletePost = async (id) => {

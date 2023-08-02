@@ -94,7 +94,7 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [setIsMobile]);
   useEffect(() => {
     const handleResize = () => {
       setIsTablet(window.innerWidth <= 935);
@@ -107,7 +107,7 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [setIsTablet]);
   return (
 
 

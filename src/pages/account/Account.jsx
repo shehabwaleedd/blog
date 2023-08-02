@@ -46,7 +46,7 @@ const Account = ({ isTablet, setIsTablet, isMobile, setIsMobile }) => {
         };
 
         fetchPosts();
-    }, [user]);
+    }, []);
 
     const handleImageChange = (event) => {
         const file = event.target.files[0];

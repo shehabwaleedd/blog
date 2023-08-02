@@ -13,6 +13,7 @@ const About = () => {
 
 
     useEffect(() => {
+        // making the image follows the mouse
         const handleMouseMove = (event) => {
             const { clientX, clientY } = event;
             const { top, left } = imageRef.current.parentElement.getBoundingClientRect();
