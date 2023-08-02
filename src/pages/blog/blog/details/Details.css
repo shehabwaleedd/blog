@@ -19,12 +19,6 @@
   margin: 0 10rem;
 }
 
-.blog__details_texts p {
-  margin: 1rem 10rem;
-  font-size: 18px;
-  line-height: 2;
-  text-transform: capitalize;
-}
 
 .blog__details_post-date {
   margin: 1rem 0;
@@ -118,10 +112,10 @@
 
 .blog__details_post-text p {
   margin: 1rem 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.3;
-  text-transform: capitalize;
-  color: var(--blog-text-color);
+  font-family: "Satoshi-Regular";
+  color: var(--text-color);
 }
 
 .blog__details_button_container {

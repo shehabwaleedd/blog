@@ -44,7 +44,9 @@ const AnimatedNav = ({ language, isTablet, setIsTablet, setIsMobile, isMobile, n
       setAccountOpen(true);
     } else if (location.pathname === "/createpost") {
       setCreateOpen(true);
-    } 
+    } else if (location.pathname.includes("/details/")) {
+      setArticlesOpen(true);
+    }
 
   }, [location.pathname]);
 

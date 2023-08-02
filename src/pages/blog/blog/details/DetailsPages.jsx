@@ -25,23 +25,32 @@ export const DetailsPages = () => {
 
 
   useEffect(() => {
+    const fetchRecommendedArticles = async () => {
+      if (post && post.category) {
+        const recommendedArticlesSnapshot = await getDocs(
+          query(postsCollectionRef, where("category", "==", post.category))
+        );
+        const recommendedArticlesData = recommendedArticlesSnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setRecommendedArticles(recommendedArticlesData);
+      }
+    };
+    fetchRecommendedArticles();
+  }, [post]); // Fetch recommended articles whenever the post or its category changes
+
+  useEffect(() => {
     const getPost = async () => {
       const docSnap = await getDoc(postDocRef);
       if (docSnap.exists()) {
         setPost({ ...docSnap.data(), id: docSnap.id });
-        if (post && post.category) {
-          const recommendedArticlesSnapshot = await getDocs(
-            query(postsCollectionRef, where("category", "==", post.category))
-          );
-          const recommendedArticlesData = recommendedArticlesSnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-          setRecommendedArticles(recommendedArticlesData);
-        }
       } else {
         // Handle error when post is not found
       }
     };
     getPost();
-  }, []);
+  }, []); // Fetch post data only once on component mount
 
 
   const deletePost = async (id) => {
@@ -64,10 +73,10 @@ export const DetailsPages = () => {
   };
 
   useEffect(() => {
-    if(deleteConfirmation) {
+    if (deleteConfirmation) {
       document.body.classList.add('no-scroll');
     } else {
-        document.body.classList.remove('no-scroll');
+      document.body.classList.remove('no-scroll');
     }
   }, [deleteConfirmation])
 
@@ -95,9 +104,9 @@ export const DetailsPages = () => {
                   <div className="blog__details_button-delete">
                     <button className="button__delete" onClick={handleDeleteConfirmationShown}><BiX style={{ fontSize: "2rem" }} /></button>
                   </div>
-                  <AnimatePresence mode="wait"> 
+                  <AnimatePresence mode="wait">
                     {deleteConfirmation && (
-                      <motion.div className="blog__details_button-delete-confirmation"  initial={{ opacity: 0, transition: { staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }} animate={{ opacity: 1, transition: { staggerChildren: 3.5, duration: 0.6, ease: [0.42, 0, 0.58, 1] } }} exit={{ opacity: 0, transition: { velocity: 2, staggerChildren: 1.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}>
+                      <motion.div className="blog__details_button-delete-confirmation" initial={{ opacity: 0, transition: { staggerChildren: 3.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }} animate={{ opacity: 1, transition: { staggerChildren: 3.5, duration: 0.6, ease: [0.42, 0, 0.58, 1] } }} exit={{ opacity: 0, transition: { velocity: 2, staggerChildren: 1.5, duration: 0.5, ease: [0.42, 0, 0.58, 1] } }}>
                         <p>Are you sure you want to delete this post?</p>
                         <div className="blog__details_button-delete-confirmation-buttons">
                           <button className="button__delete_delete" onClick={() => { deletePost(post.id) }}>Yes</button>
@@ -124,7 +133,6 @@ export const DetailsPages = () => {
             <p className="post__subtitle">{post.postText}</p>
           </div>
           {post.category && ( // Add this condition to check if post.category exists
-
             <div className="details__post__date-imgname container">
               <div className="details__post__date_imgname-combined">
                 <h1>Articles You Might Be Interested In...</h1>
